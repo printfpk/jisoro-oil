@@ -3,8 +3,13 @@
 // GSAP + ScrollTrigger Animations
 // =============================================================
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, SplitText);
+// Register GSAP plugins safely (SplitText may fail to load on some browsers/CDN states).
+if (typeof gsap !== 'undefined') {
+  const gsapPlugins = [];
+  if (typeof ScrollTrigger !== 'undefined') gsapPlugins.push(ScrollTrigger);
+  if (typeof SplitText !== 'undefined') gsapPlugins.push(SplitText);
+  if (gsapPlugins.length) gsap.registerPlugin(...gsapPlugins);
+}
 
 // =============================================================
 // UTILITIES
@@ -17,18 +22,10 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initHeader() {
   const header = qs('#site-header');
-  let scrolled = false;
+  if (!header) return;
 
-  const update = () => {
-    const shouldBeScrolled = window.scrollY > 60;
-    if (shouldBeScrolled !== scrolled) {
-      scrolled = shouldBeScrolled;
-      header.classList.toggle('is-scrolled', scrolled);
-    }
-  };
-
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  // Keep navbar appearance fixed across scroll.
+  header.classList.remove('is-scrolled');
 })();
 
 // =============================================================
@@ -190,64 +187,66 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 7. VISUAL HEADING — scroll-driven char color reveal
+// 7. VISUAL HEADING — scroll-driven typing reveal
 // =============================================================
 (function initVisualHeading() {
   const heading = qs('#visual-heading-text');
   if (!heading) return;
+  if (heading.dataset.typingInit === 'true') return;
 
-  // Fade-in eyebrow and footer
-  ['.visual-heading__eyebrow', '.visual-heading__footer'].forEach(sel => {
-    const el = qs(sel);
-    if (el) {
-      gsap.fromTo(el, { opacity: 0 }, {
-        opacity: 1,
-        delay: 0.5,
-        duration: 1,
-        scrollTrigger: { trigger: el, start: 'top bottom-=15%' },
-      });
-    }
+  // Native char-splitting so typing works even without SplitText plugin.
+  const textNodes = [];
+  const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
   });
 
-  // Inline images fade in
-  gsap.fromTo(
-    qsa('.visual-heading__img'),
-    { opacity: 0 },
-    {
-      opacity: 1,
-      delay: 0.75,
-      stagger: 0.25,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: heading,
-        start: 'top bottom-=20%',
-      },
-    }
-  );
-
-  // SplitText char color reveal — only if GSAP SplitText is available
-  if (typeof SplitText !== 'undefined') {
-    try {
-      // We need text nodes without the inline images - clone approach
-      const split = SplitText.create(heading, { type: 'words' });
-      gsap.to(split.words, {
-        color: 'var(--color-navy)',
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: '#about',
-          scrub: true,
-          start: 'top bottom-=20%',
-          end: 'bottom bottom-=10%',
-        },
-      });
-    } catch (e) {
-      // SplitText fallback — just animate opacity
-      gsap.fromTo(heading, { opacity: 0 }, {
-        opacity: 1,
-        scrollTrigger: { trigger: heading, start: 'top bottom-=20%' },
-      });
-    }
+  let current = walker.nextNode();
+  while (current) {
+    textNodes.push(current);
+    current = walker.nextNode();
   }
+
+  const charSpans = [];
+  textNodes.forEach(node => {
+    const frag = document.createDocumentFragment();
+    const chars = [...node.nodeValue];
+
+    chars.forEach(ch => {
+      const span = document.createElement('span');
+      span.className = 'typing-char';
+      span.textContent = ch;
+      frag.appendChild(span);
+      charSpans.push(span);
+    });
+
+    node.parentNode.replaceChild(frag, node);
+  });
+
+  if (!charSpans.length) return;
+
+  // Prevent repeated wrapping if script executes again.
+  heading.dataset.typingInit = 'true';
+
+  gsap.set(charSpans, {
+    opacity: 0,
+    color: 'var(--color-navy)',
+  });
+
+  gsap.to(charSpans, {
+    opacity: 1,
+    stagger: 0.018,
+    duration: 0.01,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: heading,
+      start: 'top 86%',
+      end: 'bottom 58%',
+      scrub: true,
+    },
+  });
 })();
 
 // =============================================================
@@ -256,78 +255,22 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 (function initPinnedHighlights() {
   const section     = qs('#pinned-section');
   const blocksWrap  = qs('#pinned-blocks');
-  const progressBar = qs('#pinned-progress-bar');
   const products    = qs('#pinned-products');
 
   if (!section || !blocksWrap) return;
 
-  const blocks = qsa('#pinned-blocks .pinned-block');
-  let totalY   = 0;
+  // Keep this section static (no pinning/scroll animation).
+  section.style.height = 'auto';
+  section.style.overflow = 'visible';
+  blocksWrap.style.transform = 'none';
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      pin: true,
-      scrub: true,
-      anticipatePin: 1,
-      start: 'top top',
-      end: 'bottom+=200% top',
-    },
+  qsa('#pinned-blocks .pinned-block').forEach((block) => {
+    block.style.opacity = '1';
   });
 
-  // Set initial opacities
-  blocks.forEach((block, i) => {
-    gsap.set(block, { opacity: 1 / (i + 1) });
-  });
-
-  blocks.forEach((block, index) => {
-    totalY += block.offsetHeight;
-
-    // Fade the next block in
-    if (index >= 1) {
-      tl.to(block, { opacity: 1, duration: 2, ease: 'linear' }, '<');
-    }
-
-    // Scroll the blocks wrapper up
-    tl.to(blocksWrap, {
-      y: -totalY,
-      duration: 2,
-      ease: 'linear',
-    }, `block-${index}-out`);
-
-    // Fade this block out
-    tl.to(block, {
-      opacity: 0,
-      duration: 2,
-      ease: 'linear',
-    }, `block-${index}-out`);
-
-    // Progress bar
-    if (progressBar) {
-      tl.to(progressBar, {
-        height: `${(50 / blocks.length) * (index + 1)}%`,
-        duration: 1,
-      }, `block-${index}-out`);
-    }
-  });
-
-  // Transition to products
   if (products) {
-    tl.fromTo(
-      blocksWrap,
-      { opacity: 1 },
-      { opacity: 0, duration: 1 },
-      'products-in'
-    ).fromTo(
-      products,
-      { opacity: 0, y: '20%' },
-      { opacity: 1, y: 0, duration: 1 },
-      'products-in'
-    );
-
-    if (progressBar) {
-      tl.to(progressBar, { height: '100%', duration: 1 }, 'products-in');
-    }
+    products.style.opacity = '1';
+    products.style.transform = 'none';
   }
 })();
 
@@ -571,7 +514,6 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 17. GENERAL SCROLL REVEAL — generic utility for generic items
 // =============================================================
 (function initGenericReveal() {
-  // Smooth reveal anything with [data-reveal]
   qsa('[data-reveal]').forEach(el => {
     const dir   = el.dataset.reveal || 'up';
     const delay = parseFloat(el.dataset.delay) || 0;
@@ -596,4 +538,87 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
       },
     });
   });
+})();
+
+// =============================================================
+// 18. PHOTO CAROUSEL
+// =============================================================
+(function initCarousel() {
+  const track   = document.getElementById('carousel-track');
+  const dotsEl  = document.getElementById('carousel-dots');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total  = slides.length;
+  let   current = 0;
+  let   autoTimer = null;
+
+  // Build dots
+  if (dotsEl) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  function getDots() {
+    return dotsEl ? dotsEl.querySelectorAll('.carousel-dot') : [];
+  }
+
+  function goTo(index) {
+    // Wrap around
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // Update dots
+    getDots().forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === current);
+    });
+
+    resetAuto();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+  if (nextBtn) nextBtn.addEventListener('click', next);
+
+  // Keyboard support
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('pinned-section')) return;
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? next() : prev();
+  }, { passive: true });
+
+  // Auto-play every 5 seconds
+  function startAuto() {
+    autoTimer = setInterval(next, 5000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  startAuto();
+
+  // Pause auto-play on hover
+  const wrapper = track.closest('.carousel-wrapper');
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    wrapper.addEventListener('mouseleave', startAuto);
+  }
 })();
