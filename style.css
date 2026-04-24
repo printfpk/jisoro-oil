@@ -437,6 +437,10 @@ button {
   color: var(--color-white);
 }
 
+.header-list__link .cart-count {
+  margin-left: var(--sp-4);
+}
+
 /* Header Submenu */
 .header-list__item--shop {
   position: relative;
@@ -482,6 +486,115 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-8);
+}
+
+.cart-page {
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--sp-24);
+}
+
+.cart-page__header {
+  align-items: center;
+  display: flex;
+  gap: var(--sp-16);
+  justify-content: space-between;
+  margin-bottom: var(--sp-16);
+}
+
+.cart-page__summary {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.cart-page__empty {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.cart-page__list {
+  display: grid;
+  gap: var(--sp-16);
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.cart-page__item {
+  min-width: 0;
+}
+
+.cart-product-card .product-card-wrap {
+  width: 100%;
+}
+
+.cart-product-card .product-card {
+  min-height: 360px;
+}
+
+.cart-product-card .product-card__footer {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.cart-product-card .product-card__sub {
+  font-size: 0.72rem;
+}
+
+.cart-product-card .product-card__img {
+  filter: none;
+  transform: none;
+}
+
+.cart-card-actions {
+  display: grid;
+  gap: var(--sp-8);
+}
+
+.cart-card-actions .product-card-quick-add {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 8px;
+}
+
+.product-card-quick-add--whatsapp {
+  background-color: #1f9d57;
+}
+
+.product-card-quick-add--whatsapp:hover {
+  background-color: #177a42;
+}
+
+.product-card-quick-add--remove {
+  background-color: #c33f2a;
+}
+
+.product-card-quick-add--remove:hover {
+  background-color: #9e321f;
+}
+
+@media (min-width: 768px) {
+  .cart-page__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .cart-page__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .cart-page {
+    padding: var(--sp-16);
+  }
+
+  .cart-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .product-snippet {
@@ -2536,6 +2649,92 @@ button {
   color: var(--color-text-light);
   line-height: 1.6;
   font-size: 0.9rem;
+}
+
+/* =============================================================
+   PROCESS STORYBOARD
+   ============================================================= */
+.process-story {
+  display: grid;
+  gap: var(--sp-24);
+}
+
+.story-step {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-16);
+  align-items: stretch;
+}
+
+.story-step__content {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: clamp(1rem, 2.3vw, 1.75rem);
+  box-shadow: 0 10px 26px rgba(1, 39, 62, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+
+.story-step__index {
+  color: rgba(1, 39, 62, 0.6);
+}
+
+.story-step__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3.1vw, 2rem);
+  line-height: 1.15;
+}
+
+.story-step__text {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.story-step__media {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(1, 39, 62, 0.08);
+  box-shadow: 0 14px 34px rgba(1, 39, 62, 0.14);
+  min-height: 280px;
+}
+
+.story-step__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.story-step:hover .story-step__media img {
+  transform: scale(1.03);
+}
+
+@media (min-width: 900px) {
+  .process-story {
+    gap: var(--sp-32);
+  }
+
+  .story-step {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-24);
+  }
+
+  .story-step--reverse .story-step__content {
+    order: 2;
+  }
+
+  .story-step--reverse .story-step__media {
+    order: 1;
+  }
+
+  .story-step__content,
+  .story-step__media {
+    min-height: 360px;
+  }
 }
 
 /* =============================================================

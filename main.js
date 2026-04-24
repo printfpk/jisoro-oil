@@ -81,7 +81,212 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 4. FAQ ACCORDION — smooth height animation
+// 4. CART
+// =============================================================
+(function initCart() {
+  const CART_STORAGE_KEY = 'jisoro-cart-items';
+  const WHATSAPP_NUMBER = '918393976770';
+
+  const addButtons = qsa('.product-card-quick-add');
+  const navCount = qs('#cart-count-nav');
+  const bagCount = qs('#cart-count-bag');
+  const cartPageList = qs('#cart-page-items');
+  const cartPageEmpty = qs('#cart-page-empty');
+  const cartPageTotal = qs('#cart-page-total');
+
+  let cartItems = [];
+
+  const safeReadCart = () => {
+    try {
+      const raw = localStorage.getItem(CART_STORAGE_KEY);
+      if (!raw) return [];
+
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+
+      return parsed
+        .filter(item => item && typeof item.name === 'string' && Number.isFinite(item.qty))
+        .map(item => ({
+          name: item.name,
+          size: item.size || 'Standard',
+          qty: item.qty,
+          image: item.image || 'assets/bottle.jpeg',
+          subtitle: item.subtitle || 'Pure wood-pressed oil.',
+          badge: item.badge || 'In Cart',
+          cardBg: item.cardBg || '#b8bea8',
+        }));
+    } catch (e) {
+      return [];
+    }
+  };
+
+  const persistCart = () => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch (e) {
+      // Ignore storage errors (private browsing / storage full).
+    }
+  };
+
+  const totalCount = () => cartItems.reduce((sum, item) => sum + item.qty, 0);
+
+  const setCountText = (el, count) => {
+    if (!el) return;
+    el.textContent = `[${count}]`;
+  };
+
+  const renderCartItems = () => {
+    const count = totalCount();
+    setCountText(navCount, count);
+    setCountText(bagCount, count);
+
+    if (cartPageTotal) {
+      cartPageTotal.textContent = String(count);
+    }
+
+    if (!cartPageList || !cartPageEmpty) return;
+
+    cartPageList.innerHTML = '';
+
+    if (!cartItems.length) {
+      cartPageEmpty.style.display = 'block';
+      return;
+    }
+
+    cartPageEmpty.style.display = 'none';
+
+    cartItems.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.className = 'cart-page__item cart-product-card';
+
+      const cardWrap = document.createElement('div');
+      cardWrap.className = 'product-card-wrap';
+
+      const card = document.createElement('a');
+      card.className = 'product-card';
+      card.href = '#';
+      card.style.setProperty('--card-bg', item.cardBg || '#b8bea8');
+
+      const badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = item.badge || 'In Cart';
+
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'product-card__image-wrap';
+
+      const image = document.createElement('img');
+      image.className = 'product-card__img';
+      image.src = item.image || 'assets/bottle.jpeg';
+      image.alt = item.name;
+
+      const footer = document.createElement('div');
+      footer.className = 'product-card__footer';
+
+      const titleRow = document.createElement('div');
+      titleRow.className = 'product-card__title-row';
+
+      const name = document.createElement('p');
+      name.className = 'product-card__name';
+      name.textContent = item.name;
+
+      const size = document.createElement('p');
+      size.className = 'product-card__size eyebrow';
+      size.textContent = `${item.size || 'Standard'} x ${item.qty}`;
+
+      const sub = document.createElement('p');
+      sub.className = 'product-card__sub eyebrow';
+      sub.textContent = item.subtitle || 'Pure wood-pressed oil.';
+
+      titleRow.appendChild(name);
+      titleRow.appendChild(size);
+      footer.appendChild(titleRow);
+      footer.appendChild(sub);
+      imageWrap.appendChild(image);
+      card.appendChild(badge);
+      card.appendChild(imageWrap);
+      card.appendChild(footer);
+
+      const actions = document.createElement('div');
+      actions.className = 'cart-card-actions';
+
+      const orderBtn = document.createElement('button');
+      orderBtn.type = 'button';
+      orderBtn.className = 'product-card-quick-add product-card-quick-add--whatsapp';
+      orderBtn.textContent = 'Order via WhatsApp';
+      orderBtn.addEventListener('click', () => {
+        const msg = `Hi, I want to order ${item.name} (${item.size || 'Standard'}) - Qty: ${item.qty}.`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'product-card-quick-add product-card-quick-add--remove';
+      removeBtn.textContent = 'Remove';
+      removeBtn.addEventListener('click', () => {
+        cartItems.splice(index, 1);
+        persistCart();
+        renderCartItems();
+      });
+
+      actions.appendChild(orderBtn);
+      actions.appendChild(removeBtn);
+      cardWrap.appendChild(card);
+      cardWrap.appendChild(actions);
+      li.appendChild(cardWrap);
+      cartPageList.appendChild(li);
+    });
+  };
+
+  const extractProductInfo = (button) => {
+    const wrap = button.closest('.product-card-wrap');
+    if (!wrap) {
+      return {
+        name: 'Item',
+        size: 'Standard',
+        image: 'assets/bottle.jpeg',
+        subtitle: 'Pure wood-pressed oil.',
+        badge: 'In Cart',
+        cardBg: '#b8bea8',
+      };
+    }
+
+    const name = qs('.product-card__name', wrap)?.textContent?.trim() || 'Item';
+    const size = qs('.product-card__size', wrap)?.textContent?.trim() || 'Standard';
+    const image = qs('.product-card__img', wrap)?.getAttribute('src') || 'assets/bottle.jpeg';
+    const subtitle = qs('.product-card__sub', wrap)?.textContent?.trim() || 'Pure wood-pressed oil.';
+    const badge = qs('.badge', wrap)?.textContent?.trim() || 'In Cart';
+    const cardBg = qs('.product-card', wrap)?.style.getPropertyValue('--card-bg')?.trim() || '#b8bea8';
+
+    return { name, size, image, subtitle, badge, cardBg };
+  };
+
+  const addToCart = (item) => {
+    const existing = cartItems.find(cartItem => cartItem.name === item.name && cartItem.size === item.size);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cartItems.push({ ...item, qty: 1 });
+    }
+
+    persistCart();
+    renderCartItems();
+  };
+
+  cartItems = safeReadCart();
+  renderCartItems();
+
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const item = extractProductInfo(button);
+      addToCart(item);
+    });
+  });
+
+})();
+
+// =============================================================
+// 5. FAQ ACCORDION — smooth height animation
 // =============================================================
 (function initFAQs() {
   qsa('.faq-item').forEach(item => {
@@ -126,7 +331,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 5. HERO BANNER — entrance animations
+// 6. HERO BANNER — entrance animations
 // =============================================================
 (function initHeroAnimations() {
   const lines = qsa('.hero-line');
@@ -161,7 +366,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 6. FEATURED PRODUCTS — stagger entrance
+// 7. FEATURED PRODUCTS — stagger entrance
 // =============================================================
 (function initProductsAnimation() {
   const section = qs('#products');
@@ -187,7 +392,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 7. VISUAL HEADING — scroll-driven typing reveal
+// 8. VISUAL HEADING — scroll-driven typing reveal
 // =============================================================
 (function initVisualHeading() {
   const heading = qs('#visual-heading-text');
@@ -250,7 +455,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 8. PINNED HIGHLIGHTS — scroll-triggered pin + block sequences
+// 9. PINNED HIGHLIGHTS — scroll-triggered pin + block sequences
 // =============================================================
 (function initPinnedHighlights() {
   const section     = qs('#pinned-section');
@@ -275,7 +480,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 9. PRODUCT QUOTE — section entrance + char reveal
+// 10. PRODUCT QUOTE — section entrance + char reveal
 // =============================================================
 (function initProductQuoteAnimation() {
   const section = qs('#product-quote');
