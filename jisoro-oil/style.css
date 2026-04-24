@@ -360,6 +360,38 @@ button {
   color: var(--color-white);
 }
 
+/* ── Inner pages: force navbar into solid/scrolled state ───────
+   All inner pages have <body class="inner-page">.
+   This overrides the transparent/white-text mode so links
+   are always visible and hover colours are consistent.
+   ─────────────────────────────────────────────────────────── */
+.inner-page .site-header--transparent:not(.is-scrolled) .site-header__container {
+  color: var(--color-navy);
+}
+
+.inner-page .site-header--transparent:not(.is-scrolled) .site-header__container::before {
+  opacity: 0.9;
+}
+
+/* Show the dark logo (hide white logo) on inner pages */
+.inner-page .site-header--transparent:not(.is-scrolled) .logo-default {
+  opacity: 1;
+}
+.inner-page .site-header--transparent:not(.is-scrolled) .logo-inverted {
+  opacity: 0;
+}
+
+/* Nav pill: always white background on inner pages */
+.inner-page .site-header--transparent:not(.is-scrolled) .header-list {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+/* Hamburger lines: always dark on inner pages */
+.inner-page .site-header--transparent:not(.is-scrolled) .hamburger span {
+  background-color: var(--color-navy);
+}
+
 .site-header__logo {
   justify-self: start;
   grid-column: 1;

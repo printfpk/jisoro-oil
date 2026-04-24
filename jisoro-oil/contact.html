@@ -9,83 +9,254 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inner-pages.css">
 </head>
 <body class="inner-page">
-  <div class="announcement-bar" id="announcement-bar"><div class="announcement-bar__inner" id="announcement-bar-inner"><span class="announcement-bar__item">Contact JIRASO Organics</span><span class="announcement-bar__item">Bulk and Distributor Support</span><span class="announcement-bar__item">Contact JIRASO Organics</span><span class="announcement-bar__item">Bulk and Distributor Support</span></div></div>
-
-  <header class="site-header site-header--transparent" id="site-header"><div class="site-header__container container"><a class="site-header__logo" href="index.html" aria-label="Jiraso Home"><svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg><svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg></a><nav class="site-header__nav" aria-label="Main navigation"><ul class="header-list" role="list"><li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li><li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li><li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li><li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li><li class="header-list__item"><a class="header-list__link header-list__link--active" href="contact.html">Contact</a></li></ul></nav><div class="site-header__utils"><a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a><button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
-
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true"><nav aria-label="Mobile navigation"><ul class="mobile-nav" role="list"><li><a href="index.html">Home</a></li><li><a href="process.html">Process</a></li><li><a href="products.html">Products</a></li><li><a href="reports.html">Reports</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-
-  <!-- Page Title -->
-  <div class="page-title-bar">
-    <div class="container">
-      <p class="eyebrow page-title-bar__eyebrow">Get In Touch</p>
-      <h1 class="page-title-bar__heading">Contact Us</h1>
-      <p class="page-title-bar__sub">Reach out for retail, wholesale, and product support.</p>
+  <!-- Announcement -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">Contact JIRASO Organics</span>
+      <span class="announcement-bar__item">Bulk and Distributor Support</span>
+      <span class="announcement-bar__item">We Respond Within 24 Hours</span>
+      <span class="announcement-bar__item">Contact JIRASO Organics</span>
+      <span class="announcement-bar__item">Bulk and Distributor Support</span>
+      <span class="announcement-bar__item">We Respond Within 24 Hours</span>
     </div>
   </div>
 
-  <main class="section-margin container inner-page-main">
-    <section class="contact-section">
-      <!-- Info cards -->
-      <div class="contact-info">
-        <article class="contact-info-card">
-          <div class="contact-info-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Address</h3>
-          <p>Madhavpur, Rampur Road Salempur,<br>Deoria, Uttar Pradesh 274509</p>
-        </article>
+  <!-- Header -->
+  <header class="site-header site-header--transparent" id="site-header">
+    <div class="site-header__container container">
+      <a class="site-header__logo" href="index.html" aria-label="Jiraso Home">
+        <svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg>
+        <svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg>
+      </a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <ul class="header-list" role="list">
+          <li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li>
+          <li class="header-list__item"><a class="header-list__link header-list__link--active" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__utils">
+        <a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a>
+        <button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
 
-        <article class="contact-info-card">
-          <div class="contact-info-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <h3>Phone</h3>
-          <p><a href="tel:+918393976770">+91 83939 76770</a><br><a href="tel:+919479976760">+91 94799 76760</a></p>
-        </article>
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
 
-        <article class="contact-info-card">
-          <div class="contact-info-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <h3>Email</h3>
-          <p><a href="mailto:jirasoorganics@gmail.com">jirasoorganics@gmail.com</a></p>
-        </article>
+  <!-- Hero -->
+  <div class="ip-hero">
+    <div class="ip-hero__orb ip-hero__orb--1"></div>
+    <div class="ip-hero__orb ip-hero__orb--2"></div>
+    <div class="ip-hero__noise"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="ip-hero__eyebrow" data-reveal data-delay="1">Get In Touch</p>
+      <h1 class="ip-hero__heading" data-reveal data-delay="2">Contact Us</h1>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Reach out for retail, wholesale, and product support. We're here to help.</p>
+    </div>
+  </div>
+
+  <main class="section-margin container">
+    <div class="ip-label" data-reveal>
+      <span class="ip-label__text">Connect</span>
+      <span class="ip-label__line"></span>
+      <span class="ip-label__text">Response within 24h</span>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Left: info + map -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <div data-reveal data-delay="1">
+          <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1;margin-bottom:1rem;">We'd love to<br>hear from you.</h2>
+          <p style="font-size:0.9375rem;line-height:1.75;color:var(--color-text-light);max-width:400px;">Whether you're a home cook, a distributor, or just curious about our oils — every inquiry is welcome.</p>
+        </div>
+
+        <div class="contact-info-strip">
+          <!-- Address -->
+          <article class="contact-card" data-reveal data-delay="2">
+            <div class="contact-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="contact-card__label">Address</p>
+              <p class="contact-card__value">Madhavpur, Rampur Road Salempur,<br>Deoria, Uttar Pradesh 274509</p>
+            </div>
+          </article>
+
+          <!-- Phone -->
+          <article class="contact-card" data-reveal data-delay="3">
+            <div class="contact-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card__label">Phone</p>
+              <p class="contact-card__value">
+                <a href="tel:+918393976770">+91 83939 76770</a><br>
+                <a href="tel:+919479976760">+91 94799 76760</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Email -->
+          <article class="contact-card" data-reveal data-delay="4">
+            <div class="contact-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="contact-card__label">Email</p>
+              <p class="contact-card__value"><a href="mailto:jirasoorganics@gmail.com">jirasoorganics@gmail.com</a></p>
+            </div>
+          </article>
+
+          <!-- WhatsApp -->
+          <article class="contact-card" data-reveal data-delay="5" style="border-color:#1f9d57;">
+            <div class="contact-card__icon" style="background:#1f9d57;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card__label">WhatsApp</p>
+              <p class="contact-card__value">
+                <a href="https://wa.me/918393976770" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Map -->
+        <div class="contact-map" data-reveal data-delay="6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.5!2d83.8!3d26.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDM2JzAwLjAiTiA4M8KwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="JIRASO Organics Location">
+          </iframe>
+        </div>
       </div>
 
-      <!-- Contact form -->
-      <div class="contact-form-wrap">
-        <h2 class="contact-form-wrap__heading">Send Us a Message</h2>
-        <form class="contact-form" action="mailto:jirasoorganics@gmail.com" method="post" enctype="text/plain">
-          <div class="contact-form__group">
-            <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Your full name" required>
+      <!-- Right: Form -->
+      <div data-reveal data-delay="2">
+        <div class="contact-form-premium">
+          <div>
+            <h2 class="contact-form-premium__heading">Send Us a Message</h2>
+            <p class="contact-form-premium__sub">Fill the form and we'll respond within 24 hours.</p>
           </div>
-          <div class="contact-form__group">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
-          </div>
-          <div class="contact-form__group">
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" placeholder="your@email.com">
-          </div>
-          <div class="contact-form__group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your inquiry..." required></textarea>
-          </div>
-          <button class="btn btn--primary contact-form__submit" type="submit">
-            Send Inquiry
-            <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z" /></svg>
-          </button>
-        </form>
+
+          <form id="contact-form" action="mailto:jirasoorganics@gmail.com" method="post" enctype="text/plain" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+            </div>
+
+            <div class="form-field" style="margin-top:1rem;">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="your@email.com">
+            </div>
+
+            <div class="form-field" style="margin-top:1rem;">
+              <label for="inquiry">Inquiry Type</label>
+              <select id="inquiry" name="inquiry" style="font-family:var(--font-body);font-size:0.9375rem;color:var(--color-navy);background:var(--color-chalk);border:1.5px solid var(--color-border);border-radius:10px;padding:0.75rem 1rem;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;-webkit-appearance:none;">
+                <option value="">Select an inquiry type</option>
+                <option value="retail">Retail Order</option>
+                <option value="bulk">Bulk / Wholesale</option>
+                <option value="distributor">Distributor Partnership</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-field" style="margin-top:1rem;">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your inquiry..."></textarea>
+            </div>
+
+            <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+              <button class="form-submit-btn" type="submit" id="form-submit-btn">
+                Send Inquiry
+                <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z"/></svg>
+              </button>
+              <a href="https://wa.me/918393976770?text=Hello%20JIRASO%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener"
+                 style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 1.25rem;background:#1f9d57;color:#fff;border-radius:10px;font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;transition:background 0.25s;text-decoration:none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+
+            <!-- Success message -->
+            <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#d1fae5;border-radius:10px;color:#065f46;font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;">
+              ✓ Message sent! We'll respond within 24 hours.
+            </div>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer"><div class="site-footer__bottom container"><p class="site-footer__copyright">© 2026 JIRASO Organics</p><p class="site-footer__copyright">Trusted quality rooted in tradition.</p></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script><script src="main.js"></script>
+  <!-- Footer -->
+  <footer class="site-footer-premium">
+    <div class="container">
+      <div class="site-footer-premium__inner">
+        <span class="site-footer-premium__brand">JIRASO</span>
+        <nav class="site-footer-premium__links">
+          <a href="index.html">Home</a>
+          <a href="process.html">Process</a>
+          <a href="products.html">Products</a>
+          <a href="reports.html">Reports</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Select focus style
+    const sel = document.getElementById('inquiry');
+    if (sel) {
+      sel.addEventListener('focus', () => { sel.style.borderColor = 'var(--color-blue)'; sel.style.boxShadow = '0 0 0 3px rgba(0,11,250,0.07)'; sel.style.background = '#fff'; });
+      sel.addEventListener('blur', () => { sel.style.borderColor = ''; sel.style.boxShadow = ''; sel.style.background = ''; });
+    }
+
+    // Form submit — show success state
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        const successEl = document.getElementById('form-success');
+        if (successEl) {
+          successEl.style.display = 'block';
+          setTimeout(() => { successEl.style.display = 'none'; }, 5000);
+        }
+      });
+    }
+  </script>
 </body>
 </html>

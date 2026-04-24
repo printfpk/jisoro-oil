@@ -3,41 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore the premium JIRASO range of everyday essentials.">
+  <meta name="description" content="Explore the premium JIRASO range of wood-pressed everyday oils.">
   <title>Products | JIRASO Organics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inner-pages.css">
 </head>
 <body class="inner-page">
-  <div class="announcement-bar" id="announcement-bar"><div class="announcement-bar__inner" id="announcement-bar-inner"><span class="announcement-bar__item">Premium Range</span><span class="announcement-bar__item">Everyday Essentials, Traditionally Crafted</span><span class="announcement-bar__item">Premium Range</span><span class="announcement-bar__item">Everyday Essentials, Traditionally Crafted</span></div></div>
-  <header class="site-header site-header--transparent" id="site-header"><div class="site-header__container container"><a class="site-header__logo" href="index.html" aria-label="Jiraso Home"><svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg><svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg></a><nav class="site-header__nav" aria-label="Main navigation"><ul class="header-list" role="list"><li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li><li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li><li class="header-list__item"><a class="header-list__link header-list__link--active" href="products.html">Products</a></li><li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li><li class="header-list__item"><a class="header-list__link" href="contact.html">Contact</a></li></ul></nav><div class="site-header__utils"><a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a><button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true"><nav aria-label="Mobile navigation"><ul class="mobile-nav" role="list"><li><a href="index.html">Home</a></li><li><a href="process.html">Process</a></li><li><a href="products.html">Products</a></li><li><a href="reports.html">Reports</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-
-  <!-- Page Title -->
-  <div class="page-title-bar">
-    <div class="container">
-      <p class="eyebrow page-title-bar__eyebrow">01 / Our Offerings</p>
-      <h1 class="page-title-bar__heading">Our Products</h1>
-      <p class="page-title-bar__sub">Everyday essentials, traditionally crafted for healthier kitchens.</p>
+  <!-- Announcement -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">Premium Range</span>
+      <span class="announcement-bar__item">Everyday Essentials, Traditionally Crafted</span>
+      <span class="announcement-bar__item">100% Wood Pressed · No Refining</span>
+      <span class="announcement-bar__item">Premium Range</span>
+      <span class="announcement-bar__item">Everyday Essentials, Traditionally Crafted</span>
+      <span class="announcement-bar__item">100% Wood Pressed · No Refining</span>
     </div>
   </div>
 
-  <!-- Products Section -->
+  <!-- Header -->
+  <header class="site-header site-header--transparent" id="site-header">
+    <div class="site-header__container container">
+      <a class="site-header__logo" href="index.html" aria-label="Jiraso Home">
+        <svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg>
+        <svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg>
+      </a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <ul class="header-list" role="list">
+          <li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li>
+          <li class="header-list__item"><a class="header-list__link header-list__link--active" href="products.html">Products</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__utils">
+        <a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a>
+        <button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- Hero -->
+  <div class="ip-hero">
+    <div class="ip-hero__orb ip-hero__orb--1"></div>
+    <div class="ip-hero__orb ip-hero__orb--2"></div>
+    <div class="ip-hero__noise"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="ip-hero__eyebrow" data-reveal data-delay="1">01 / Our Offerings</p>
+      <h1 class="ip-hero__heading" data-reveal data-delay="2">Our Products</h1>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Everyday essentials, traditionally crafted for healthier kitchens — wood-pressed and unrefined.</p>
+    </div>
+  </div>
+
+  <!-- Products -->
   <main>
-    <section class="featured-products section-margin container" id="products">
-      <div class="featured-products__header">
-        <p class="eyebrow featured-products__line">Shop by Category</p>
-        <h2 class="featured-products__line">Our Collection</h2>
-        <p class="featured-products__body featured-products__line"></p>
+    <section class="section-margin container" id="products">
+      <div class="ip-label" data-reveal>
+        <span class="ip-label__text">Shop by Category</span>
+        <span class="ip-label__line"></span>
+        <span class="ip-label__text">4 Varieties</span>
       </div>
 
-      <div class="featured-products__products">
-        <!-- Card: Mustard Oil -->
-        <div class="product-card-wrap">
-          <a class="product-card" href="#" style="--card-bg: #7899b4;">
+      <!-- Filter chips -->
+      <div class="products-filter-bar" data-reveal data-delay="1">
+        <button class="filter-chip is-active" data-filter="all" id="filter-all">All Oils</button>
+        <button class="filter-chip" data-filter="cooking">Cooking</button>
+        <button class="filter-chip" data-filter="wellness">Wellness</button>
+        <button class="filter-chip" data-filter="tropical">Tropical</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="products-grid" id="products-grid">
+
+        <!-- Mustard Oil -->
+        <div class="product-card-wrap" data-reveal data-delay="1" data-category="cooking">
+          <div class="product-card" style="--card-bg:#7899b4;">
             <span class="badge" style="background-color:#f28388;">Raspberry Ginger</span>
             <div class="product-card__image-wrap">
               <img class="product-card__img" src="assets/bottle2.jpeg" alt="Mustard Oil">
@@ -59,13 +116,30 @@
                 </div>
               </div>
             </div>
-          </a>
-          <button class="product-card-quick-add">Add to cart</button>
+            <!-- Hover Overlay -->
+            <div class="product-card__overlay">
+              <a class="product-card__overlay-view" href="product-mustard.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Product
+              </a>
+              <button class="product-card__overlay-cart"
+                data-name="Mustard Oil"
+                data-img="assets/bottle2.jpeg"
+                data-color="#7899b4"
+                data-badge-color="#f28388"
+                data-badge="Raspberry Ginger"
+                data-sub="Bold, pungent oil perfect for traditional Indian cooking."
+                data-price="450">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Card: Sesame Oil -->
-        <div class="product-card-wrap">
-          <a class="product-card" href="#" style="--card-bg: #b8bea8;">
+        <!-- Sesame Oil -->
+        <div class="product-card-wrap" data-reveal data-delay="2" data-category="wellness">
+          <div class="product-card" style="--card-bg:#b8bea8;">
             <span class="badge" style="background-color:#f3eb66;">Lemon</span>
             <div class="product-card__image-wrap">
               <img class="product-card__img" src="assets/bottle.jpeg" alt="Sesame Oil">
@@ -87,13 +161,30 @@
                 </div>
               </div>
             </div>
-          </a>
-          <button class="product-card-quick-add">Add to cart</button>
+            <!-- Hover Overlay -->
+            <div class="product-card__overlay">
+              <a class="product-card__overlay-view" href="product-sesame.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Product
+              </a>
+              <button class="product-card__overlay-cart"
+                data-name="Sesame Oil"
+                data-img="assets/bottle.jpeg"
+                data-color="#b8bea8"
+                data-badge-color="#f3eb66"
+                data-badge="Lemon"
+                data-sub="Rich aroma, ideal for South Indian & wellness cooking."
+                data-price="500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Card: Coconut Oil -->
-        <div class="product-card-wrap">
-          <a class="product-card" href="#" style="--card-bg: #c4a898;">
+        <!-- Coconut Oil -->
+        <div class="product-card-wrap" data-reveal data-delay="3" data-category="tropical">
+          <div class="product-card" style="--card-bg:#c4a898;">
             <span class="badge" style="background-color:#fcc9a4;">Peach Chamomile</span>
             <div class="product-card__image-wrap">
               <img class="product-card__img" src="assets/bottle3.jpeg" alt="Coconut Oil">
@@ -115,13 +206,30 @@
                 </div>
               </div>
             </div>
-          </a>
-          <button class="product-card-quick-add">Add to cart</button>
+            <!-- Hover Overlay -->
+            <div class="product-card__overlay">
+              <a class="product-card__overlay-view" href="product-coconut.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Product
+              </a>
+              <button class="product-card__overlay-cart"
+                data-name="Coconut Oil"
+                data-img="assets/bottle3.jpeg"
+                data-color="#c4a898"
+                data-badge-color="#fcc9a4"
+                data-badge="Peach Chamomile"
+                data-sub="Pure tropical oil for cooking, skin, and health."
+                data-price="550">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Card: Groundnut Oil -->
-        <div class="product-card-wrap">
-          <a class="product-card" href="#" style="--card-bg: #c4a860;">
+        <!-- Groundnut Oil -->
+        <div class="product-card-wrap" data-reveal data-delay="4" data-category="cooking">
+          <div class="product-card" style="--card-bg:#c4a860;">
             <span class="badge" style="background-color:#ffc04a;">Orange Honey</span>
             <div class="product-card__image-wrap">
               <img class="product-card__img" src="assets/bottle5.jpeg" alt="Groundnut Oil">
@@ -143,20 +251,134 @@
                 </div>
               </div>
             </div>
-          </a>
-          <button class="product-card-quick-add">Add to cart</button>
+            <!-- Hover Overlay -->
+            <div class="product-card__overlay">
+              <a class="product-card__overlay-view" href="product-groundnut.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View Product
+              </a>
+              <button class="product-card__overlay-cart"
+                data-name="Groundnut Oil"
+                data-img="assets/bottle5.jpeg"
+                data-color="#c4a860"
+                data-badge-color="#ffc04a"
+                data-badge="Orange Honey"
+                data-sub="Light, versatile oil for everyday use."
+                data-price="400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="section-margin container" style="text-align:center; padding-bottom: 2rem;">
-      <a class="btn btn--primary" href="contact.html">Request Bulk Pricing
-        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z" /></svg>
-      </a>
+      <!-- Benefits strip -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin-top:4rem;" data-reveal>
+        <div style="background:#fff;padding:2rem 1.5rem;">
+          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">0°</p>
+          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Chemical Processing</p>
+        </div>
+        <div style="background:#fff;padding:2rem 1.5rem;">
+          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">100%</p>
+          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Natural Seeds</p>
+        </div>
+        <div style="background:#fff;padding:2rem 1.5rem;">
+          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">4+</p>
+          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Oil Varieties</p>
+        </div>
+        <div style="background:#fff;padding:2rem 1.5rem;">
+          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">10</p>
+          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Quality Steps</p>
+        </div>
+      </div>
+
+      <!-- Bulk CTA -->
+      <div style="text-align:center;padding-block:3.5rem 1rem;" data-reveal>
+        <a class="btn btn--primary" href="contact.html">Request Bulk Pricing
+          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z"/></svg>
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="site-footer__bottom container"><p class="site-footer__copyright">© 2026 JIRASO Organics</p><p class="site-footer__copyright">Whole grains and natural sweeteners available.</p></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script><script src="main.js"></script>
+  <!-- Footer -->
+  <footer class="site-footer-premium">
+    <div class="container">
+      <div class="site-footer-premium__inner">
+        <span class="site-footer-premium__brand">JIRASO</span>
+        <nav class="site-footer-premium__links">
+          <a href="index.html">Home</a>
+          <a href="process.html">Process</a>
+          <a href="products.html">Products</a>
+          <a href="reports.html">Reports</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // ── Scroll reveal ────────────────────────────────────────
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // ── Filter chips ─────────────────────────────────────────
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        const filter = chip.dataset.filter;
+        document.querySelectorAll('#products-grid .product-card-wrap').forEach(card => {
+          const cat = card.dataset.category;
+          const show = filter === 'all' || cat === filter;
+          card.style.transition = 'opacity 0.3s, transform 0.3s';
+          card.style.opacity = show ? '1' : '0.25';
+          card.style.pointerEvents = show ? '' : 'none';
+        });
+      });
+    });
+
+    // ── Overlay Add to Cart ───────────────────────────────────
+    document.querySelectorAll('.product-card__overlay-cart').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const d = btn.dataset;
+        const cart = JSON.parse(localStorage.getItem('jiraso_cart') || '[]');
+        cart.push({
+          name: d.name,
+          img: d.img,
+          color: d.color,
+          badgeColor: d.badgeColor,
+          badge: d.badge,
+          sub: d.sub,
+          size: '1 Litre',
+          price: parseInt(d.price)
+        });
+        localStorage.setItem('jiraso_cart', JSON.stringify(cart));
+
+        // Visual feedback on button
+        const origHTML = btn.innerHTML;
+        btn.innerHTML = '✓ Added!';
+        btn.classList.add('is-added');
+        setTimeout(() => {
+          btn.innerHTML = origHTML;
+          btn.classList.remove('is-added');
+        }, 1800);
+
+        // Update cart count badges across the page
+        document.querySelectorAll('.cart-count').forEach(el => {
+          el.textContent = '[' + cart.length + ']';
+        });
+      });
+    });
+  </script>
 </body>
 </html>

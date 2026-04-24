@@ -9,27 +9,222 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inner-pages.css">
 </head>
 <body class="inner-page">
-  <div class="announcement-bar" id="announcement-bar"><div class="announcement-bar__inner" id="announcement-bar-inner"><span class="announcement-bar__item">Evidence First</span><span class="announcement-bar__item">Quality Reports and Research</span><span class="announcement-bar__item">Evidence First</span><span class="announcement-bar__item">Quality Reports and Research</span></div></div>
-  <header class="site-header site-header--transparent" id="site-header"><div class="site-header__container container"><a class="site-header__logo" href="index.html" aria-label="Jiraso Home"><svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg><svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg></a><nav class="site-header__nav" aria-label="Main navigation"><ul class="header-list" role="list"><li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li><li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li><li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li><li class="header-list__item"><a class="header-list__link header-list__link--active" href="reports.html">Reports</a></li><li class="header-list__item"><a class="header-list__link" href="contact.html">Contact</a></li></ul></nav><div class="site-header__utils"><a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a><button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header>
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true"><nav aria-label="Mobile navigation"><ul class="mobile-nav" role="list"><li><a href="index.html">Home</a></li><li><a href="process.html">Process</a></li><li><a href="products.html">Products</a></li><li><a href="reports.html">Reports</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-
-  <!-- Page Title -->
-  <div class="page-title-bar">
-    <div class="container">
-      <p class="eyebrow page-title-bar__eyebrow">Evidence First</p>
-      <h1 class="page-title-bar__heading">Reports &amp; Research</h1>
-      <p class="page-title-bar__sub">Clear documentation to build trust in every purchase decision.</p>
+  <!-- Announcement -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">Evidence First</span>
+      <span class="announcement-bar__item">Quality Reports and Research</span>
+      <span class="announcement-bar__item">Transparency in Every Batch</span>
+      <span class="announcement-bar__item">Evidence First</span>
+      <span class="announcement-bar__item">Quality Reports and Research</span>
+      <span class="announcement-bar__item">Transparency in Every Batch</span>
     </div>
   </div>
 
-  <main class="section-margin container inner-page-main">
-    <section class="inner-section"><div class="inner-grid"><article class="inner-card"><h3>Batch Quality Summary</h3><p>Purity, moisture, FFA, peroxide value, and compliance overview.</p><a class="btn btn--primary" href="Jiraso Organics PitchDeck 2026.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a></article><article class="inner-card"><h3>Wood Pressed vs Refined</h3><p>A side-by-side look at extraction, nutrients, and taste profile.</p><a class="btn btn--primary" href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">View Reference</a></article><article class="inner-card"><h3>Traditional Process Note</h3><p>Low temperature extraction and natural settling documentation.</p><a class="btn btn--primary" href="process.html">Read Process</a></article></div></section>
+  <!-- Header -->
+  <header class="site-header site-header--transparent" id="site-header">
+    <div class="site-header__container container">
+      <a class="site-header__logo" href="index.html" aria-label="Jiraso Home">
+        <svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg>
+        <svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg>
+      </a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <ul class="header-list" role="list">
+          <li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li>
+          <li class="header-list__item"><a class="header-list__link header-list__link--active" href="reports.html">Reports</a></li>
+          <li class="header-list__item"><a class="header-list__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__utils">
+        <a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a>
+        <button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- Hero -->
+  <div class="ip-hero">
+    <div class="ip-hero__orb ip-hero__orb--1"></div>
+    <div class="ip-hero__orb ip-hero__orb--2"></div>
+    <div class="ip-hero__noise"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="ip-hero__eyebrow" data-reveal data-delay="1">Evidence First</p>
+      <h1 class="ip-hero__heading" data-reveal data-delay="2">Reports &amp; Research</h1>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Clear documentation to build trust in every purchase decision. Transparency from seed to shelf.</p>
+    </div>
+  </div>
+
+  <main class="section-margin container">
+    <!-- Stats -->
+    <div class="reports-stats" data-reveal>
+      <div class="reports-stat">
+        <span class="reports-stat__num">100%</span>
+        <span class="reports-stat__label">Natural Seeds</span>
+      </div>
+      <div class="reports-stat">
+        <span class="reports-stat__num">0</span>
+        <span class="reports-stat__label">Chemicals Used</span>
+      </div>
+      <div class="reports-stat">
+        <span class="reports-stat__num">10+</span>
+        <span class="reports-stat__label">Quality Parameters</span>
+      </div>
+      <div class="reports-stat">
+        <span class="reports-stat__num">∞</span>
+        <span class="reports-stat__label">Batch Traceability</span>
+      </div>
+    </div>
+
+    <!-- Label -->
+    <div class="ip-label" style="margin-top:3.5rem;" data-reveal>
+      <span class="ip-label__text">Documentation</span>
+      <span class="ip-label__line"></span>
+      <span class="ip-label__text">3 Reports</span>
+    </div>
+
+    <!-- Report cards -->
+    <div class="reports-grid">
+      <!-- Card 1 -->
+      <article class="report-card" data-reveal data-delay="1">
+        <div class="report-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <p class="report-card__label">Quality Report</p>
+        <h3 class="report-card__title">Batch Quality Summary</h3>
+        <p class="report-card__body">Purity, moisture, FFA, peroxide value, and compliance overview for every production batch.</p>
+        <a class="report-card__link" href="Jiraso Organics PitchDeck 2026.pdf" target="_blank" rel="noopener noreferrer">
+          Open PDF
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="report-card" data-reveal data-delay="2">
+        <div class="report-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <p class="report-card__label">Research</p>
+        <h3 class="report-card__title">Wood Pressed vs Refined</h3>
+        <p class="report-card__body">A side-by-side look at extraction methods, nutrient retention, and taste profile differences backed by science.</p>
+        <a class="report-card__link" href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">
+          View Reference
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="report-card" data-reveal data-delay="3">
+        <div class="report-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <p class="report-card__label">Process Note</p>
+        <h3 class="report-card__title">Traditional Process Note</h3>
+        <p class="report-card__body">Low temperature extraction and natural settling documentation — our commitment to the Kachi Ghani method.</p>
+        <a class="report-card__link" href="process.html">
+          Read Process
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <!-- Transparency pledge -->
+    <div style="display:grid;gap:2rem;margin-top:4rem;padding:3rem;background:var(--color-soft-grey);border-radius:20px;position:relative;overflow:hidden;" data-reveal>
+      <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(0,11,250,0.06);pointer-events:none;"></div>
+      <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-light);">Our Commitment</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);color:var(--color-navy);max-width:600px;line-height:1.1;">Every bottle is backed by complete process transparency.</h2>
+      <p style="font-size:0.9375rem;line-height:1.75;color:var(--color-text-light);max-width:540px;">We share our quality reports publicly because we believe customers deserve to know exactly what they're consuming. Our processes are documented, traceable, and held to the highest traditional standards.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="btn btn--primary" href="contact.html">Request Full Reports
+          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z"/></svg>
+        </a>
+        <a class="btn" href="process.html" style="background:var(--color-navy);color:#fff;">Our Process</a>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer"><div class="site-footer__bottom container"><p class="site-footer__copyright">© 2026 JIRASO Organics</p><p class="site-footer__copyright">Education-focused transparency content.</p></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script><script src="main.js"></script>
+  <!-- Footer -->
+  <footer class="site-footer-premium">
+    <div class="container">
+      <div class="site-footer-premium__inner">
+        <span class="site-footer-premium__brand">JIRASO</span>
+        <nav class="site-footer-premium__links">
+          <a href="index.html">Home</a>
+          <a href="process.html">Process</a>
+          <a href="products.html">Products</a>
+          <a href="reports.html">Reports</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Animate stat numbers
+    function animateNum(el, target, suffix='') {
+      let start = 0;
+      const isPercent = suffix === '%';
+      const duration = 1500;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const val = Math.floor(progress * parseInt(target));
+        el.textContent = val + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(step);
+    }
+
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const nums = e.target.querySelectorAll('.reports-stat__num');
+          nums.forEach(n => {
+            const raw = n.textContent.trim();
+            if (raw === '100%') animateNum(n, 100, '%');
+            else if (raw === '0') animateNum(n, 0, '');
+            else if (raw === '10+') { n.textContent = '0'; setTimeout(() => animateNum(n, 10, '+'), 100); }
+          });
+          statsObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const statsEl = document.querySelector('.reports-stats');
+    if (statsEl) statsObs.observe(statsEl);
+  </script>
 </body>
 </html>

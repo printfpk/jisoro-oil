@@ -1,0 +1,7 @@
+txt = open('products.html', encoding='utf-8').read()
+txt = txt.replace('href="#" style="--card-bg: #7899b4;"', 'href="product-mustard.html" style="--card-bg: #7899b4;"')
+txt = txt.replace('href="#" style="--card-bg: #b8bea8;"', 'href="product-sesame.html" style="--card-bg: #b8bea8;"')
+txt = txt.replace('href="#" style="--card-bg: #c4a898;"', 'href="product-coconut.html" style="--card-bg: #c4a898;"')
+txt = txt.replace('href="#" style="--card-bg: #c4a860;"', 'href="product-groundnut.html" style="--card-bg: #c4a860;"')
+open('products.html', 'w', encoding='utf-8').write(txt)
+print('Done. Counts:', txt.count('product-mustard'), txt.count('product-sesame'), txt.count('product-coconut'), txt.count('product-groundnut'))
