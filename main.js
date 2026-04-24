@@ -3,8 +3,13 @@
 // GSAP + ScrollTrigger Animations
 // =============================================================
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, SplitText);
+// Register GSAP plugins safely (SplitText may fail to load on some browsers/CDN states).
+if (typeof gsap !== 'undefined') {
+  const gsapPlugins = [];
+  if (typeof ScrollTrigger !== 'undefined') gsapPlugins.push(ScrollTrigger);
+  if (typeof SplitText !== 'undefined') gsapPlugins.push(SplitText);
+  if (gsapPlugins.length) gsap.registerPlugin(...gsapPlugins);
+}
 
 // =============================================================
 // UTILITIES
@@ -17,18 +22,10 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initHeader() {
   const header = qs('#site-header');
-  let scrolled = false;
+  if (!header) return;
 
-  const update = () => {
-    const shouldBeScrolled = window.scrollY > 60;
-    if (shouldBeScrolled !== scrolled) {
-      scrolled = shouldBeScrolled;
-      header.classList.toggle('is-scrolled', scrolled);
-    }
-  };
-
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  // Keep navbar appearance fixed across scroll.
+  header.classList.remove('is-scrolled');
 })();
 
 // =============================================================
@@ -84,7 +81,212 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 4. FAQ ACCORDION — smooth height animation
+// 4. CART
+// =============================================================
+(function initCart() {
+  const CART_STORAGE_KEY = 'jisoro-cart-items';
+  const WHATSAPP_NUMBER = '918393976770';
+
+  const addButtons = qsa('.product-card-quick-add');
+  const navCount = qs('#cart-count-nav');
+  const bagCount = qs('#cart-count-bag');
+  const cartPageList = qs('#cart-page-items');
+  const cartPageEmpty = qs('#cart-page-empty');
+  const cartPageTotal = qs('#cart-page-total');
+
+  let cartItems = [];
+
+  const safeReadCart = () => {
+    try {
+      const raw = localStorage.getItem(CART_STORAGE_KEY);
+      if (!raw) return [];
+
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+
+      return parsed
+        .filter(item => item && typeof item.name === 'string' && Number.isFinite(item.qty))
+        .map(item => ({
+          name: item.name,
+          size: item.size || 'Standard',
+          qty: item.qty,
+          image: item.image || 'assets/bottle.jpeg',
+          subtitle: item.subtitle || 'Pure wood-pressed oil.',
+          badge: item.badge || 'In Cart',
+          cardBg: item.cardBg || '#b8bea8',
+        }));
+    } catch (e) {
+      return [];
+    }
+  };
+
+  const persistCart = () => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch (e) {
+      // Ignore storage errors (private browsing / storage full).
+    }
+  };
+
+  const totalCount = () => cartItems.reduce((sum, item) => sum + item.qty, 0);
+
+  const setCountText = (el, count) => {
+    if (!el) return;
+    el.textContent = `[${count}]`;
+  };
+
+  const renderCartItems = () => {
+    const count = totalCount();
+    setCountText(navCount, count);
+    setCountText(bagCount, count);
+
+    if (cartPageTotal) {
+      cartPageTotal.textContent = String(count);
+    }
+
+    if (!cartPageList || !cartPageEmpty) return;
+
+    cartPageList.innerHTML = '';
+
+    if (!cartItems.length) {
+      cartPageEmpty.style.display = 'block';
+      return;
+    }
+
+    cartPageEmpty.style.display = 'none';
+
+    cartItems.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.className = 'cart-page__item cart-product-card';
+
+      const cardWrap = document.createElement('div');
+      cardWrap.className = 'product-card-wrap';
+
+      const card = document.createElement('a');
+      card.className = 'product-card';
+      card.href = '#';
+      card.style.setProperty('--card-bg', item.cardBg || '#b8bea8');
+
+      const badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = item.badge || 'In Cart';
+
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'product-card__image-wrap';
+
+      const image = document.createElement('img');
+      image.className = 'product-card__img';
+      image.src = item.image || 'assets/bottle.jpeg';
+      image.alt = item.name;
+
+      const footer = document.createElement('div');
+      footer.className = 'product-card__footer';
+
+      const titleRow = document.createElement('div');
+      titleRow.className = 'product-card__title-row';
+
+      const name = document.createElement('p');
+      name.className = 'product-card__name';
+      name.textContent = item.name;
+
+      const size = document.createElement('p');
+      size.className = 'product-card__size eyebrow';
+      size.textContent = `${item.size || 'Standard'} x ${item.qty}`;
+
+      const sub = document.createElement('p');
+      sub.className = 'product-card__sub eyebrow';
+      sub.textContent = item.subtitle || 'Pure wood-pressed oil.';
+
+      titleRow.appendChild(name);
+      titleRow.appendChild(size);
+      footer.appendChild(titleRow);
+      footer.appendChild(sub);
+      imageWrap.appendChild(image);
+      card.appendChild(badge);
+      card.appendChild(imageWrap);
+      card.appendChild(footer);
+
+      const actions = document.createElement('div');
+      actions.className = 'cart-card-actions';
+
+      const orderBtn = document.createElement('button');
+      orderBtn.type = 'button';
+      orderBtn.className = 'product-card-quick-add product-card-quick-add--whatsapp';
+      orderBtn.textContent = 'Order via WhatsApp';
+      orderBtn.addEventListener('click', () => {
+        const msg = `Hi, I want to order ${item.name} (${item.size || 'Standard'}) - Qty: ${item.qty}.`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'product-card-quick-add product-card-quick-add--remove';
+      removeBtn.textContent = 'Remove';
+      removeBtn.addEventListener('click', () => {
+        cartItems.splice(index, 1);
+        persistCart();
+        renderCartItems();
+      });
+
+      actions.appendChild(orderBtn);
+      actions.appendChild(removeBtn);
+      cardWrap.appendChild(card);
+      cardWrap.appendChild(actions);
+      li.appendChild(cardWrap);
+      cartPageList.appendChild(li);
+    });
+  };
+
+  const extractProductInfo = (button) => {
+    const wrap = button.closest('.product-card-wrap');
+    if (!wrap) {
+      return {
+        name: 'Item',
+        size: 'Standard',
+        image: 'assets/bottle.jpeg',
+        subtitle: 'Pure wood-pressed oil.',
+        badge: 'In Cart',
+        cardBg: '#b8bea8',
+      };
+    }
+
+    const name = qs('.product-card__name', wrap)?.textContent?.trim() || 'Item';
+    const size = qs('.product-card__size', wrap)?.textContent?.trim() || 'Standard';
+    const image = qs('.product-card__img', wrap)?.getAttribute('src') || 'assets/bottle.jpeg';
+    const subtitle = qs('.product-card__sub', wrap)?.textContent?.trim() || 'Pure wood-pressed oil.';
+    const badge = qs('.badge', wrap)?.textContent?.trim() || 'In Cart';
+    const cardBg = qs('.product-card', wrap)?.style.getPropertyValue('--card-bg')?.trim() || '#b8bea8';
+
+    return { name, size, image, subtitle, badge, cardBg };
+  };
+
+  const addToCart = (item) => {
+    const existing = cartItems.find(cartItem => cartItem.name === item.name && cartItem.size === item.size);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cartItems.push({ ...item, qty: 1 });
+    }
+
+    persistCart();
+    renderCartItems();
+  };
+
+  cartItems = safeReadCart();
+  renderCartItems();
+
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const item = extractProductInfo(button);
+      addToCart(item);
+    });
+  });
+
+})();
+
+// =============================================================
+// 5. FAQ ACCORDION — smooth height animation
 // =============================================================
 (function initFAQs() {
   qsa('.faq-item').forEach(item => {
@@ -129,7 +331,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 5. HERO BANNER — entrance animations
+// 6. HERO BANNER — entrance animations
 // =============================================================
 (function initHeroAnimations() {
   const lines = qsa('.hero-line');
@@ -164,7 +366,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 6. FEATURED PRODUCTS — stagger entrance
+// 7. FEATURED PRODUCTS — stagger entrance
 // =============================================================
 (function initProductsAnimation() {
   const section = qs('#products');
@@ -190,149 +392,95 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 })();
 
 // =============================================================
-// 7. VISUAL HEADING — scroll-driven char color reveal
+// 8. VISUAL HEADING — scroll-driven typing reveal
 // =============================================================
 (function initVisualHeading() {
   const heading = qs('#visual-heading-text');
   if (!heading) return;
+  if (heading.dataset.typingInit === 'true') return;
 
-  // Fade-in eyebrow and footer
-  ['.visual-heading__eyebrow', '.visual-heading__footer'].forEach(sel => {
-    const el = qs(sel);
-    if (el) {
-      gsap.fromTo(el, { opacity: 0 }, {
-        opacity: 1,
-        delay: 0.5,
-        duration: 1,
-        scrollTrigger: { trigger: el, start: 'top bottom-=15%' },
-      });
-    }
+  // Native char-splitting so typing works even without SplitText plugin.
+  const textNodes = [];
+  const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
   });
 
-  // Inline images fade in
-  gsap.fromTo(
-    qsa('.visual-heading__img'),
-    { opacity: 0 },
-    {
-      opacity: 1,
-      delay: 0.75,
-      stagger: 0.25,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: heading,
-        start: 'top bottom-=20%',
-      },
-    }
-  );
-
-  // SplitText char color reveal — only if GSAP SplitText is available
-  if (typeof SplitText !== 'undefined') {
-    try {
-      // We need text nodes without the inline images - clone approach
-      const split = SplitText.create(heading, { type: 'words' });
-      gsap.to(split.words, {
-        color: 'var(--color-navy)',
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: '#about',
-          scrub: true,
-          start: 'top bottom-=20%',
-          end: 'bottom bottom-=10%',
-        },
-      });
-    } catch (e) {
-      // SplitText fallback — just animate opacity
-      gsap.fromTo(heading, { opacity: 0 }, {
-        opacity: 1,
-        scrollTrigger: { trigger: heading, start: 'top bottom-=20%' },
-      });
-    }
+  let current = walker.nextNode();
+  while (current) {
+    textNodes.push(current);
+    current = walker.nextNode();
   }
+
+  const charSpans = [];
+  textNodes.forEach(node => {
+    const frag = document.createDocumentFragment();
+    const chars = [...node.nodeValue];
+
+    chars.forEach(ch => {
+      const span = document.createElement('span');
+      span.className = 'typing-char';
+      span.textContent = ch;
+      frag.appendChild(span);
+      charSpans.push(span);
+    });
+
+    node.parentNode.replaceChild(frag, node);
+  });
+
+  if (!charSpans.length) return;
+
+  // Prevent repeated wrapping if script executes again.
+  heading.dataset.typingInit = 'true';
+
+  gsap.set(charSpans, {
+    opacity: 0,
+    color: 'var(--color-navy)',
+  });
+
+  gsap.to(charSpans, {
+    opacity: 1,
+    stagger: 0.018,
+    duration: 0.01,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: heading,
+      start: 'top 86%',
+      end: 'bottom 58%',
+      scrub: true,
+    },
+  });
 })();
 
 // =============================================================
-// 8. PINNED HIGHLIGHTS — scroll-triggered pin + block sequences
+// 9. PINNED HIGHLIGHTS — scroll-triggered pin + block sequences
 // =============================================================
 (function initPinnedHighlights() {
   const section     = qs('#pinned-section');
   const blocksWrap  = qs('#pinned-blocks');
-  const progressBar = qs('#pinned-progress-bar');
   const products    = qs('#pinned-products');
 
   if (!section || !blocksWrap) return;
 
-  const blocks = qsa('#pinned-blocks .pinned-block');
-  let totalY   = 0;
+  // Keep this section static (no pinning/scroll animation).
+  section.style.height = 'auto';
+  section.style.overflow = 'visible';
+  blocksWrap.style.transform = 'none';
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      pin: true,
-      scrub: true,
-      anticipatePin: 1,
-      start: 'top top',
-      end: 'bottom+=200% top',
-    },
+  qsa('#pinned-blocks .pinned-block').forEach((block) => {
+    block.style.opacity = '1';
   });
 
-  // Set initial opacities
-  blocks.forEach((block, i) => {
-    gsap.set(block, { opacity: 1 / (i + 1) });
-  });
-
-  blocks.forEach((block, index) => {
-    totalY += block.offsetHeight;
-
-    // Fade the next block in
-    if (index >= 1) {
-      tl.to(block, { opacity: 1, duration: 2, ease: 'linear' }, '<');
-    }
-
-    // Scroll the blocks wrapper up
-    tl.to(blocksWrap, {
-      y: -totalY,
-      duration: 2,
-      ease: 'linear',
-    }, `block-${index}-out`);
-
-    // Fade this block out
-    tl.to(block, {
-      opacity: 0,
-      duration: 2,
-      ease: 'linear',
-    }, `block-${index}-out`);
-
-    // Progress bar
-    if (progressBar) {
-      tl.to(progressBar, {
-        height: `${(50 / blocks.length) * (index + 1)}%`,
-        duration: 1,
-      }, `block-${index}-out`);
-    }
-  });
-
-  // Transition to products
   if (products) {
-    tl.fromTo(
-      blocksWrap,
-      { opacity: 1 },
-      { opacity: 0, duration: 1 },
-      'products-in'
-    ).fromTo(
-      products,
-      { opacity: 0, y: '20%' },
-      { opacity: 1, y: 0, duration: 1 },
-      'products-in'
-    );
-
-    if (progressBar) {
-      tl.to(progressBar, { height: '100%', duration: 1 }, 'products-in');
-    }
+    products.style.opacity = '1';
+    products.style.transform = 'none';
   }
 })();
 
 // =============================================================
-// 9. PRODUCT QUOTE — section entrance + char reveal
+// 10. PRODUCT QUOTE — section entrance + char reveal
 // =============================================================
 (function initProductQuoteAnimation() {
   const section = qs('#product-quote');
@@ -571,7 +719,6 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 17. GENERAL SCROLL REVEAL — generic utility for generic items
 // =============================================================
 (function initGenericReveal() {
-  // Smooth reveal anything with [data-reveal]
   qsa('[data-reveal]').forEach(el => {
     const dir   = el.dataset.reveal || 'up';
     const delay = parseFloat(el.dataset.delay) || 0;
@@ -596,4 +743,87 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
       },
     });
   });
+})();
+
+// =============================================================
+// 18. PHOTO CAROUSEL
+// =============================================================
+(function initCarousel() {
+  const track   = document.getElementById('carousel-track');
+  const dotsEl  = document.getElementById('carousel-dots');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total  = slides.length;
+  let   current = 0;
+  let   autoTimer = null;
+
+  // Build dots
+  if (dotsEl) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  function getDots() {
+    return dotsEl ? dotsEl.querySelectorAll('.carousel-dot') : [];
+  }
+
+  function goTo(index) {
+    // Wrap around
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // Update dots
+    getDots().forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === current);
+    });
+
+    resetAuto();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+  if (nextBtn) nextBtn.addEventListener('click', next);
+
+  // Keyboard support
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('pinned-section')) return;
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? next() : prev();
+  }, { passive: true });
+
+  // Auto-play every 5 seconds
+  function startAuto() {
+    autoTimer = setInterval(next, 5000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  startAuto();
+
+  // Pause auto-play on hover
+  const wrapper = track.closest('.carousel-wrapper');
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    wrapper.addEventListener('mouseleave', startAuto);
+  }
 })();
