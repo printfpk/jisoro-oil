@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -24,41 +24,43 @@
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="site-header site-header--transparent" id="site-header">
-    <div class="site-header__container container">
-      <a class="site-header__logo" href="index.html" aria-label="Jiraso Home">
-        <svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg>
-        <svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg>
-      </a>
-      <nav class="site-header__nav" aria-label="Main navigation">
-        <ul class="header-list" role="list">
-          <li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="process.html">Process</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li>
-          <li class="header-list__item"><a class="header-list__link header-list__link--active" href="contact.html">Contact</a></li>
+    <!-- -- HEADER --------------------------------------- -->
+  <header class="hdr" id="hdr">
+    <div class="container hdr__inner">
+      <a class="hdr__logo" href="index.html">JIRAS<span>O</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="site-header__utils">
-        <a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a>
-        <button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <a class="hdr__cart" href="cart.html" id="cart-btn">
+          <div style="position:relative; display:inline-flex;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-count">0</span>
+          </div>
+          <span class="cart-label">Bag</span>
+        </a>
+        <button class="hbg" id="hbg" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-    <nav aria-label="Mobile navigation">
-      <ul class="mobile-nav" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Mobile drawer -->
+  <div class="mob-drawer" id="mob-drawer">
+    <button class="mob-close" id="mob-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="process.html">Process</a>
+    <a href="products.html">Products</a>
+    <a href="reports.html">Reports</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
 
   <!-- Hero -->
   <div class="ip-hero">
@@ -84,7 +86,7 @@
       <div style="display:flex;flex-direction:column;gap:1.5rem;">
         <div data-reveal data-delay="1">
           <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.1;margin-bottom:1rem;">We'd love to<br>hear from you.</h2>
-          <p style="font-size:0.9375rem;line-height:1.75;color:var(--color-text-light);max-width:400px;">Whether you're a home cook, a distributor, or just curious about our oils — every inquiry is welcome.</p>
+          <p style="font-size:0.9375rem;line-height:1.75;color:var(--color-text-light);max-width:400px;">Whether you're a home cook, a distributor, or just curious about our oils â€” every inquiry is welcome.</p>
         </div>
 
         <div class="contact-info-strip">
@@ -203,7 +205,7 @@
 
             <!-- Success message -->
             <div id="form-success" style="display:none;margin-top:1rem;padding:1rem;background:#d1fae5;border-radius:10px;color:#065f46;font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;">
-              ✓ Message sent! We'll respond within 24 hours.
+              âœ“ Message sent! We'll respond within 24 hours.
             </div>
           </form>
         </div>
@@ -223,7 +225,7 @@
           <a href="reports.html">Reports</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+        <p class="site-footer-premium__copy">Â© 2026 JIRASO Organics</p>
       </div>
     </div>
   </footer>
@@ -246,7 +248,7 @@
       sel.addEventListener('blur', () => { sel.style.borderColor = ''; sel.style.boxShadow = ''; sel.style.background = ''; });
     }
 
-    // Form submit — show success state
+    // Form submit â€” show success state
     const form = document.getElementById('contact-form');
     if (form) {
       form.addEventListener('submit', (e) => {
@@ -260,3 +262,5 @@
   </script>
 </body>
 </html>
+
+

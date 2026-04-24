@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -17,48 +17,50 @@
     <div class="announcement-bar__inner" id="announcement-bar-inner">
       <span class="announcement-bar__item">From Seed to Bottle</span>
       <span class="announcement-bar__item">Traditional Wood Pressed Process</span>
-      <span class="announcement-bar__item">Zero Chemicals · Zero Shortcuts</span>
+      <span class="announcement-bar__item">Zero Chemicals Â· Zero Shortcuts</span>
       <span class="announcement-bar__item">From Seed to Bottle</span>
       <span class="announcement-bar__item">Traditional Wood Pressed Process</span>
-      <span class="announcement-bar__item">Zero Chemicals · Zero Shortcuts</span>
+      <span class="announcement-bar__item">Zero Chemicals Â· Zero Shortcuts</span>
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="site-header site-header--transparent" id="site-header">
-    <div class="site-header__container container">
-      <a class="site-header__logo" href="index.html" aria-label="Jiraso Home">
-        <svg class="logo-default" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="currentColor">JIRASO</text></svg>
-        <svg class="logo-inverted" viewBox="0 0 140 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><text x="0" y="24" font-family="DM Serif Display, serif" font-size="22" fill="white">JIRASO</text></svg>
-      </a>
-      <nav class="site-header__nav" aria-label="Main navigation">
-        <ul class="header-list" role="list">
-          <li class="header-list__item"><a class="header-list__link" href="index.html">Home</a></li>
-          <li class="header-list__item"><a class="header-list__link header-list__link--active" href="process.html">Process</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="products.html">Products</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="reports.html">Reports</a></li>
-          <li class="header-list__item"><a class="header-list__link" href="contact.html">Contact</a></li>
+    <!-- -- HEADER --------------------------------------- -->
+  <header class="hdr" id="hdr">
+    <div class="container hdr__inner">
+      <a class="hdr__logo" href="index.html">JIRAS<span>O</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="site-header__utils">
-        <a class="btn-icon" href="cart.html" aria-label="Bag"><span class="from-lg">Cart</span><span class="cart-count" id="cart-count-bag">[0]</span></a>
-        <button class="btn-icon hamburger until-md" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <a class="hdr__cart" href="cart.html" id="cart-btn">
+          <div style="position:relative; display:inline-flex;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-count">0</span>
+          </div>
+          <span class="cart-label">Bag</span>
+        </a>
+        <button class="hbg" id="hbg" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-    <nav aria-label="Mobile navigation">
-      <ul class="mobile-nav" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="reports.html">Reports</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Mobile drawer -->
+  <div class="mob-drawer" id="mob-drawer">
+    <button class="mob-close" id="mob-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="process.html">Process</a>
+    <a href="products.html">Products</a>
+    <a href="reports.html">Reports</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
 
   <!-- Hero -->
   <div class="ip-hero">
@@ -68,7 +70,7 @@
     <div class="container" style="position:relative;z-index:1;">
       <p class="ip-hero__eyebrow" data-reveal data-delay="1">Our Process</p>
       <h1 class="ip-hero__heading" data-reveal data-delay="2">From Seed to<br>Premium Bottle</h1>
-      <p class="ip-hero__sub" data-reveal data-delay="3">Traditional low-heat extraction with modern quality controls — a 10-step journey that preserves nature's goodness.</p>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Traditional low-heat extraction with modern quality controls â€” a 10-step journey that preserves nature's goodness.</p>
       <div style="margin-top:2rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;" data-reveal data-delay="4">
         <span class="badge" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);padding:0.4rem 1rem;border-radius:99px;font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;">10 Steps</span>
         <span class="badge" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);padding:0.4rem 1rem;border-radius:99px;font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;">Zero Chemicals</span>
@@ -221,19 +223,21 @@
     </section>
 
     <!-- CTA strip -->
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;padding:3rem;background:var(--color-navy);border-radius:20px;margin-top:4rem;color:#fff;" data-reveal>
+    <div class="process-cta-strip" data-reveal>
       <div>
-        <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-bottom:0.5rem;">Ready to taste the difference?</p>
-        <p style="font-family:var(--font-heading);font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.1;">Order your first bottle today</p>
+        <p class="process-cta-strip__eyebrow">Ready to taste the difference?</p>
+        <p class="process-cta-strip__heading">Order your first bottle today</p>
       </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <div class="process-cta-strip__actions">
         <a class="btn btn--primary" href="products.html">Shop Now
           <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z"/></svg>
         </a>
-        <a href="contact.html" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.625rem 0.875rem;border:1px solid rgba(255,255,255,0.25);border-radius:8px;font-family:var(--font-mono);font-size:0.75rem;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:all 0.2s;">Bulk Inquiry</a>
+        <a class="process-cta-strip__ghost" href="contact.html">Bulk Inquiry</a>
       </div>
     </div>
-  </main>
+
+    </main>
+
 
   <!-- Footer -->
   <footer class="site-footer-premium">
@@ -247,7 +251,7 @@
           <a href="reports.html">Reports</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+        <p class="site-footer-premium__copy">Â© 2026 JIRASO Organics</p>
       </div>
     </div>
   </footer>
@@ -264,3 +268,5 @@
   </script>
 </body>
 </html>
+
+

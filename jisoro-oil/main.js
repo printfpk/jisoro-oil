@@ -14,7 +14,7 @@ if (typeof gsap !== 'undefined') {
 // =============================================================
 // UTILITIES
 // =============================================================
-const qs  = (selector, root = document) => root.querySelector(selector);
+const qs = (selector, root = document) => root.querySelector(selector);
 const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 // =============================================================
@@ -32,8 +32,8 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 2. MOBILE MENU
 // =============================================================
 (function initMobileMenu() {
-  const toggle  = qs('#menu-toggle');
-  const drawer  = qs('#mobile-drawer');
+  const toggle = qs('#menu-toggle');
+  const drawer = qs('#mobile-drawer');
   const overlay = qs('#mobile-overlay');
   if (!toggle || !drawer) return;
 
@@ -70,7 +70,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 3. VIDEO SOUND TOGGLE
 // =============================================================
 (function initSoundToggle() {
-  const btn   = qs('#sound-toggle');
+  const btn = qs('#sound-toggle');
   const video = qs('.hero-banner__bg-video');
   if (!btn || !video) return;
 
@@ -84,7 +84,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 4. CART
 // =============================================================
 (function initCart() {
-  const CART_STORAGE_KEY = 'jisoro-cart-items';
+  const CART_STORAGE_KEY = 'jiraso_cart';
   const WHATSAPP_NUMBER = '918393976770';
 
   const addButtons = qsa('.product-card-quick-add');
@@ -132,7 +132,35 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 
   const setCountText = (el, count) => {
     if (!el) return;
-    el.textContent = `[${count}]`;
+    el.textContent = count;
+  };
+
+  window.animateFlyToCart = (button, imgUrl) => {
+    const bagIcon = qs('#cart-count-bag') || qs('#cart-count-nav') || qs('.cart-count');
+    if (!bagIcon || !button) return;
+
+    const btnRect = button.getBoundingClientRect();
+    const bagRect = bagIcon.getBoundingClientRect();
+
+    const img = document.createElement('img');
+    img.src = imgUrl || 'assets/bottle.jpeg';
+    img.className = 'flying-cart-item';
+    img.style.left = `${btnRect.left + btnRect.width / 2 - 30}px`;
+    img.style.top = `${btnRect.top + btnRect.height / 2 - 30}px`;
+    document.body.appendChild(img);
+
+    img.getBoundingClientRect();
+
+    img.style.left = `${bagRect.left + bagRect.width / 2 - 30}px`;
+    img.style.top = `${bagRect.top + bagRect.height / 2 - 30}px`;
+    img.style.transform = 'scale(0.1)';
+    img.style.opacity = '0.5';
+
+    bagIcon.classList.remove('cart-bump');
+    setTimeout(() => {
+      img.remove();
+      bagIcon.classList.add('cart-bump');
+    }, 800);
   };
 
   const renderCartItems = () => {
@@ -280,6 +308,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
     button.addEventListener('click', () => {
       const item = extractProductInfo(button);
       addToCart(item);
+      window.animateFlyToCart(button, item.image);
     });
   });
 
@@ -291,8 +320,8 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 (function initFAQs() {
   qsa('.faq-item').forEach(item => {
     const summary = qs('summary', item);
-    const body    = qs('.faq-item__body', item);
-    const icon    = qs('.faq-icon', item);
+    const body = qs('.faq-item__body', item);
+    const icon = qs('.faq-icon', item);
     if (!summary || !body) return;
 
     // Hide content initially
@@ -458,9 +487,9 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 9. PINNED HIGHLIGHTS — scroll-triggered pin + block sequences
 // =============================================================
 (function initPinnedHighlights() {
-  const section     = qs('#pinned-section');
-  const blocksWrap  = qs('#pinned-blocks');
-  const products    = qs('#pinned-products');
+  const section = qs('#pinned-section');
+  const blocksWrap = qs('#pinned-blocks');
+  const products = qs('#pinned-products');
 
   if (!section || !blocksWrap) return;
 
@@ -582,7 +611,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
           visibility: 'hidden',
           stagger: 0.02,
         });
-      } catch(e) { /* skip */ }
+      } catch (e) { /* skip */ }
     });
   }
 })();
@@ -720,12 +749,12 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initGenericReveal() {
   qsa('[data-reveal]').forEach(el => {
-    const dir   = el.dataset.reveal || 'up';
+    const dir = el.dataset.reveal || 'up';
     const delay = parseFloat(el.dataset.delay) || 0;
 
     const fromVars = { opacity: 0 };
-    if (dir === 'up')    fromVars.y = 40;
-    if (dir === 'left')  fromVars.x = -40;
+    if (dir === 'up') fromVars.y = 40;
+    if (dir === 'left') fromVars.x = -40;
     if (dir === 'right') fromVars.x = 40;
     if (dir === 'scale') fromVars.scale = 0.92;
 
@@ -749,16 +778,16 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // 18. PHOTO CAROUSEL
 // =============================================================
 (function initCarousel() {
-  const track   = document.getElementById('carousel-track');
-  const dotsEl  = document.getElementById('carousel-dots');
+  const track = document.getElementById('carousel-track');
+  const dotsEl = document.getElementById('carousel-dots');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
   if (!track) return;
 
   const slides = track.querySelectorAll('.carousel-slide');
-  const total  = slides.length;
-  let   current = 0;
-  let   autoTimer = null;
+  const total = slides.length;
+  let current = 0;
+  let autoTimer = null;
 
   // Build dots
   if (dotsEl) {
@@ -797,7 +826,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
   // Keyboard support
   document.addEventListener('keydown', e => {
     if (!document.getElementById('pinned-section')) return;
-    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowLeft') prev();
     if (e.key === 'ArrowRight') next();
   });
 
