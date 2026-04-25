@@ -3023,8 +3023,8 @@ button {
   transition: all .25s;
 }
 .hdr__cart:hover { background: rgba(255,255,255,.12); color: #fff; }
-.hdr.solid .hdr__cart { color: var(--slate); border-color: var(--border); }
-.hdr.solid .hdr__cart:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.hdr.solid .hdr__cart { background: var(--ink); color: #fff; border-color: var(--ink); }
+.hdr.solid .hdr__cart:hover { background: var(--char); color: #fff; border-color: var(--char); }
 .hbg { display: none; flex-direction: column; gap: 5px; padding: 4px; }
 .hbg span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,.9); transition: all .4s var(--ease2); border-radius: 2px; }
 .hdr.solid .hbg span { background: var(--char); }
