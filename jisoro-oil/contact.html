@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="inner-pages.css">
+  <link rel="stylesheet" href="inner-theme.css">
 </head>
 <body class="inner-page">
   <!-- Announcement -->
@@ -233,34 +234,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="cart-manager.js"></script>
+
   <script src="main.js"></script>
-  <script>
-    // Scroll reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
-
-    // Select focus style
-    const sel = document.getElementById('inquiry');
-    if (sel) {
-      sel.addEventListener('focus', () => { sel.style.borderColor = 'var(--color-blue)'; sel.style.boxShadow = '0 0 0 3px rgba(0,11,250,0.07)'; sel.style.background = '#fff'; });
-      sel.addEventListener('blur', () => { sel.style.borderColor = ''; sel.style.boxShadow = ''; sel.style.background = ''; });
-    }
-
-    // Form submit â€” show success state
-    const form = document.getElementById('contact-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        const successEl = document.getElementById('form-success');
-        if (successEl) {
-          successEl.style.display = 'block';
-          setTimeout(() => { successEl.style.display = 'none'; }, 5000);
-        }
-      });
-    }
-  </script>
-</body>
+  </body>
 </html>
 
 

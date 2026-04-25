@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="inner-pages.css">
+  <link rel="stylesheet" href="inner-theme.css">
 </head>
 <body class="inner-page">
   <!-- Announcement -->
@@ -188,47 +189,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script src="cart-manager.js"></script>
+
   <script src="main.js"></script>
-  <script>
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
-
-    // Animate stat numbers
-    function animateNum(el, target, suffix='') {
-      let start = 0;
-      const isPercent = suffix === '%';
-      const duration = 1500;
-      const step = (timestamp) => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / duration, 1);
-        const val = Math.floor(progress * parseInt(target));
-        el.textContent = val + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target + suffix;
-      };
-      requestAnimationFrame(step);
-    }
-
-    const statsObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const nums = e.target.querySelectorAll('.reports-stat__num');
-          nums.forEach(n => {
-            const raw = n.textContent.trim();
-            if (raw === '100%') animateNum(n, 100, '%');
-            else if (raw === '0') animateNum(n, 0, '');
-            else if (raw === '10+') { n.textContent = '0'; setTimeout(() => animateNum(n, 10, '+'), 100); }
-          });
-          statsObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    const statsEl = document.querySelector('.reports-stats');
-    if (statsEl) statsObs.observe(statsEl);
-  </script>
-</body>
+  </body>
 </html>
 
 

@@ -1,0 +1,413 @@
+/* ============================================================
+   INNER PAGES THEME OVERRIDE
+   Aligns all inner pages (process, products, contact, cart,
+   reports) with the warm cream/gold/ink aesthetic of index.html
+   ============================================================ */
+
+/* ---------- Google Fonts: Playfair Display (serif) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap');
+
+/* ---------- Warm Token Overrides ---------- */
+:root {
+  --cream:   #FAF7F0;
+  --warm:    #FDFCF8;
+  --parch:   #EDE8DF;
+  --gold:    #C4923A;
+  --gold-l:  #E8B668;
+  --gold-p:  #F5E3BF;
+  --gold-d:  #A87830;
+  --ink:     #17140F;
+  --char:    #2B2822;
+  --slate:   #5A554E;
+  --mist:    #928D85;
+  --border:  #DDD6CB;
+  --green:   #3B5C3E;
+
+  /* Override blue-navy design tokens to warm equivalents */
+  --color-navy:       var(--ink);
+  --color-chalk:      var(--cream);
+  --color-chalk-70:   rgba(250, 247, 240, 0.7);
+  --color-blue:       var(--gold);
+  --color-blue-dark:  var(--gold-d);
+  --color-soft-grey:  var(--parch);
+  --color-border:     var(--border);
+  --color-text-light: var(--slate);
+  --color-bg:         var(--cream);
+  --color-text:       var(--ink);
+
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-mono:    'DM Mono', 'Courier New', monospace;
+}
+
+/* ---------- Body ---------- */
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* Grain overlay to match index */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity: .35;
+  mix-blend-mode: multiply;
+}
+
+/* ---------- Announcement bar ---------- */
+.announcement-bar {
+  background: rgba(23, 20, 15, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ---------- Scroll progress bar ---------- */
+#progress-bar {
+  background: linear-gradient(90deg, var(--gold), var(--gold-l));
+  box-shadow: 0 0 8px rgba(196, 146, 58, .5);
+}
+
+/* ---------- Header: solid state on inner pages ---------- */
+.hdr {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .5s, border-color .5s, padding .5s;
+}
+.hdr.solid {
+  background: rgba(250, 247, 240, 0.92);
+  backdrop-filter: blur(24px) saturate(160%);
+  border-color: var(--border);
+}
+/* Inner pages: always show solid header (no transparent-over-dark-hero) */
+body.inner-page .hdr {
+  background: rgba(250, 247, 240, 0.92);
+  backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+}
+body.inner-page .hdr .hdr__logo {
+  color: var(--ink);
+}
+body.inner-page .hdr .hdr__logo span {
+  color: var(--gold);
+}
+body.inner-page .hdr .nav-links a {
+  color: var(--slate);
+}
+body.inner-page .hdr .nav-links a:hover {
+  color: var(--ink);
+}
+body.inner-page .hdr .nav-links a::after {
+  background: var(--gold);
+}
+body.inner-page .hdr .hdr__cart {
+  color: var(--slate);
+  border-color: var(--border);
+}
+body.inner-page .hdr .hdr__cart:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+body.inner-page .hdr .hbg span {
+  background: var(--char);
+}
+
+/* Mobile drawer warm theme */
+.mob-drawer {
+  background: var(--cream);
+}
+.mob-drawer a {
+  font-family: var(--font-heading);
+  color: var(--ink);
+}
+.mob-drawer a:hover {
+  color: var(--gold);
+}
+.mob-close {
+  color: var(--slate);
+}
+
+/* ---------- Hero banner ---------- */
+.ip-hero {
+  background: var(--ink);
+}
+.ip-hero::before {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,146,58,0.25) 0%, transparent 70%);
+}
+.ip-hero__orb--1 {
+  background: rgba(196,146,58,0.22);
+}
+.ip-hero__orb--2 {
+  background: rgba(90,85,78,0.18);
+}
+.ip-hero__eyebrow {
+  color: rgba(255,255,255,0.5);
+}
+.ip-hero__heading {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-style: italic;
+}
+.ip-hero__heading em {
+  color: var(--gold-l);
+}
+.ip-hero__sub {
+  color: rgba(255,255,255,0.65);
+}
+
+/* ---------- Section / label ---------- */
+.ip-label__line {
+  background: var(--border);
+}
+.ip-label__text {
+  color: var(--mist);
+}
+
+/* ---------- Process timeline nodes ---------- */
+.process-step__num {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--cream);
+  box-shadow: 0 0 0 1px var(--border);
+}
+.process-step:hover .process-step__num {
+  background: var(--gold);
+}
+.process-step__index {
+  color: var(--gold);
+}
+.process-step__title {
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+.process-step__text {
+  color: var(--slate);
+}
+
+/* Process CTA strip */
+.process-cta-strip {
+  background: var(--ink);
+}
+.process-cta-strip__eyebrow {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ---------- Filter chips ---------- */
+.filter-chip {
+  border-color: var(--border);
+  color: var(--ink);
+}
+.filter-chip:hover,
+.filter-chip.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Buttons ---------- */
+.btn--primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+.btn--primary:hover {
+  background: var(--gold-d);
+  border-color: var(--gold-d);
+  box-shadow: 0 10px 30px rgba(196,146,58,.35);
+  transform: translateY(-2px);
+}
+
+/* ---------- Contact cards ---------- */
+.contact-card {
+  background: var(--warm);
+  border-color: var(--border);
+}
+.contact-card:hover {
+  box-shadow: 0 8px 32px rgba(23,20,15,0.08);
+}
+.contact-card__icon {
+  background: var(--ink);
+}
+.contact-card__label {
+  color: var(--mist);
+}
+.contact-card__value {
+  color: var(--ink);
+}
+.contact-card__value a:hover {
+  color: var(--gold);
+}
+
+/* Contact form */
+.contact-form-premium {
+  background: var(--warm);
+  border-color: var(--border);
+}
+.form-field label {
+  color: var(--mist);
+}
+.form-field input,
+.form-field textarea {
+  background: var(--cream);
+  border-color: var(--border);
+  color: var(--ink);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--gold);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(196,146,58,0.12);
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(90,85,78,0.45);
+}
+select {
+  background: var(--cream) !important;
+  color: var(--ink) !important;
+  border-color: var(--border) !important;
+}
+select:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(196,146,58,0.12) !important;
+}
+.form-submit-btn {
+  background: var(--gold);
+}
+.form-submit-btn:hover {
+  background: var(--gold-d);
+}
+
+/* ---------- Report cards ---------- */
+.report-card {
+  background: var(--warm);
+  border-color: var(--border);
+}
+.report-card::before {
+  background: linear-gradient(90deg, var(--gold), var(--gold-l));
+}
+.report-card:hover {
+  box-shadow: 0 12px 40px rgba(23,20,15,0.1);
+}
+.report-card__icon {
+  background: var(--parch);
+}
+.report-card__label {
+  color: var(--gold);
+}
+.report-card__title {
+  font-family: var(--font-heading);
+}
+.report-card__body {
+  color: var(--slate);
+}
+.report-card__link {
+  color: var(--ink);
+  border-color: var(--border);
+}
+.report-card__link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Stats strip */
+.reports-stat {
+  background: var(--warm);
+}
+.reports-stat__num {
+  color: var(--ink);
+  font-family: var(--font-heading);
+}
+.reports-stat__label {
+  color: var(--mist);
+}
+
+/* ---------- Cart ---------- */
+.cart-item-card {
+  background: var(--warm);
+  border-color: var(--border);
+}
+.cart-item-card:hover {
+  box-shadow: 0 8px 32px rgba(23,20,15,0.1);
+}
+.cart-summary-panel {
+  background: var(--ink);
+}
+.cart-empty-state__icon {
+  background: var(--parch);
+}
+.cart-empty-state__title {
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+.cart-empty-state__sub {
+  color: var(--mist);
+}
+
+/* Cart item actions area */
+.cart-card-actions {
+  background: var(--warm) !important;
+}
+
+/* ---------- Benefits / Stats inline blocks ---------- */
+[style*="background:#fff"],
+[style*="background: #fff"] {
+  background: var(--warm) !important;
+}
+[style*="color:var(--color-navy)"],
+[style*="color: var(--color-navy)"] {
+  color: var(--ink) !important;
+}
+[style*="color:var(--color-text-light)"],
+[style*="color: var(--color-text-light)"] {
+  color: var(--mist) !important;
+}
+
+/* ---------- Footer ---------- */
+.site-footer-premium {
+  background: var(--ink);
+  color: rgba(255,255,255,0.55);
+}
+.site-footer-premium__brand {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: #fff;
+}
+.site-footer-premium__links a {
+  color: rgba(255,255,255,0.45);
+}
+.site-footer-premium__links a:hover {
+  color: #fff;
+}
+
+/* ---------- Badges (overlay) ---------- */
+.badge {
+  background: var(--parch);
+  color: var(--ink);
+}
+.badge--overlay {
+  background: rgba(23,20,15,0.12);
+  color: var(--ink);
+}
+
+/* ---------- Transparency pledge block ---------- */
+[style*="background:var(--color-soft-grey)"] {
+  background: var(--parch) !important;
+}
+
+/* ---------- Headings inside main ---------- */
+main h2,
+main h3 {
+  font-family: var(--font-heading);
+}
+
+/* ---------- Cart-count badge stays red (intentional) ---------- */
+.cart-count {
+  background: #c4923a;
+  box-shadow: 0 2px 5px rgba(196,146,58,0.4);
+}
