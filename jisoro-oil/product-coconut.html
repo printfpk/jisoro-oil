@@ -1,48 +1,248 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="JIRASO Lakdi Ghani Coconut Oil â€” Shudh nariyal ka tel. Wood pressed, unrefined, 100% pure.">
+  <meta name="description"
+    content="JIRASO Lakdi Ghani Coconut Oil ”” Shudh nariyal ka tel. Wood pressed, unrefined, 100% pure.">
   <title>Coconut Oil | JIRASO Organics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="inner-pages.css">
+  <link rel="stylesheet" href="inner-theme.css">
   <link rel="stylesheet" href="product-page.css">
   <style>
-    :root{--cream:#FAF7F0;--gold:#C4923A;--gold-l:#E8B668;--ink:#17140F;--char:#2B2822;--slate:#5A554E;--border:#DDD6CB;--ff-serif:'Playfair Display',Georgia,serif;--ff-sans:'Inter',system-ui,sans-serif;--ease1:cubic-bezier(.25,.46,.45,.94);--ease2:cubic-bezier(.645,.045,.355,1);}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:var(--ff-sans);background:#FAF7F0;color:var(--ink);overflow-x:hidden;}
-    a{color:inherit;text-decoration:none;} ul{list-style:none;} button{cursor:pointer;font:inherit;border:none;background:none;}
-    .container{max-width:1240px;margin-inline:auto;padding-inline:2rem;}
-    .hdr{position:fixed;inset:-1px 0 auto;z-index:1000;padding:1rem 0;background:rgba(250,247,240,.95);backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--border);transition:padding .5s var(--ease1);}
-    .hdr__inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;max-width:1240px;margin-inline:auto;padding-inline:2rem;}
-    .hdr__logo{font-family:var(--ff-serif);font-size:1.55rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);}
-    .hdr__logo span{color:var(--gold);}
-    .nav-links{display:flex;gap:2.2rem;}
-    .nav-links a{font-family:var(--ff-sans);font-size:.875rem;font-weight:500;letter-spacing:.02em;color:var(--slate);position:relative;transition:color .25s;}
-    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease1);}
-    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-    .hdr__cart{display:flex;align-items:center;gap:.5rem;font-family:var(--ff-sans);font-size:.85rem;font-weight:500;color:var(--slate);padding:.5rem 1.1rem;border:1px solid var(--border);border-radius:100px;transition:all .25s;}
-    .hdr__cart:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
-    .cart-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:700;border-radius:100px;padding:0 4px;margin-left:2px;}
-    .hbg{display:none;flex-direction:column;gap:5px;padding:4px;}
-    .hbg span{display:block;width:22px;height:1.5px;background:var(--char);transition:all .4s;border-radius:2px;}
-    .mob-drawer{position:fixed;inset:0;z-index:2000;background:var(--cream);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transform:translateX(100%);transition:transform .7s var(--ease2);}
-    .mob-drawer.open{transform:none;}
-    .mob-drawer a{font-family:var(--ff-serif);font-size:2.8rem;font-weight:400;color:var(--ink);transition:color .2s;}
-    .mob-drawer a:hover{color:var(--gold);}
-    .mob-close{position:absolute;top:1.5rem;right:1.75rem;font-size:1.6rem;color:var(--slate);}
-    @media(max-width:768px){.nav-links{display:none;}.hbg{display:flex;}.hdr__cart{padding:.5rem;border-color:transparent;}}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #FAF7F0;
+      color: #17140F;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin-inline: auto;
+      padding-inline: 2rem;
+    }
+
+    .hdr {
+      position: fixed;
+      inset: -1px 0 auto;
+      z-index: 1000;
+      padding: 1rem 0;
+      background: rgba(250, 247, 240, .95);
+      backdrop-filter: blur(24px) saturate(160%);
+      border-bottom: 1px solid #DDD6CB;
+      transition: padding .5s;
+    }
+
+    .hdr__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hdr__logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: #17140F;
+    }
+
+    .hdr__logo span {
+      color: #C4923A;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      color: #5A554E;
+      position: relative;
+      transition: color .25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #C4923A;
+      transition: width .4s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #17140F;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .hdr__cart {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      font-weight: 500;
+      color: #5A554E;
+      padding: .5rem 1.1rem;
+      border: 1px solid #DDD6CB;
+      border-radius: 100px;
+      transition: all .25s;
+    }
+
+    .hdr__cart:hover {
+      background: #17140F;
+      color: #fff;
+      border-color: #17140F;
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      background: #C4923A;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      border-radius: 100px;
+      padding: 0 4px;
+      margin-left: 2px;
+    }
+
+    .hbg {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hbg span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #2B2822;
+      transition: all .4s;
+      border-radius: 2px;
+    }
+
+    .mob-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: #FAF7F0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform .7s cubic-bezier(.645, .045, .355, 1);
+    }
+
+    .mob-drawer.open {
+      transform: none;
+    }
+
+    .mob-drawer a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: #17140F;
+      transition: color .2s;
+    }
+
+    .mob-drawer a:hover {
+      color: #C4923A;
+    }
+
+    .mob-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.75rem;
+      font-size: 1.6rem;
+      color: #5A554E;
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hbg {
+        display: flex;
+      }
+
+      .hdr__cart {
+        padding: .5rem;
+        border-color: transparent;
+      }
+    }
   </style>
 </head>
-<body>
 
-  <!-- ── HEADER ── -->
+<body class="inner-page">
+
+  <!-- Announcement -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">100% Pure Wood Pressed Oils</span>
+      <span class="announcement-bar__item">FSSAI Certified · Lab Tested</span>
+      <span class="announcement-bar__item">Free Delivery on Orders Above ₹500</span>
+      <span class="announcement-bar__item">100% Pure Wood Pressed Oils</span>
+      <span class="announcement-bar__item">FSSAI Certified · Lab Tested</span>
+      <span class="announcement-bar__item">Free Delivery on Orders Above ₹500</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
   <header class="hdr" id="hdr">
-    <div class="hdr__inner">
-      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics" style="height: 48px; width: auto;">Jiraso <span>Organics</span></a>
+    <div class="container hdr__inner">
+      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img
+          src="assets/logo.png" alt="Jiraso Organics" style="height: 48px; width: auto;">Jiraso
+        <span>Organics</span></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -55,13 +255,19 @@
       </nav>
       <div style="display:flex;align-items:center;gap:.75rem">
         <a class="hdr__cart" href="cart.html" id="cart-btn">
-          <div style="position:relative;display:inline-flex;">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span id="cart-count" class="cart-count">0</span>
+          <div style="position:relative; display:inline-flex;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-count">0</span>
           </div>
-          Bag
+          <span class="cart-label">Bag</span>
         </a>
-        <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+        <button class="hbg" id="hbg" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -79,7 +285,8 @@
 
   <!-- Breadcrumb -->
   <div style="padding-top:7rem;padding-bottom:0;" class="container">
-    <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-light);padding-block:1rem 0;">
+    <p
+      style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-light);padding-block:1rem 0;">
       <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp;
       <a href="products.html" style="color:inherit;">Products</a> &nbsp;/&nbsp;
       <span style="color:var(--color-navy);">Mustard Oil</span>
@@ -111,16 +318,16 @@
       <!-- Info -->
       <div class="pdp-info" data-reveal="right">
         <div>
-          <span class="pdp-badge">â­ Premium Quality</span>
+          <span class="pdp-badge">⭐ Premium Quality</span>
         </div>
 
         <div>
           <h1 class="pdp-name">Jiraso Lakdi Ghani Coconut Oil</h1>
-          <p class="pdp-tagline">Shudh nariyal ka tel â€” Pure Tropical Oil</p>
+          <p class="pdp-tagline">Shudh nariyal ka tel ”” Pure Tropical Oil</p>
         </div>
 
         <div class="pdp-rating">
-          <span class="pdp-stars">â˜…â˜…â˜…â˜…â˜…</span>
+          <span class="pdp-stars">★★★★★</span>
           <a class="pdp-review-count" href="#reviews">(98 reviews)</a>
         </div>
 
@@ -132,16 +339,16 @@
           <div class="pdp-sizes">
             <button class="pdp-size-btn" onclick="selectSize(this,160)" data-price="135">
               <span class="pdp-size-btn__ml">250 ml</span>
-              <span class="pdp-size-btn__price">â‚¹160</span>
+              <span class="pdp-size-btn__price">₹160</span>
             </button>
             <button class="pdp-size-btn" onclick="selectSize(this,300)" data-price="250">
               <span class="pdp-size-btn__ml">500 ml</span>
-              <span class="pdp-size-btn__price">â‚¹300</span>
+              <span class="pdp-size-btn__price">₹300</span>
             </button>
             <button class="pdp-size-btn is-active" onclick="selectSize(this,550)" data-price="450">
               <span class="pdp-size-popular">Popular</span>
               <span class="pdp-size-btn__ml">1 Litre</span>
-              <span class="pdp-size-btn__price">â‚¹550</span>
+              <span class="pdp-size-btn__price">₹550</span>
             </button>
           </div>
         </div>
@@ -151,7 +358,7 @@
           <p class="pdp-section-label">Quantity</p>
           <div class="pdp-qty">
             <div class="pdp-qty-ctrl">
-              <button class="pdp-qty-btn" id="qty-minus" onclick="changeQty(-1)">âˆ’</button>
+              <button class="pdp-qty-btn" id="qty-minus" onclick="changeQty(-1)">−</button>
               <input class="pdp-qty-num" id="qty-num" type="number" value="1" min="1" max="50" readonly>
               <button class="pdp-qty-btn" id="qty-plus" onclick="changeQty(1)">+</button>
             </div>
@@ -163,24 +370,34 @@
           <div class="pdp-toggle" id="sub-indicator"></div>
           <div>
             <span class="pdp-subscription__label">Monthly Subscription</span>
-            <span class="pdp-subscription__sub">Save 5% on every order Â· Cancel anytime</span>
+            <span class="pdp-subscription__sub">Save 5% on every order · Cancel anytime</span>
           </div>
         </div>
 
         <!-- Price -->
         <div>
-          <p class="pdp-price" id="display-price">â‚¹550</p>
+          <p class="pdp-price" id="display-price">₹550</p>
           <p class="pdp-price__tax">Inclusive of all taxes</p>
         </div>
 
         <!-- CTAs -->
         <div class="pdp-ctas">
-          <a id="wa-btn" href="https://wa.me/918393976770?text=Hi%2C%20I%20would%20like%20to%20order%20JIRASO%20Mustard%20Oil%201L%20%E2%82%B9450" target="_blank" rel="noopener" class="pdp-btn-whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <a id="wa-btn"
+            href="https://wa.me/918393976770?text=Hi%2C%20I%20would%20like%20to%20order%20JIRASO%20Mustard%20Oil%201L%20%E2%82%B9450"
+            target="_blank" rel="noopener" class="pdp-btn-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
             Order via WhatsApp
           </a>
           <button class="pdp-btn-cart" id="add-cart-btn" onclick="addToCart()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
             Add to Cart
           </button>
         </div>
@@ -188,15 +405,28 @@
         <!-- Trust -->
         <div class="pdp-trust">
           <div class="pdp-trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            </svg>
             <span>Secure Packaging</span>
           </div>
           <div class="pdp-trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
             <span>Free Delivery</span>
           </div>
           <div class="pdp-trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
             <span>Quality Assured</span>
           </div>
         </div>
@@ -205,7 +435,11 @@
 
     <!-- Batch Tracker -->
     <div class="pdp-batch" data-reveal>
-      <svg class="pdp-batch__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M7 12h.01M7 17h.01M12 7h.01M12 12h.01M17 7h.01M17 12h5M17 17h5"/></svg>
+      <svg class="pdp-batch__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h.01M12 12h.01M17 7h.01M17 12h5M17 17h5" />
+      </svg>
       <div class="pdp-batch__text">
         <p class="pdp-batch__title">Trace Your Bottle</p>
         <p class="pdp-batch__sub">Enter your batch number to track the journey</p>
@@ -226,7 +460,7 @@
           <li class="pdp-benefit">Rich in Lauric Acid &amp; MCTs</li>
           <li class="pdp-benefit">Lab Tested for Purity</li>
           <li class="pdp-benefit">FSSAI Certified</li>
-          <li class="pdp-benefit">Cold Pressed Below 50Â°C</li>
+          <li class="pdp-benefit">Cold Pressed Below 50°C</li>
           <li class="pdp-benefit">No Preservatives or Additives</li>
           <li class="pdp-benefit">Natural Cold Press Method</li>
         </ul>
@@ -235,15 +469,26 @@
         <h2 class="pdp-card__title">Nutritional Information</h2>
         <div class="pdp-nutrition">
           <p class="pdp-nutrition__serving">Per 100g serving</p>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Energy</span><span class="pdp-nutrition-row__val">900 kcal</span></div>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Total Fat</span><span class="pdp-nutrition-row__val">100g</span></div>
-          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Saturated Fat</span><span class="pdp-nutrition-row__val">7g</span></div>
-          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Monounsaturated Fat</span><span class="pdp-nutrition-row__val">60g</span></div>
-          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Polyunsaturated Fat</span><span class="pdp-nutrition-row__val">21g</span></div>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Omega-3 (ALA)</span><span class="pdp-nutrition-row__val">14g</span></div>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Vitamin E</span><span class="pdp-nutrition-row__val">20mg</span></div>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Carbohydrates</span><span class="pdp-nutrition-row__val">0g</span></div>
-          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Protein</span><span class="pdp-nutrition-row__val">0g</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Energy</span><span
+              class="pdp-nutrition-row__val">900 kcal</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Total Fat</span><span
+              class="pdp-nutrition-row__val">100g</span></div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Saturated
+              Fat</span><span class="pdp-nutrition-row__val">7g</span></div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span
+              class="pdp-nutrition-row__label">Monounsaturated Fat</span><span class="pdp-nutrition-row__val">60g</span>
+          </div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span
+              class="pdp-nutrition-row__label">Polyunsaturated Fat</span><span class="pdp-nutrition-row__val">21g</span>
+          </div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Omega-3 (ALA)</span><span
+              class="pdp-nutrition-row__val">14g</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Vitamin E</span><span
+              class="pdp-nutrition-row__val">20mg</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Carbohydrates</span><span
+              class="pdp-nutrition-row__val">0g</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Protein</span><span
+              class="pdp-nutrition-row__val">0g</span></div>
         </div>
       </div>
     </div>
@@ -253,24 +498,32 @@
       <h2 class="pdp-reviews-title">Customer Reviews</h2>
       <div class="pdp-reviews-grid">
         <div class="pdp-review-card">
-          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">April 2026</span></div>
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">April 2026</span></div>
           <p class="pdp-review-card__name">Rekha Rao</p>
-          <p class="pdp-review-card__text">"Authentic taste, Perfect for hair and cooking both!"</p>
+          <p class="pdp-review-card__text">"Kya kamaal ka tel hai! Khane mein toh achha hai hi, par baalon ke liye toh
+            ekdum jaadu hai. Chemical wala tel ab hamesha ke liye band!"</p>
         </div>
         <div class="pdp-review-card">
-          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">March 2026</span></div>
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">March 2026</span></div>
           <p class="pdp-review-card__name">Arun Sharma</p>
-          <p class="pdp-review-card__text">"Best coconut oil I have tried I've used. Worth every rupee."</p>
+          <p class="pdp-review-card__text">"Sardiyon mein bilkul white aur solid ho jata hai, jisse pata chalta hai ki
+            ekdum pure hai. Taste aur smell bohot fresh hai."</p>
         </div>
         <div class="pdp-review-card">
-          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">March 2026</span></div>
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">March 2026</span></div>
           <p class="pdp-review-card__name">Deepa Menon</p>
-          <p class="pdp-review-card__text">"Subscribed for monthly delivery. Use it for skin care too."</p>
+          <p class="pdp-review-card__text">"Maine baby massage ke liye liya tha. Skin ke liye bohot soft aur safe laga
+            mujhe. Ab main khud bhi skin moisturizer ki tarah use karti hoon."</p>
         </div>
         <div class="pdp-review-card">
-          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜†</span><span class="pdp-review-card__date">February 2026</span></div>
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★☆</span><span
+              class="pdp-review-card__date">February 2026</span></div>
           <p class="pdp-review-card__name">Vivek Sinha</p>
-          <p class="pdp-review-card__text">"Very pure and fresh aroma. Packaging could be more premium."</p>
+          <p class="pdp-review-card__text">"South Indian dishes ka asli maza issi tel se aata hai. Coconut ki khushboo
+            bohot natural hai. Worth buying again!"</p>
         </div>
       </div>
     </section>
@@ -299,19 +552,22 @@
   <footer class="site-footer-premium">
     <div class="container">
       <div class="site-footer-premium__inner">
-        <span class="site-footer-premium__brand" style="display:flex;align-items:center;gap:0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics Logo" style="height: 48px;width:auto;">Jiraso Organics</span>
+        <span class="site-footer-premium__brand" style="display:flex;align-items:center;gap:0.5rem;"><img
+            src="assets/logo.png" alt="Jiraso Organics Logo" style="height: 48px;width:auto;">Jiraso Organics</span>
         <nav class="site-footer-premium__links">
           <a href="index.html">Home</a><a href="process.html">Process</a>
-          <a href="products.html">Products</a><a href="reports.html">Reports</a><a href="know-your-oil.html">Know Your Oil</a>
+          <a href="products.html">Products</a><a href="reports.html">Reports</a><a href="know-your-oil.html">Know Your
+            Oil</a>
           <a href="contact.html">Contact</a>
         </nav>
-        <p class="site-footer-premium__copy">Â© 2026 JIRASO Organics</p>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="cart-manager.js"></script>
   <script src="main.js"></script>
   <script>
     // Scroll reveal
@@ -358,11 +614,11 @@
     function updatePrice() {
       let p = currentPrice * qty;
       if (subscribed) p = Math.round(p * 0.95);
-      document.getElementById('display-price').textContent = 'â‚¹' + p;
+      document.getElementById('display-price').textContent = '₹' + p;
     }
 
     function updateWALink() {
-      const msg = `Hi, I would like to order JIRASO Coconut Oil ${currentSize} â‚¹${currentPrice} Ã— ${qty}`;
+      const msg = `Hi, I would like to order JIRASO Coconut Oil ${currentSize} ₹${currentPrice} × ${qty}`;
       document.getElementById('wa-btn').href = `https://wa.me/918393976770?text=${encodeURIComponent(msg)}`;
     }
 
@@ -396,18 +652,14 @@
     function trackBatch() {
       const val = document.getElementById('batch-input').value.trim();
       if (!val) return;
-      alert('Batch ' + val + ' â€” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“');
+      alert('Batch ' + val + ' ”” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“');
     }
   </script>
   <script>
-    const _hbg=document.getElementById('hbg'),_md=document.getElementById('mob-drawer'),_mc=document.getElementById('mob-close');
-    if(_hbg)_hbg.addEventListener('click',()=>_md.classList.toggle('open'));
-    if(_mc)_mc.addEventListener('click',()=>_md.classList.remove('open'));
-    const _cc=document.getElementById('cart-count');
-    if(_cc){const _c=JSON.parse(localStorage.getItem('jiraso_cart')||'[]');_cc.textContent=_c.length;}
+    const _cc = document.querySelectorAll('.cart-count');
+    const _c = JSON.parse(localStorage.getItem('jiraso_cart') || '[]');
+    _cc.forEach(el => { el.textContent = _c.length; });
   </script>
 </body>
+
 </html>
-
-
-

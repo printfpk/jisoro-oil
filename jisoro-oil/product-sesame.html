@@ -1,46 +1,247 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="JIRASO Sesame Oil â€” Rich aroma, ideal for South Indian and wellness cooking.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="JIRASO Sesame Oil ”” Rich aroma, ideal for South Indian and wellness cooking.">
   <title>Sesame Oil | JIRASO Organics</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="inner-pages.css">
+  <link rel="stylesheet" href="inner-theme.css">
   <link rel="stylesheet" href="product-page.css">
   <style>
-    :root{--cream:#FAF7F0;--gold:#C4923A;--gold-l:#E8B668;--ink:#17140F;--char:#2B2822;--slate:#5A554E;--border:#DDD6CB;--ff-serif:'Playfair Display',Georgia,serif;--ff-sans:'Inter',system-ui,sans-serif;--ease1:cubic-bezier(.25,.46,.45,.94);--ease2:cubic-bezier(.645,.045,.355,1);}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:var(--ff-sans);background:#FAF7F0;color:var(--ink);overflow-x:hidden;}
-    a{color:inherit;text-decoration:none;} ul{list-style:none;} button{cursor:pointer;font:inherit;border:none;background:none;}
-    .container{max-width:1240px;margin-inline:auto;padding-inline:2rem;}
-    .hdr{position:fixed;inset:-1px 0 auto;z-index:1000;padding:1rem 0;background:rgba(250,247,240,.95);backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--border);transition:padding .5s var(--ease1);}
-    .hdr__inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;max-width:1240px;margin-inline:auto;padding-inline:2rem;}
-    .hdr__logo{font-family:var(--ff-serif);font-size:1.55rem;font-weight:700;letter-spacing:-.02em;color:var(--ink);}
-    .hdr__logo span{color:var(--gold);}
-    .nav-links{display:flex;gap:2.2rem;}
-    .nav-links a{font-family:var(--ff-sans);font-size:.875rem;font-weight:500;letter-spacing:.02em;color:var(--slate);position:relative;transition:color .25s;}
-    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s var(--ease1);}
-    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-    .hdr__cart{display:flex;align-items:center;gap:.5rem;font-family:var(--ff-sans);font-size:.85rem;font-weight:500;color:var(--slate);padding:.5rem 1.1rem;border:1px solid var(--border);border-radius:100px;transition:all .25s;}
-    .hdr__cart:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
-    .cart-count{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:700;border-radius:100px;padding:0 4px;margin-left:2px;}
-    .hbg{display:none;flex-direction:column;gap:5px;padding:4px;}
-    .hbg span{display:block;width:22px;height:1.5px;background:var(--char);transition:all .4s;border-radius:2px;}
-    .mob-drawer{position:fixed;inset:0;z-index:2000;background:var(--cream);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transform:translateX(100%);transition:transform .7s var(--ease2);}
-    .mob-drawer.open{transform:none;}
-    .mob-drawer a{font-family:var(--ff-serif);font-size:2.8rem;font-weight:400;color:var(--ink);transition:color .2s;}
-    .mob-drawer a:hover{color:var(--gold);}
-    .mob-close{position:absolute;top:1.5rem;right:1.75rem;font-size:1.6rem;color:var(--slate);}
-    @media(max-width:768px){.nav-links{display:none;}.hbg{display:flex;}.hdr__cart{padding:.5rem;border-color:transparent;}}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #FAF7F0;
+      color: #17140F;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin-inline: auto;
+      padding-inline: 2rem;
+    }
+
+    .hdr {
+      position: fixed;
+      inset: -1px 0 auto;
+      z-index: 1000;
+      padding: 1rem 0;
+      background: rgba(250, 247, 240, .95);
+      backdrop-filter: blur(24px) saturate(160%);
+      border-bottom: 1px solid #DDD6CB;
+      transition: padding .5s;
+    }
+
+    .hdr__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hdr__logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: #17140F;
+    }
+
+    .hdr__logo span {
+      color: #C4923A;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      color: #5A554E;
+      position: relative;
+      transition: color .25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #C4923A;
+      transition: width .4s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #17140F;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .hdr__cart {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      font-weight: 500;
+      color: #5A554E;
+      padding: .5rem 1.1rem;
+      border: 1px solid #DDD6CB;
+      border-radius: 100px;
+      transition: all .25s;
+    }
+
+    .hdr__cart:hover {
+      background: #17140F;
+      color: #fff;
+      border-color: #17140F;
+    }
+
+    .cart-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      background: #C4923A;
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      border-radius: 100px;
+      padding: 0 4px;
+      margin-left: 2px;
+    }
+
+    .hbg {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hbg span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #2B2822;
+      transition: all .4s;
+      border-radius: 2px;
+    }
+
+    .mob-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: #FAF7F0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform .7s cubic-bezier(.645, .045, .355, 1);
+    }
+
+    .mob-drawer.open {
+      transform: none;
+    }
+
+    .mob-drawer a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: #17140F;
+      transition: color .2s;
+    }
+
+    .mob-drawer a:hover {
+      color: #C4923A;
+    }
+
+    .mob-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.75rem;
+      font-size: 1.6rem;
+      color: #5A554E;
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hbg {
+        display: flex;
+      }
+
+      .hdr__cart {
+        padding: .5rem;
+        border-color: transparent;
+      }
+    }
   </style>
 </head>
-<body>
 
-  <!-- ── HEADER ── -->
+<body class="inner-page">
+
+  <!-- Announcement -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">100% Pure Wood Pressed Oils</span>
+      <span class="announcement-bar__item">FSSAI Certified · Lab Tested</span>
+      <span class="announcement-bar__item">Free Delivery on Orders Above ₹500</span>
+      <span class="announcement-bar__item">100% Pure Wood Pressed Oils</span>
+      <span class="announcement-bar__item">FSSAI Certified · Lab Tested</span>
+      <span class="announcement-bar__item">Free Delivery on Orders Above ₹500</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
   <header class="hdr" id="hdr">
-    <div class="hdr__inner">
-      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics" style="height: 48px; width: auto;">Jiraso <span>Organics</span></a>
+    <div class="container hdr__inner">
+      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img
+          src="assets/logo.png" alt="Jiraso Organics" style="height: 48px; width: auto;">Jiraso
+        <span>Organics</span></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -53,13 +254,19 @@
       </nav>
       <div style="display:flex;align-items:center;gap:.75rem">
         <a class="hdr__cart" href="cart.html" id="cart-btn">
-          <div style="position:relative;display:inline-flex;">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span id="cart-count" class="cart-count">0</span>
+          <div style="position:relative; display:inline-flex;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-count">0</span>
           </div>
-          Bag
+          <span class="cart-label">Bag</span>
         </a>
-        <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+        <button class="hbg" id="hbg" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -75,85 +282,242 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <div style="padding-top:7rem;" class="container"><p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-light);padding-block:1rem 0;"><a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp; <a href="products.html" style="color:inherit;">Products</a> &nbsp;/&nbsp; <span style="color:var(--color-navy);">Sesame Oil</span></p></div>
+  <div style="padding-top:7rem;" class="container">
+    <p
+      style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-light);padding-block:1rem 0;">
+      <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp; <a href="products.html"
+        style="color:inherit;">Products</a> &nbsp;/&nbsp; <span style="color:var(--color-navy);">Sesame Oil</span>
+    </p>
+  </div>
 
   <main class="container">
     <div class="pdp-layout">
       <div class="pdp-gallery" data-reveal="left">
-        <div class="pdp-gallery__main"><span class="pdp-gallery__badge">Premium Quality</span><img id="main-img" src="assets/bottle.jpeg" alt="Sesame Oil"></div>
+        <div class="pdp-gallery__main"><span class="pdp-gallery__badge">Premium Quality</span><img id="main-img"
+            src="assets/bottle.jpeg" alt="Sesame Oil"></div>
         <div class="pdp-gallery__thumbs">
-          <div class="pdp-gallery__thumb is-active" onclick="switchImg(this,'assets/bottle.jpeg')"><img src="assets/bottle.jpeg" alt="Sesame Oil"></div>
-          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process2.png')"><img src="assets/process2.png" alt="Seeds"></div>
-          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process5.png')"><img src="assets/process5.png" alt="Pressing"></div>
+          <div class="pdp-gallery__thumb is-active" onclick="switchImg(this,'assets/bottle.jpeg')"><img
+              src="assets/bottle.jpeg" alt="Sesame Oil"></div>
+          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process2.png')"><img src="assets/process2.png"
+              alt="Seeds"></div>
+          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process5.png')"><img src="assets/process5.png"
+              alt="Pressing"></div>
         </div>
       </div>
       <div class="pdp-info" data-reveal="right">
-        <div><span class="pdp-badge">â­ Premium Quality</span></div>
-        <div><h1 class="pdp-name">Jiraso Lakdi Ghani Sesame Oil</h1><p class="pdp-tagline">Shudh til ka tel â€” Pure South Indian Wellness Oil</p></div>
-        <div class="pdp-rating"><span class="pdp-stars">â˜…â˜…â˜…â˜…â˜…</span><a class="pdp-review-count" href="#reviews">(112 reviews)</a></div>
+        <div><span class="pdp-badge">⭐ Premium Quality</span></div>
+        <div>
+          <h1 class="pdp-name">Jiraso Lakdi Ghani Sesame Oil</h1>
+          <p class="pdp-tagline">Shudh til ka tel ”” Pure South Indian Wellness Oil</p>
+        </div>
+        <div class="pdp-rating"><span class="pdp-stars">★★★★★</span><a class="pdp-review-count" href="#reviews">(112
+            reviews)</a></div>
         <div class="pdp-divider"></div>
         <div>
           <p class="pdp-section-label">Select Size</p>
           <div class="pdp-sizes">
-            <button class="pdp-size-btn" onclick="selectSize(this,150)"><span class="pdp-size-btn__ml">250 ml</span><span class="pdp-size-btn__price">â‚¹150</span></button>
-            <button class="pdp-size-btn" onclick="selectSize(this,275)"><span class="pdp-size-btn__ml">500 ml</span><span class="pdp-size-btn__price">â‚¹275</span></button>
-            <button class="pdp-size-btn is-active" onclick="selectSize(this,500)"><span class="pdp-size-popular">Popular</span><span class="pdp-size-btn__ml">1 Litre</span><span class="pdp-size-btn__price">â‚¹500</span></button>
+            <button class="pdp-size-btn" onclick="selectSize(this,150)"><span class="pdp-size-btn__ml">250
+                ml</span><span class="pdp-size-btn__price">₹150</span></button>
+            <button class="pdp-size-btn" onclick="selectSize(this,275)"><span class="pdp-size-btn__ml">500
+                ml</span><span class="pdp-size-btn__price">₹275</span></button>
+            <button class="pdp-size-btn is-active" onclick="selectSize(this,500)"><span
+                class="pdp-size-popular">Popular</span><span class="pdp-size-btn__ml">1 Litre</span><span
+                class="pdp-size-btn__price">₹500</span></button>
           </div>
         </div>
-        <div><p class="pdp-section-label">Quantity</p><div class="pdp-qty"><div class="pdp-qty-ctrl"><button class="pdp-qty-btn" onclick="changeQty(-1)">âˆ’</button><input class="pdp-qty-num" id="qty-num" type="number" value="1" min="1" max="50" readonly><button class="pdp-qty-btn" onclick="changeQty(1)">+</button></div></div></div>
-        <div class="pdp-subscription" onclick="toggleSubscription()"><div class="pdp-toggle" id="sub-indicator"></div><div><span class="pdp-subscription__label">Monthly Subscription</span><span class="pdp-subscription__sub">Save 5% on every order Â· Cancel anytime</span></div></div>
-        <div><p class="pdp-price" id="display-price">â‚¹500</p><p class="pdp-price__tax">Inclusive of all taxes</p></div>
+        <div>
+          <p class="pdp-section-label">Quantity</p>
+          <div class="pdp-qty">
+            <div class="pdp-qty-ctrl"><button class="pdp-qty-btn" onclick="changeQty(-1)">−</button><input
+                class="pdp-qty-num" id="qty-num" type="number" value="1" min="1" max="50" readonly><button
+                class="pdp-qty-btn" onclick="changeQty(1)">+</button></div>
+          </div>
+        </div>
+        <div class="pdp-subscription" onclick="toggleSubscription()">
+          <div class="pdp-toggle" id="sub-indicator"></div>
+          <div><span class="pdp-subscription__label">Monthly Subscription</span><span class="pdp-subscription__sub">Save
+              5% on every order · Cancel anytime</span></div>
+        </div>
+        <div>
+          <p class="pdp-price" id="display-price">₹500</p>
+          <p class="pdp-price__tax">Inclusive of all taxes</p>
+        </div>
         <div class="pdp-ctas">
-          <a id="wa-btn" href="https://wa.me/918393976770?text=Hi%2C%20I%20want%20JIRASO%20Sesame%20Oil%201L" target="_blank" rel="noopener" class="pdp-btn-whatsapp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <a id="wa-btn" href="https://wa.me/918393976770?text=Hi%2C%20I%20want%20JIRASO%20Sesame%20Oil%201L"
+            target="_blank" rel="noopener" class="pdp-btn-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
             Order via WhatsApp
           </a>
-          <button class="pdp-btn-cart" id="add-cart-btn" onclick="addToCart()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Add to Cart</button>
+          <button class="pdp-btn-cart" id="add-cart-btn" onclick="addToCart()"><svg xmlns="http://www.w3.org/2000/svg"
+              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg> Add to Cart</button>
         </div>
         <div class="pdp-trust">
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Secure Packaging</span></div>
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span>Free Delivery</span></div>
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Quality Assured</span></div>
+          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            </svg><span>Secure Packaging</span></div>
+          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg><span>Free Delivery</span></div>
+          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg><span>Quality Assured</span></div>
         </div>
       </div>
     </div>
 
-    <div class="pdp-batch" data-reveal><svg class="pdp-batch__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M7 12h.01M7 17h.01M12 7h.01M12 12h.01M17 7h.01"/></svg><div class="pdp-batch__text"><p class="pdp-batch__title">Trace Your Bottle</p><p class="pdp-batch__sub">Enter your batch number to track the journey</p></div><div class="pdp-batch__form"><input class="pdp-batch__input" type="text" placeholder="Enter batch number (e.g., JO2026)" id="batch-input"><button class="pdp-batch__btn" onclick="trackBatch()">Track</button></div></div>
-
-    <div class="pdp-details-grid" data-reveal>
-      <div class="pdp-card"><h2 class="pdp-card__title">Key Benefits</h2><ul class="pdp-benefits"><li class="pdp-benefit">100% Pure Wood Pressed Sesame Oil</li><li class="pdp-benefit">No Chemical Processing</li><li class="pdp-benefit">Rich in Calcium &amp; Iron</li><li class="pdp-benefit">Sesamin &amp; Sesamolin Antioxidants</li><li class="pdp-benefit">FSSAI Certified</li><li class="pdp-benefit">Ideal for Ayurvedic Oil Pulling</li><li class="pdp-benefit">No Preservatives or Additives</li><li class="pdp-benefit">Traditional Cold Press Method</li></ul></div>
-      <div class="pdp-card"><h2 class="pdp-card__title">Nutritional Information</h2><div class="pdp-nutrition"><p class="pdp-nutrition__serving">Per 100g serving</p><div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Energy</span><span class="pdp-nutrition-row__val">900 kcal</span></div><div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Total Fat</span><span class="pdp-nutrition-row__val">100g</span></div><div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Saturated Fat</span><span class="pdp-nutrition-row__val">14g</span></div><div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Monounsaturated Fat</span><span class="pdp-nutrition-row__val">40g</span></div><div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Polyunsaturated Fat</span><span class="pdp-nutrition-row__val">42g</span></div><div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Sesamin</span><span class="pdp-nutrition-row__val">0.5g</span></div><div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Vitamin E</span><span class="pdp-nutrition-row__val">1.4mg</span></div><div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Calcium</span><span class="pdp-nutrition-row__val">14mg</span></div></div></div>
+    <div class="pdp-batch" data-reveal><svg class="pdp-batch__icon" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h.01M12 12h.01M17 7h.01" />
+      </svg>
+      <div class="pdp-batch__text">
+        <p class="pdp-batch__title">Trace Your Bottle</p>
+        <p class="pdp-batch__sub">Enter your batch number to track the journey</p>
+      </div>
+      <div class="pdp-batch__form"><input class="pdp-batch__input" type="text"
+          placeholder="Enter batch number (e.g., JO2026)" id="batch-input"><button class="pdp-batch__btn"
+          onclick="trackBatch()">Track</button></div>
     </div>
 
-    <section class="pdp-reviews-section" id="reviews" data-reveal><h2 class="pdp-reviews-title">Customer Reviews</h2><div class="pdp-reviews-grid"><div class="pdp-review-card"><div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">April 2026</span></div><p class="pdp-review-card__name">Priya Nair</p><p class="pdp-review-card__text">"Perfect for South Indian cooking. The aroma is exactly what we get from village-pressed oil!"</p></div><div class="pdp-review-card"><div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">March 2026</span></div><p class="pdp-review-card__name">Rajan Pillai</p><p class="pdp-review-card__text">"Using this for oil pulling daily. Noticeable improvement in oral health."</p></div><div class="pdp-review-card"><div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜…</span><span class="pdp-review-card__date">February 2026</span></div><p class="pdp-review-card__name">Ananya S</p><p class="pdp-review-card__text">"The depth of flavour is unmatched. Every dish tastes more authentic."</p></div><div class="pdp-review-card"><div class="pdp-review-card__top"><span class="pdp-review-card__stars">â˜…â˜…â˜…â˜…â˜†</span><span class="pdp-review-card__date">January 2026</span></div><p class="pdp-review-card__name">Mohan K</p><p class="pdp-review-card__text">"Good quality, prompt delivery. Will continue ordering."</p></div></div></section>
+    <div class="pdp-details-grid" data-reveal>
+      <div class="pdp-card">
+        <h2 class="pdp-card__title">Key Benefits</h2>
+        <ul class="pdp-benefits">
+          <li class="pdp-benefit">100% Pure Wood Pressed Sesame Oil</li>
+          <li class="pdp-benefit">No Chemical Processing</li>
+          <li class="pdp-benefit">Rich in Calcium &amp; Iron</li>
+          <li class="pdp-benefit">Sesamin &amp; Sesamolin Antioxidants</li>
+          <li class="pdp-benefit">FSSAI Certified</li>
+          <li class="pdp-benefit">Ideal for Ayurvedic Oil Pulling</li>
+          <li class="pdp-benefit">No Preservatives or Additives</li>
+          <li class="pdp-benefit">Traditional Cold Press Method</li>
+        </ul>
+      </div>
+      <div class="pdp-card">
+        <h2 class="pdp-card__title">Nutritional Information</h2>
+        <div class="pdp-nutrition">
+          <p class="pdp-nutrition__serving">Per 100g serving</p>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Energy</span><span
+              class="pdp-nutrition-row__val">900 kcal</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Total Fat</span><span
+              class="pdp-nutrition-row__val">100g</span></div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span class="pdp-nutrition-row__label">Saturated
+              Fat</span><span class="pdp-nutrition-row__val">14g</span></div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span
+              class="pdp-nutrition-row__label">Monounsaturated Fat</span><span class="pdp-nutrition-row__val">40g</span>
+          </div>
+          <div class="pdp-nutrition-row pdp-nutrition-row--indent"><span
+              class="pdp-nutrition-row__label">Polyunsaturated Fat</span><span class="pdp-nutrition-row__val">42g</span>
+          </div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Sesamin</span><span
+              class="pdp-nutrition-row__val">0.5g</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Vitamin E</span><span
+              class="pdp-nutrition-row__val">1.4mg</span></div>
+          <div class="pdp-nutrition-row"><span class="pdp-nutrition-row__label">Calcium</span><span
+              class="pdp-nutrition-row__val">14mg</span></div>
+        </div>
+      </div>
+    </div>
 
-    <div class="pdp-related" data-reveal><p class="pdp-related__title">You May Also Like</p><div class="pdp-related__grid"><a href="product-mustard.html" class="pdp-related__card"><img src="assets/bottle2.jpeg" alt="Mustard Oil" class="pdp-related__card-img"><p class="pdp-related__card-name">Mustard Oil</p></a><a href="product-coconut.html" class="pdp-related__card"><img src="assets/bottle3.jpeg" alt="Coconut Oil" class="pdp-related__card-img"><p class="pdp-related__card-name">Coconut Oil</p></a><a href="product-groundnut.html" class="pdp-related__card"><img src="assets/bottle5.jpeg" alt="Groundnut Oil" class="pdp-related__card-img"><p class="pdp-related__card-name">Groundnut Oil</p></a></div></div>
+    <section class="pdp-reviews-section" id="reviews" data-reveal>
+      <h2 class="pdp-reviews-title">Customer Reviews</h2>
+      <div class="pdp-reviews-grid">
+        <div class="pdp-review-card">
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">April 2026</span></div>
+          <p class="pdp-review-card__name">Priya Nair</p>
+          <p class="pdp-review-card__text">"Yaar, iss til ke tel ki khushboo hi alag hai! South Indian dishes mein
+            daalte hi ghar mein ekdum village wala feel aata hai. Bilkul asli cheez hai, koi artificial smell nahi."</p>
+        </div>
+        <div class="pdp-review-card">
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">March 2026</span></div>
+          <p class="pdp-review-card__name">Rajan Pillai</p>
+          <p class="pdp-review-card__text">"Main roz subah oil pulling ke liye use karta hoon — 3 hafte mein hi teeth
+            aur gums mein farak dikh gaya! Ayurveda wale sach bolte the, sesame oil ekdum best hai is kaam ke liye."</p>
+        </div>
+        <div class="pdp-review-card">
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★★</span><span
+              class="pdp-review-card__date">February 2026</span></div>
+          <p class="pdp-review-card__name">Ananya S</p>
+          <p class="pdp-review-card__text">"Pehle market wala til ka tel use karti thi par woh toh sirf naam ka hota
+            tha. Jiraso ka tel try kiya toh samjha ki asli cheez kaisi hoti hai! Har dish mein ek alag richness aati
+            hai."</p>
+        </div>
+        <div class="pdp-review-card">
+          <div class="pdp-review-card__top"><span class="pdp-review-card__stars">★★★★☆</span><span
+              class="pdp-review-card__date">January 2026</span></div>
+          <p class="pdp-review-card__name">Mohan K</p>
+          <p class="pdp-review-card__text">"Baal mein lagao ya khane mein — dono kaam ke liye perfect hai. Meri naani
+            bhi kehti thi ki til ka tel sab se kaam ka tel hota hai, aur yeh Jiraso wala bilkul waisi hi quality deta
+            hai."</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="pdp-related" data-reveal>
+      <p class="pdp-related__title">You May Also Like</p>
+      <div class="pdp-related__grid"><a href="product-mustard.html" class="pdp-related__card"><img
+            src="assets/bottle2.jpeg" alt="Mustard Oil" class="pdp-related__card-img">
+          <p class="pdp-related__card-name">Mustard Oil</p>
+        </a><a href="product-coconut.html" class="pdp-related__card"><img src="assets/bottle3.jpeg" alt="Coconut Oil"
+            class="pdp-related__card-img">
+          <p class="pdp-related__card-name">Coconut Oil</p>
+        </a><a href="product-groundnut.html" class="pdp-related__card"><img src="assets/bottle5.jpeg"
+            alt="Groundnut Oil" class="pdp-related__card-img">
+          <p class="pdp-related__card-name">Groundnut Oil</p>
+        </a></div>
+    </div>
   </main>
 
-  <footer class="site-footer-premium"><div class="container"><div class="site-footer-premium__inner"><span class="site-footer-premium__brand" style="display:flex;align-items:center;gap:0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics Logo" style="height: 48px;width:auto;">Jiraso Organics</span><nav class="site-footer-premium__links"><a href="index.html">Home</a><a href="process.html">Process</a><a href="products.html">Products</a><a href="reports.html">Reports</a><a href="know-your-oil.html">Know Your Oil</a><a href="contact.html">Contact</a></nav><p class="site-footer-premium__copy">Â© 2026 JIRASO Organics</p></div></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="main.js"></script>
+  <footer class="site-footer-premium">
+    <div class="container">
+      <div class="site-footer-premium__inner"><span class="site-footer-premium__brand"
+          style="display:flex;align-items:center;gap:0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics Logo"
+            style="height: 48px;width:auto;">Jiraso Organics</span>
+        <nav class="site-footer-premium__links"><a href="index.html">Home</a><a href="process.html">Process</a><a
+            href="products.html">Products</a><a href="reports.html">Reports</a><a href="know-your-oil.html">Know Your
+            Oil</a><a href="contact.html">Contact</a></nav>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="cart-manager.js"></script>
+  <script src="main.js"></script>
   <script>
-    const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');io.unobserve(x.target);}});},{threshold:0.08});document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
-    function switchImg(t,s){document.getElementById('main-img').src=s;document.querySelectorAll('.pdp-gallery__thumb').forEach(x=>x.classList.remove('is-active'));t.classList.add('is-active');}
-    let currentPrice=500,currentSize='1 Litre',qty=1,subscribed=false;
-    function selectSize(b,p){document.querySelectorAll('.pdp-size-btn').forEach(x=>x.classList.remove('is-active'));b.classList.add('is-active');currentPrice=p;currentSize=b.querySelector('.pdp-size-btn__ml').textContent;updatePrice();}
-    function changeQty(d){qty=Math.max(1,Math.min(50,qty+d));document.getElementById('qty-num').value=qty;updatePrice();}
-    function toggleSubscription(){subscribed=!subscribed;document.getElementById('sub-indicator').classList.toggle('is-on',subscribed);updatePrice();}
-    function updatePrice(){let p=currentPrice*qty;if(subscribed)p=Math.round(p*0.95);document.getElementById('display-price').textContent='â‚¹'+p;}
-    function addToCart(){const cart=JSON.parse(localStorage.getItem('jiraso_cart')||'[]');cart.push({name:'Sesame Oil',img:'assets/bottle.jpeg',color:'#b8bea8',badgeColor:'#f3eb66',badge:'Lemon',sub:'Rich aroma, ideal for South Indian & wellness cooking.',size:currentSize,price:currentPrice});localStorage.setItem('jiraso_cart',JSON.stringify(cart));const btn=document.getElementById('add-cart-btn');btn.textContent='âœ“ Added to Cart';btn.classList.add('is-added');setTimeout(()=>{btn.textContent='Add to Cart';btn.classList.remove('is-added');},2000);document.querySelectorAll('.cart-count').forEach(el=>{el.textContent=cart.length;});if(typeof window.animateFlyToCart==='function')window.animateFlyToCart(btn,'assets/bottle.jpeg');}
-    function trackBatch(){const v=document.getElementById('batch-input').value.trim();if(!v)return;alert('Batch '+v+' â€” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“');}
+    const io = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-visible'); io.unobserve(x.target); } }); }, { threshold: 0.08 }); document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    function switchImg(t, s) { document.getElementById('main-img').src = s; document.querySelectorAll('.pdp-gallery__thumb').forEach(x => x.classList.remove('is-active')); t.classList.add('is-active'); }
+    let currentPrice = 500, currentSize = '1 Litre', qty = 1, subscribed = false;
+    function selectSize(b, p) { document.querySelectorAll('.pdp-size-btn').forEach(x => x.classList.remove('is-active')); b.classList.add('is-active'); currentPrice = p; currentSize = b.querySelector('.pdp-size-btn__ml').textContent; updatePrice(); }
+    function changeQty(d) { qty = Math.max(1, Math.min(50, qty + d)); document.getElementById('qty-num').value = qty; updatePrice(); }
+    function toggleSubscription() { subscribed = !subscribed; document.getElementById('sub-indicator').classList.toggle('is-on', subscribed); updatePrice(); }
+    function updatePrice() { let p = currentPrice * qty; if (subscribed) p = Math.round(p * 0.95); document.getElementById('display-price').textContent = '₹' + p; }
+    function addToCart() { const cart = JSON.parse(localStorage.getItem('jiraso_cart') || '[]'); cart.push({ name: 'Sesame Oil', img: 'assets/bottle.jpeg', color: '#b8bea8', badgeColor: '#f3eb66', badge: 'Lemon', sub: 'Rich aroma, ideal for South Indian & wellness cooking.', size: currentSize, price: currentPrice }); localStorage.setItem('jiraso_cart', JSON.stringify(cart)); const btn = document.getElementById('add-cart-btn'); btn.textContent = 'âœ“ Added to Cart'; btn.classList.add('is-added'); setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('is-added'); }, 2000); document.querySelectorAll('.cart-count').forEach(el => { el.textContent = cart.length; }); if (typeof window.animateFlyToCart === 'function') window.animateFlyToCart(btn, 'assets/bottle.jpeg'); }
+    function trackBatch() { const v = document.getElementById('batch-input').value.trim(); if (!v) return; alert('Batch ' + v + ' ”” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“'); }
   </script>
   <script>
-    const _hbg=document.getElementById('hbg'),_md=document.getElementById('mob-drawer'),_mc=document.getElementById('mob-close');
-    if(_hbg)_hbg.addEventListener('click',()=>_md.classList.toggle('open'));
-    if(_mc)_mc.addEventListener('click',()=>_md.classList.remove('open'));
-    const _cc=document.getElementById('cart-count');
-    if(_cc){const _c=JSON.parse(localStorage.getItem('jiraso_cart')||'[]');_cc.textContent=_c.length;}
+    const _cc = document.querySelectorAll('.cart-count');
+    const _c = JSON.parse(localStorage.getItem('jiraso_cart') || '[]');
+    _cc.forEach(el => { el.textContent = _c.length; });
   </script>
 </body>
+
 </html>
-
-
-
-
-

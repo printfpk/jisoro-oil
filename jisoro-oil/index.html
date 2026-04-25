@@ -1249,6 +1249,8 @@
       transform: rotateY(-4deg) scale(.98);
       transition: transform .5s var(--ease1), box-shadow .5s;
       box-shadow: 0 8px 30px rgba(23, 20, 15, .08);
+      position: relative;
+      cursor: pointer;
     }
 
     .strip-img:hover {
@@ -1265,6 +1267,93 @@
 
     .strip-img:hover img {
       transform: scale(1.05)
+    }
+
+    .strip-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 2;
+    }
+
+    .strip-img:hover .strip-overlay {
+      opacity: 1;
+    }
+
+    .strip-overlay span {
+      background: #fff;
+      color: var(--ink);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transform: translateY(10px);
+      transition: transform 0.3s var(--ease1);
+    }
+
+    .strip-img:hover .strip-overlay span {
+      transform: translateY(0);
+    }
+
+    /* Fullscreen Modal */
+    .fs-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0.4s;
+      padding: 1rem;
+    }
+    
+    .fs-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .fs-modal__img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform: scale(0.9);
+      transition: transform 0.4s var(--ease1);
+    }
+    
+    .fs-modal.active .fs-modal__img {
+      transform: scale(1);
+    }
+    
+    .fs-modal__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: background 0.3s;
+      border: none;
+    }
+    
+    .fs-modal__close:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     /* ======================================================
@@ -2503,23 +2592,23 @@
   <section class="strip-section" id="gallery" aria-label="Gallery">
     <div class="strip-track" id="strip">
       <!-- Original set -->
-      <div class="strip-img"><img src="assets/1.png" alt="Gallery 1" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/2.png" alt="Gallery 2" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/3.png" alt="Gallery 3" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/4.png" alt="Gallery 4" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/5.png" alt="Gallery 5" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/6.png" alt="Gallery 6" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/7.png" alt="Gallery 7" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/8.png" alt="Gallery 8" loading="lazy"></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="Gallery 1" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="Gallery 2" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="Gallery 3" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="Gallery 4" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="Gallery 5" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="Gallery 6" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="Gallery 7" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="Gallery 8" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
       <!-- Duplicate -->
-      <div class="strip-img"><img src="assets/1.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/2.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/3.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/4.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/5.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/6.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/7.png" alt="" aria-hidden="true" loading="lazy"></div>
-      <div class="strip-img"><img src="assets/8.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
     </div>
   </section>
 
@@ -3193,8 +3282,29 @@
   </script>
 
   <script src="main.js"></script>
-</body>
 
+  <!-- Fullscreen Modal -->
+  <div class="fs-modal" id="fsModal" onclick="closeFsModal()">
+    <button class="fs-modal__close" onclick="closeFsModal()">&times;</button>
+    <img src="" alt="Fullscreen view" class="fs-modal__img" id="fsModalImg" onclick="event.stopPropagation()">
+  </div>
+
+  <script>
+    function openFsModal(el) {
+      const img = el.querySelector('img');
+      if (!img) return;
+      const modal = document.getElementById('fsModal');
+      const modalImg = document.getElementById('fsModalImg');
+      modalImg.src = img.src;
+      modal.classList.add('active');
+    }
+
+    function closeFsModal() {
+      const modal = document.getElementById('fsModal');
+      modal.classList.remove('active');
+    }
+  </script>
+</body>
 </html>
 
 
