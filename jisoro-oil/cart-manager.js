@@ -275,16 +275,24 @@
     const close  = $('#mob-close');
     if (!hbg || !drawer) return;
 
+    const closeDrawer = () => {
+      drawer.classList.remove('open');
+      hbg.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
     hbg.addEventListener('click', () => {
       const isOpen = drawer.classList.toggle('open');
       hbg.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    if (close) close.addEventListener('click', () => {
-      drawer.classList.remove('open');
-      hbg.classList.remove('open');
-    });
+    
+    if (close) close.addEventListener('click', closeDrawer);
+    
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { drawer.classList.remove('open'); hbg.classList.remove('open'); }
+      if (e.key === 'Escape') closeDrawer();
     });
   }
 

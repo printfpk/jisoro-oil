@@ -492,3 +492,23 @@ main h3 {
   .trace-input-group input { border-radius: 8px; background: var(--cream); }
   .trace-input-group button { width: 100%; border-radius: 8px; }
 }
+
+@media(max-width: 768px) {
+  .hdr__cart .cart-label { display: none; }
+  .hdr__cart { font-size: 0; padding: 0.5rem; border-color: transparent; }
+  .hdr__cart svg { width: 20px; height: 20px; }
+}
+
+.hbg.open span:nth-child(1), .hbg.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg) !important;
+}
+
+.hbg.open span:nth-child(2), .hbg.is-open span:nth-child(2) {
+  opacity: 0 !important;
+  transform: scaleX(0) !important;
+}
+
+.hbg.open span:nth-child(3), .hbg.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg) !important;
+}
+
