@@ -46,8 +46,10 @@
       border: 1px solid var(--border, #DDD6CB);
       border-radius: 18px;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 110px 1fr;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.25rem;
       transition: box-shadow .25s, transform .25s
     }
 
@@ -60,79 +62,88 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
-      min-height: 120px
+      width: 110px;
+      height: 120px;
+      background: #fff !important;
+      border: 1px solid var(--border, #DDD6CB);
+      border-radius: 12px;
+      flex-shrink: 0;
     }
 
     .cmi-thumb img {
-      width: 82px;
-      height: 82px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
-      border-radius: 10px
     }
 
     .cmi-body {
-      padding: 1.25rem 1.25rem 1.25rem 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
       gap: .3rem;
-      justify-content: center
+      justify-content: center;
+      flex-grow: 1;
     }
 
     .cmi-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-style: italic;
-      font-weight: 500;
+      font-size: 1.35rem;
+      font-style: normal;
+      font-weight: 700;
       color: var(--ink, #17140F);
-      line-height: 1.25
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
     }
 
     .cmi-size {
       font-family: 'DM Mono', monospace;
-      font-size: .6rem;
+      font-size: .8rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--mist, #928D85)
+      letter-spacing: .05em;
+      color: var(--slate, #3A352F)
     }
 
     .cmi-sub {
-      font-size: .8rem;
-      color: var(--slate, #5A554E);
+      font-size: .95rem;
+      color: var(--ink, #2B2822);
       line-height: 1.5;
-      margin-top: .1rem;
+      margin-top: .3rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
-      overflow: hidden
+      overflow: hidden;
+      font-weight: 500;
     }
 
     .cmi-actions {
       display: flex;
       align-items: center;
       gap: .55rem;
-      margin-top: .6rem;
+      margin-top: .8rem;
       flex-wrap: wrap
     }
 
     .cmi-qty {
       display: flex;
       align-items: center;
-      border: 1.5px solid var(--border, #DDD6CB);
+      border: 1.5px solid var(--slate, #5A554E);
       border-radius: 8px;
-      overflow: hidden
+      overflow: hidden;
+      background: #fff;
     }
 
     .cmi-qbtn {
       background: none;
       border: none;
       cursor: pointer;
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.15rem;
+      font-weight: 600;
       color: var(--ink, #17140F);
       transition: background .15s
     }
@@ -143,8 +154,9 @@
 
     .cmi-qnum {
       font-family: 'DM Mono', monospace;
-      font-size: .78rem;
-      min-width: 26px;
+      font-size: .95rem;
+      font-weight: 600;
+      min-width: 32px;
       text-align: center;
       color: var(--ink, #17140F)
     }
@@ -154,10 +166,11 @@
       display: inline-flex;
       align-items: center;
       gap: .3rem;
-      padding: .32rem .65rem;
+      padding: .4rem .85rem;
       border-radius: 7px;
       font-family: 'DM Mono', monospace;
-      font-size: .6rem;
+      font-size: .7rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .07em;
       cursor: pointer;
@@ -177,9 +190,9 @@
     }
 
     .cmi-rm {
-      background: transparent;
-      border: 1.5px solid var(--border, #DDD6CB);
-      color: var(--slate, #5A554E)
+      background: #fff;
+      border: 1.5px solid var(--slate, #5A554E);
+      color: var(--ink, #17140F);
     }
 
     .cmi-rm:hover {
@@ -337,13 +350,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: .7rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      padding: .85rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .15);
       font-family: 'DM Mono', monospace;
-      font-size: .7rem;
+      font-size: .8rem;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: .05em;
-      color: rgba(255, 255, 255, .55)
+      color: rgba(255, 255, 255, .85)
     }
 
     .cm-sum__row span:last-child {
@@ -366,14 +380,16 @@
 
     .cm-sum__tlabel {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 1.35rem;
       font-style: italic;
-      color: rgba(255, 255, 255, .8)
+      font-weight: 600;
+      color: #fff;
     }
 
     .cm-sum__tval {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--gold-l, #E8B668)
     }
 

@@ -8,7 +8,7 @@
 
   /* ── Constants ─────────────────────────────────────────────── */
   const STORAGE_KEY  = 'jiraso_cart';
-  const WA_NUMBER    = '918393976770';
+  const WA_NUMBER    = '919479976760';
 
   /* ── Helpers ───────────────────────────────────────────────── */
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -70,10 +70,11 @@
   function addItem(item) {
     const cart     = readCart();
     const existing = cart.find(c => c.name === item.name && c.size === item.size);
+    const qtyToAdd = Number.isFinite(item.qty) ? item.qty : 1;
     if (existing) {
-      existing.qty += 1;
+      existing.qty += qtyToAdd;
     } else {
-      cart.push({ ...item, qty: 1 });
+      cart.push({ ...item, qty: qtyToAdd });
     }
     writeCart(cart);
     refreshBadges();

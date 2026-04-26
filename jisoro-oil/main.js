@@ -85,7 +85,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initCart() {
   const CART_STORAGE_KEY = 'jiraso_cart';
-  const WHATSAPP_NUMBER = '918393976770';
+  const WHATSAPP_NUMBER = '919479976760';
 
   const addButtons = qsa('.product-card-quick-add');
   const navCount = qs('#cart-count-nav');
@@ -749,8 +749,12 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initGenericReveal() {
   qsa('[data-reveal]').forEach(el => {
+    // Disable CSS transitions so GSAP can animate smoothly without lag
+    el.style.transition = 'none';
+
     const dir = el.dataset.reveal || 'up';
-    const delay = parseFloat(el.dataset.delay) || 0;
+    // The HTML has data-delay="1", "2", etc. Treat them as 150ms steps.
+    const delay = (parseFloat(el.dataset.delay) || 0) * 0.15;
 
     const fromVars = { opacity: 0 };
     if (dir === 'up') fromVars.y = 40;
@@ -768,7 +772,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top bottom-=10%',
+        start: 'top bottom',
       },
     });
   });
