@@ -110,7 +110,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
           name: item.name,
           size: item.size || 'Standard',
           qty: item.qty,
-          image: item.image || 'assets/bottle.jpeg',
+          image: item.image || 'assets/mustard.png',
           subtitle: item.subtitle || 'Pure wood-pressed oil.',
           badge: item.badge || 'In Cart',
           cardBg: item.cardBg || '#b8bea8',
@@ -143,7 +143,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
     const bagRect = bagIcon.getBoundingClientRect();
 
     const img = document.createElement('img');
-    img.src = imgUrl || 'assets/bottle.jpeg';
+    img.src = imgUrl || 'assets/mustard.png';
     img.className = 'flying-cart-item';
     img.style.left = `${btnRect.left + btnRect.width / 2 - 30}px`;
     img.style.top = `${btnRect.top + btnRect.height / 2 - 30}px`;
@@ -204,7 +204,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 
       const image = document.createElement('img');
       image.className = 'product-card__img';
-      image.src = item.image || 'assets/bottle.jpeg';
+      image.src = item.image || 'assets/mustard.png';
       image.alt = item.name;
 
       const footer = document.createElement('div');
@@ -272,7 +272,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
       return {
         name: 'Item',
         size: 'Standard',
-        image: 'assets/bottle.jpeg',
+        image: 'assets/mustard.png',
         subtitle: 'Pure wood-pressed oil.',
         badge: 'In Cart',
         cardBg: '#b8bea8',
@@ -281,7 +281,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 
     const name = qs('.product-card__name', wrap)?.textContent?.trim() || 'Item';
     const size = qs('.product-card__size', wrap)?.textContent?.trim() || 'Standard';
-    const image = qs('.product-card__img', wrap)?.getAttribute('src') || 'assets/bottle.jpeg';
+    const image = qs('.product-card__img', wrap)?.getAttribute('src') || 'assets/mustard.png';
     const subtitle = qs('.product-card__sub', wrap)?.textContent?.trim() || 'Pure wood-pressed oil.';
     const badge = qs('.badge', wrap)?.textContent?.trim() || 'In Cart';
     const cardBg = qs('.product-card', wrap)?.style.getPropertyValue('--card-bg')?.trim() || '#b8bea8';
@@ -858,5 +858,39 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
   if (wrapper) {
     wrapper.addEventListener('mouseenter', () => clearInterval(autoTimer));
     wrapper.addEventListener('mouseleave', startAuto);
+  }
+})();
+
+// =============================================================
+// 19. INJECT "PARTNER US" NAV LINK ON ALL PAGES
+// =============================================================
+(function injectPartnerNav() {
+  // Desktop nav
+  var navUl = document.querySelector('.nav-links');
+  if (navUl && !navUl.querySelector('a[href="partner.html"]')) {
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = 'partner.html';
+    a.textContent = 'Partner Us';
+    li.appendChild(a);
+    navUl.appendChild(li);
+  }
+
+  // Mobile drawer
+  var drawer = document.getElementById('mob-drawer');
+  if (drawer && !drawer.querySelector('a[href="partner.html"]')) {
+    var da = document.createElement('a');
+    da.href = 'partner.html';
+    da.textContent = 'Partner Us';
+    drawer.appendChild(da);
+  }
+
+  // Footer nav
+  var footerNav = document.querySelector('.site-footer-premium__links');
+  if (footerNav && !footerNav.querySelector('a[href="partner.html"]')) {
+    var fa = document.createElement('a');
+    fa.href = 'partner.html';
+    fa.textContent = 'Partner Us';
+    footerNav.appendChild(fa);
   }
 })();

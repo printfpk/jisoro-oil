@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Partner with JIRASO Organics — become a distributor or stockist of premium wood-pressed oils.">
+  <title>Partner With Us | JIRASO Organics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inner-pages.css">
+  <link rel="stylesheet" href="inner-theme.css">
+  <style>
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .partner-card {
+      background: #fff;
+      border: 1px solid #DDD6CB;
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .partner-card:hover {
+      box-shadow: 0 16px 48px rgba(23,20,15,.1);
+      transform: translateY(-3px);
+    }
+    .partner-card__icon {
+      width: 52px; height: 52px;
+      background: #FAF7F0;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: #C4923A;
+    }
+    .partner-card__title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: #17140F;
+      margin-bottom: .5rem;
+    }
+    .partner-card__text {
+      font-size: .875rem;
+      color: #928D85;
+      line-height: 1.65;
+    }
+    .partner-form-wrap {
+      background: #17140F;
+      border-radius: 24px;
+      padding: 3rem;
+      color: #fff;
+      margin-top: 4rem;
+    }
+    .partner-form-wrap h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-style: italic;
+      color: #E8B668;
+      margin-bottom: .5rem;
+    }
+    .partner-form-wrap p {
+      color: rgba(255,255,255,.65);
+      font-size: .9rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .pf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media(max-width:640px) { .pf-grid { grid-template-columns: 1fr; } .partner-form-wrap { padding: 2rem 1.5rem; } }
+    .pf-field { display: flex; flex-direction: column; gap: .4rem; }
+    .pf-label {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.5);
+    }
+    .pf-input {
+      background: rgba(255,255,255,.07);
+      border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: .8rem 1rem;
+      color: #fff;
+      font-family: inherit;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .pf-input::placeholder { color: rgba(255,255,255,.3); }
+    .pf-input:focus { border-color: #C4923A; box-shadow: 0 0 0 3px rgba(196,146,58,.2); }
+    .pf-full { grid-column: 1 / -1; }
+    .pf-submit {
+      margin-top: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .pf-submit:hover { background: #1aab52; transform: translateY(-1px); }
+    .partner-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1px;
+      background: #DDD6CB;
+      border: 1px solid #DDD6CB;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+    .partner-stat {
+      background: #fff;
+      padding: 1.75rem 1.5rem;
+    }
+    .partner-stat__num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: #C4923A;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .partner-stat__label {
+      font-family: 'DM Mono', monospace;
+      font-size: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: #928D85;
+    }
+  </style>
+</head>
+<body class="inner-page">
+
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-bar__inner" id="announcement-bar-inner">
+      <span class="announcement-bar__item">Partner With JIRASO</span>
+      <span class="announcement-bar__item">Distributor & Stockist Opportunities</span>
+      <span class="announcement-bar__item">Premium Wood-Pressed Oils · Direct from Source</span>
+      <span class="announcement-bar__item">Partner With JIRASO</span>
+      <span class="announcement-bar__item">Distributor & Stockist Opportunities</span>
+      <span class="announcement-bar__item">Premium Wood-Pressed Oils · Direct from Source</span>
+    </div>
+  </div>
+
+  <header class="hdr" id="hdr">
+    <div class="container hdr__inner">
+      <a class="hdr__logo" href="index.html" style="display:flex;align-items:center;gap:.5rem;">
+        <img src="assets/logo.png?v=2" alt="Jiraso Organics" style="height:48px;width:auto;">
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="know-your-oil.html">Know Your Oil</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="partner.html" class="active">Partner Us</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <a class="hdr__cart" href="cart.html" id="cart-btn">
+          <div style="position:relative;display:inline-flex;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="cart-count">0</span>
+          </div>
+          <span class="cart-label">Bag</span>
+        </a>
+        <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mob-drawer" id="mob-drawer">
+    <button class="mob-close" id="mob-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="process.html">Process</a>
+    <a href="products.html">Products</a>
+    <a href="reports.html">Reports</a>
+    <a href="know-your-oil.html">Know Your Oil</a>
+    <a href="contact.html">Contact</a>
+    <a href="partner.html">Partner Us</a>
+  </div>
+
+  <!-- Hero -->
+  <div class="ip-hero">
+    <div class="ip-hero__orb ip-hero__orb--1"></div>
+    <div class="ip-hero__orb ip-hero__orb--2"></div>
+    <div class="ip-hero__noise"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="ip-hero__eyebrow" data-reveal data-delay="1">Grow Together</p>
+      <h1 class="ip-hero__heading" data-reveal data-delay="2">Partner With Us</h1>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Join the JIRASO network as a distributor, stockist, or retail partner. Bring authentic wood-pressed oils to your customers.</p>
+    </div>
+  </div>
+
+  <main class="section-margin container">
+
+    <!-- Label -->
+    <div class="ip-label" data-reveal>
+      <span class="ip-label__text">Partnership Models</span>
+      <span class="ip-label__line"></span>
+      <span class="ip-label__text">3 Options</span>
+    </div>
+
+    <!-- Partner type cards -->
+    <div class="partner-grid">
+      <div class="partner-card" data-reveal data-delay="1">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <p class="partner-card__title">Retail Stockist</p>
+        <p class="partner-card__text">Stock JIRASO oils in your store — grocery shops, supermarkets, organic stores. Minimum order: 24 units. Attractive margins with branding support.</p>
+      </div>
+
+      <div class="partner-card" data-reveal data-delay="2">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <p class="partner-card__title">Area Distributor</p>
+        <p class="partner-card__text">Distribute JIRASO across your city or district. Exclusive territorial rights, volume-based pricing, and dedicated support from our team.</p>
+      </div>
+
+      <div class="partner-card" data-reveal data-delay="3">
+        <div class="partner-card__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <p class="partner-card__title">Online / D2C Partner</p>
+        <p class="partner-card__text">Sell JIRASO on your own platform or social channels. We provide product assets, pricing support, and fulfilment assistance.</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="partner-stats" data-reveal>
+      <div class="partner-stat">
+        <p class="partner-stat__num">20%+</p>
+        <p class="partner-stat__label">Retailer Margin</p>
+      </div>
+      <div class="partner-stat">
+        <p class="partner-stat__num">48h</p>
+        <p class="partner-stat__label">Order Dispatch</p>
+      </div>
+      <div class="partner-stat">
+        <p class="partner-stat__num">100%</p>
+        <p class="partner-stat__label">Pure & Lab Tested</p>
+      </div>
+      <div class="partner-stat">
+        <p class="partner-stat__num">FSSAI</p>
+        <p class="partner-stat__label">Certified</p>
+      </div>
+    </div>
+
+    <!-- Partner Enquiry Form -->
+    <div class="partner-form-wrap" data-reveal>
+      <h2>Start the Conversation</h2>
+      <p>Fill the form below and our team will reach out within 24 hours via WhatsApp or phone.</p>
+
+      <form id="partner-form" novalidate>
+        <div class="pf-grid">
+          <div class="pf-field">
+            <label class="pf-label" for="pf-name">Full Name *</label>
+            <input class="pf-input" type="text" id="pf-name" placeholder="Your name" required>
+          </div>
+          <div class="pf-field">
+            <label class="pf-label" for="pf-phone">WhatsApp / Phone *</label>
+            <input class="pf-input" type="tel" id="pf-phone" placeholder="10-digit number" maxlength="10" required>
+          </div>
+          <div class="pf-field">
+            <label class="pf-label" for="pf-business">Business / Shop Name</label>
+            <input class="pf-input" type="text" id="pf-business" placeholder="Your business name">
+          </div>
+          <div class="pf-field">
+            <label class="pf-label" for="pf-city">City / District *</label>
+            <input class="pf-input" type="text" id="pf-city" placeholder="Your city" required>
+          </div>
+          <div class="pf-field pf-full">
+            <label class="pf-label" for="pf-type">Partnership Type *</label>
+            <select class="pf-input" id="pf-type" required>
+              <option value="">Select partnership type</option>
+              <option value="Retail Stockist">Retail Stockist</option>
+              <option value="Area Distributor">Area Distributor</option>
+              <option value="Online / D2C Partner">Online / D2C Partner</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="pf-field pf-full">
+            <label class="pf-label" for="pf-msg">Additional Message</label>
+            <textarea class="pf-input" id="pf-msg" rows="3" placeholder="Tell us more about your business..."></textarea>
+          </div>
+        </div>
+        <p id="pf-err" style="color:#f28388;font-size:.75rem;margin-top:.75rem;display:none;">Please fill all required fields.</p>
+        <button type="submit" class="pf-submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Send Enquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer class="site-footer-premium">
+    <div class="container">
+      <div class="site-footer-premium__inner">
+        <span class="site-footer-premium__brand" style="display:flex;align-items:center;gap:.5rem;"><img src="assets/logo.png?v=2" alt="Jiraso Organics Logo" style="height:48px;width:auto;"></span>
+        <nav class="site-footer-premium__links">
+          <a href="index.html">Home</a>
+          <a href="process.html">Process</a>
+          <a href="products.html">Products</a>
+          <a href="reports.html">Reports</a>
+          <a href="know-your-oil.html">Know Your Oil</a>
+          <a href="contact.html">Contact</a>
+          <a href="partner.html">Partner Us</a>
+        </nav>
+        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="cart-manager.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.getElementById('partner-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('pf-name').value.trim();
+      var phone = document.getElementById('pf-phone').value.trim();
+      var city = document.getElementById('pf-city').value.trim();
+      var type = document.getElementById('pf-type').value;
+      var business = document.getElementById('pf-business').value.trim();
+      var msg = document.getElementById('pf-msg').value.trim();
+      var err = document.getElementById('pf-err');
+
+      if (!name || phone.length < 10 || !city || !type) {
+        err.style.display = 'block';
+        return;
+      }
+      err.style.display = 'none';
+
+      var waMsg = '🤝 *Partnership Enquiry — JIRASO Organics*\n\n' +
+        '*Name:* ' + name + '\n' +
+        '*Phone:* ' + phone + '\n' +
+        (business ? '*Business:* ' + business + '\n' : '') +
+        '*City:* ' + city + '\n' +
+        '*Partnership Type:* ' + type + '\n' +
+        (msg ? '*Message:* ' + msg + '\n' : '') +
+        '\nPlease get in touch at your earliest convenience.';
+
+      window.open('https://wa.me/918393976770?text=' + encodeURIComponent(waMsg), '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>

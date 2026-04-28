@@ -2271,7 +2271,7 @@
   <!-- ── HEADER ─────────────────────────────────────── -->
   <header class="hdr" id="hdr">
     <div class="container hdr__inner">
-      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png" alt="Jiraso Organics" style="height: 48px; width: auto;">Jiraso <span>Organics</span></a>
+      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png?v=2" alt="Jiraso Organics" style="height: 48px; width: auto;"></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -2394,10 +2394,10 @@
         <div class="pc rv d1" id="pc-mustard">
           <p class="pc__num">01 / Mustard</p>
           <div class="pc__img-wrap">
-            <img class="pc__img" src="assets/bottle2.jpeg" alt="Mustard Oil" loading="lazy">
+            <img class="pc__img" src="assets/mustard.png" alt="Mustard Oil" loading="lazy">
           </div>
           <div class="pc__body">
-            <p class="pc__name">Mustard Oil</p>
+            <p class="pc__name">Wood Pressed Black Mustard oil</p>
             <p class="pc__desc">Bold, pungent oil perfect for traditional Indian cooking.</p>
             <div class="pc__ribbon">
               <div class="ribbon-track">
@@ -2421,7 +2421,7 @@
               </svg>
               View Product
             </a>
-            <button class="pc__overlay-cart" data-product="Mustard Oil">
+            <button class="pc__overlay-cart" data-product="Wood Pressed Black Mustard oil">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="9" cy="21" r="1" />
@@ -2436,7 +2436,7 @@
         <div class="pc rv d2" id="pc-sesame">
           <p class="pc__num">02 / Sesame</p>
           <div class="pc__img-wrap">
-            <img class="pc__img" src="assets/bottle.jpeg" alt="Sesame Oil" loading="lazy">
+            <img class="pc__img" src="assets/sesame.png" alt="Sesame Oil" loading="lazy">
           </div>
           <div class="pc__body">
             <p class="pc__name">Sesame Oil</p>
@@ -2478,7 +2478,7 @@
         <div class="pc rv d3" id="pc-coconut">
           <p class="pc__num">03 / Coconut</p>
           <div class="pc__img-wrap">
-            <img class="pc__img" src="assets/bottle3.jpeg" alt="Coconut Oil" loading="lazy">
+            <img class="pc__img" src="assets/coconut.png" alt="Coconut Oil" loading="lazy">
           </div>
           <div class="pc__body">
             <p class="pc__name">Coconut Oil</p>
@@ -2520,7 +2520,7 @@
         <div class="pc rv d4" id="pc-groundnut">
           <p class="pc__num">04 / Groundnut</p>
           <div class="pc__img-wrap">
-            <img class="pc__img" src="assets/bottle5.jpeg" alt="Groundnut Oil" loading="lazy">
+            <img class="pc__img" src="assets/groundnut.png" alt="Groundnut Oil" loading="lazy">
           </div>
           <div class="pc__body">
             <p class="pc__name">Groundnut Oil</p>
@@ -2674,7 +2674,7 @@
       <div class="spotlight__grid">
         <div>
           <div class="spotlight__img" id="spot-img">
-            <img src="assets/mid_bottle.jpeg" alt="Product Range">
+            <img src="assets/mid_sesame.png" alt="Product Range">
             <div class="spotlight__badge">
               <p class="mono">Feature</p>
               <strong>Complete Kitchen</strong>
@@ -2771,7 +2771,7 @@
   ⑨ TESTIMONIAL — Cinematic full-bleed
 ================================================================ -->
   <section class="testi-section" id="product-quote">
-    <img class="testi__bottle" src="assets/flying_bottle.jpeg" alt="" aria-hidden="true">
+    <img class="testi__bottle" src="assets/flying_sesame.png" alt="" aria-hidden="true">
     <div class="testi__inner">
       <div class="testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <blockquote class="testi__quote" id="testi-quote">
@@ -2795,7 +2795,7 @@
           <p>Everything you need to know about wood-pressed oils and why they outperform refined alternatives in taste,
             nutrition, and purity.</p>
           <div class="faqs-img" style="margin-top:2rem">
-            <img src="assets/flying_bottle.jpeg" alt="JIRASO bottle" loading="lazy">
+            <img src="assets/flying_sesame.png" alt="JIRASO bottle" loading="lazy">
           </div>
         </div>
         <div class="faq-list rv d2">
@@ -3099,7 +3099,7 @@
 
         // Trigger the fly animation
         const imgEl = btn.closest('.pc').querySelector('.pc__img');
-        const imgSrc = imgEl ? imgEl.getAttribute('src') : 'assets/bottle.jpeg';
+        const imgSrc = imgEl ? imgEl.getAttribute('src') : 'assets/sesame.png';
         if (typeof window.animateFlyToCart === 'function') {
           window.animateFlyToCart(btn, imgSrc);
         }
