@@ -901,68 +901,79 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 (function initFlipTextHover() {
   if (typeof gsap === 'undefined') return;
 
-  const links = document.querySelectorAll('.nav-links a, .site-footer-premium__links a, .site-footer__col a, .fc a, .mob-drawer a');
-  
-  links.forEach(link => {
-    // Exclude icons or already processed
-    if (link.querySelector('svg') || link.dataset.flipInit) return;
-    link.dataset.flipInit = 'true';
-
-    const text = link.textContent.trim();
-    if (!text) return;
-
-    link.textContent = '';
-    // Must be relative and block-like so overflow works properly.
-    // Some links might be flex items, so keep their natural sizing.
-    // We'll wrap the content in a relative div.
+  // Small delay to ensure all injected links (like Partner Us) are in the DOM
+  setTimeout(() => {
+    const links = document.querySelectorAll('.nav-links a, .site-footer-premium__links a, .site-footer__col a, .fc a, .mob-drawer a');
     
-    const wrapper = document.createElement('div');
-    wrapper.style.position = 'relative';
-    wrapper.style.display = 'inline-flex';
-    wrapper.style.overflow = 'hidden';
+    links.forEach(link => {
+      if (link.querySelector('svg') || link.dataset.flipInit) return;
+      link.dataset.flipInit = 'true';
 
-    const front = document.createElement('div');
-    front.textContent = text;
-    front.style.display = 'inline-block';
+      const text = link.textContent.trim();
+      if (!text) return;
 
-    const back = document.createElement('div');
-    back.textContent = text;
-    back.style.position = 'absolute';
-    back.style.left = '0';
-    back.style.top = '0';
-    back.style.display = 'inline-block';
-
-    wrapper.appendChild(front);
-    wrapper.appendChild(back);
-    link.appendChild(wrapper);
-
-    // If SplitText is available, do char stagger, else just word slide
-    if (typeof SplitText !== 'undefined') {
-      try {
-        const splitFront = new SplitText(front, { type: 'chars', charsClass: 'flip-char' });
-        const splitBack = new SplitText(back, { type: 'chars', charsClass: 'flip-char' });
-        
-        // Ensure chars are styled correctly to sit side-by-side
-        gsap.set(splitFront.chars, { display: 'inline-block' });
-        gsap.set(splitBack.chars, { display: 'inline-block', yPercent: 100 });
-        
-        const tl = gsap.timeline({ paused: true });
-        tl.to(splitFront.chars, { yPercent: -100, stagger: 0.02, duration: 0.4, ease: 'power3.inOut' }, 0)
-          .to(splitBack.chars, { yPercent: 0, stagger: 0.02, duration: 0.4, ease: 'power3.inOut' }, 0);
-          
-        link.addEventListener('mouseenter', () => tl.play());
-        link.addEventListener('mouseleave', () => tl.reverse());
-        return;
-      } catch(e) { }
-    }
-    
-    // Fallback if SplitText fails or is not available
-    gsap.set(back, { yPercent: 100 });
-    const tl = gsap.timeline({ paused: true });
-    tl.to(front, { yPercent: -100, duration: 0.4, ease: 'power3.inOut' }, 0)
-      .to(back, { yPercent: 0, duration: 0.4, ease: 'power3.inOut' }, 0);
+      link.textContent = '';
+      link.style.overflow = 'hidden';
       
-    link.addEventListener('mouseenter', () => tl.play());
-    link.addEventListener('mouseleave', () => tl.reverse());
-  });
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flip-wrapper';
+      wrapper.style.position = 'relative';
+      wrapper.style.display = 'inline-flex';
+      wrapper.style.overflow = 'hidden';
+      wrapper.style.height = '1.2em'; // Fixed height to prevent shifting
+      wrapper.style.lineHeight = '1.2em';
+
+      const front = document.createElement('div');
+      front.className = 'flip-front';
+      front.style.display = 'inline-block';
+
+      const back = document.createElement('div');
+      back.className = 'flip-back';
+      back.style.position = 'absolute';
+      back.style.left = '0';
+      back.style.top = '0';
+      back.style.display = 'inline-block';
+      back.style.width = '100%';
+
+      // Manual character splitting for guaranteed "SplitText" effect
+      const chars = text.split('');
+      chars.forEach(char => {
+        const spanF = document.createElement('span');
+        spanF.textContent = char === ' ' ? '\u00A0' : char;
+        spanF.style.display = 'inline-block';
+        front.appendChild(spanF);
+
+        const spanB = document.createElement('span');
+        spanB.textContent = char === ' ' ? '\u00A0' : char;
+        spanB.style.display = 'inline-block';
+        back.appendChild(spanB);
+      });
+
+      wrapper.appendChild(front);
+      wrapper.appendChild(back);
+      link.appendChild(wrapper);
+
+      const frontChars = front.querySelectorAll('span');
+      const backChars = back.querySelectorAll('span');
+
+      gsap.set(backChars, { yPercent: 100 });
+
+      const tl = gsap.timeline({ paused: true });
+      tl.to(frontChars, { 
+        yPercent: -100, 
+        stagger: 0.02, 
+        duration: 0.45, 
+        ease: 'power3.inOut' 
+      }, 0)
+      .to(backChars, { 
+        yPercent: 0, 
+        stagger: 0.02, 
+        duration: 0.45, 
+        ease: 'power3.inOut' 
+      }, 0);
+
+      link.addEventListener('mouseenter', () => tl.play());
+      link.addEventListener('mouseleave', () => tl.reverse());
+    });
+  }, 100); 
 })();
