@@ -113,7 +113,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
           image: item.image || 'assets/mustard.png',
           subtitle: item.subtitle || 'Pure wood-pressed oil.',
           badge: item.badge || 'In Cart',
-          cardBg: item.cardBg || '#b8bea8',
+          cardBg: item.cardBg || '#E8E4D9',
         }));
     } catch (e) {
       return [];
@@ -193,7 +193,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
       const card = document.createElement('a');
       card.className = 'product-card';
       card.href = '#';
-      card.style.setProperty('--card-bg', item.cardBg || '#b8bea8');
+      card.style.setProperty('--card-bg', item.cardBg || '#E8E4D9');
 
       const badge = document.createElement('span');
       badge.className = 'badge';
@@ -275,7 +275,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
         image: 'assets/mustard.png',
         subtitle: 'Pure wood-pressed oil.',
         badge: 'In Cart',
-        cardBg: '#b8bea8',
+        cardBg: '#E8E4D9',
       };
     }
 
@@ -284,7 +284,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
     const image = qs('.product-card__img', wrap)?.getAttribute('src') || 'assets/mustard.png';
     const subtitle = qs('.product-card__sub', wrap)?.textContent?.trim() || 'Pure wood-pressed oil.';
     const badge = qs('.badge', wrap)?.textContent?.trim() || 'In Cart';
-    const cardBg = qs('.product-card', wrap)?.style.getPropertyValue('--card-bg')?.trim() || '#b8bea8';
+    const cardBg = qs('.product-card', wrap)?.style.getPropertyValue('--card-bg')?.trim() || '#E8E4D9';
 
     return { name, size, image, subtitle, badge, cardBg };
   };
@@ -893,4 +893,76 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
     fa.textContent = 'Partner Us';
     footerNav.appendChild(fa);
   }
+})();
+
+// =============================================================
+// 20. GSAP FLIP TEXT ANIMATION FOR NAVBAR & FOOTER
+// =============================================================
+(function initFlipTextHover() {
+  if (typeof gsap === 'undefined') return;
+
+  const links = document.querySelectorAll('.nav-links a, .site-footer-premium__links a, .site-footer__col a, .fc a, .mob-drawer a');
+  
+  links.forEach(link => {
+    // Exclude icons or already processed
+    if (link.querySelector('svg') || link.dataset.flipInit) return;
+    link.dataset.flipInit = 'true';
+
+    const text = link.textContent.trim();
+    if (!text) return;
+
+    link.textContent = '';
+    // Must be relative and block-like so overflow works properly.
+    // Some links might be flex items, so keep their natural sizing.
+    // We'll wrap the content in a relative div.
+    
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.overflow = 'hidden';
+
+    const front = document.createElement('div');
+    front.textContent = text;
+    front.style.display = 'inline-block';
+
+    const back = document.createElement('div');
+    back.textContent = text;
+    back.style.position = 'absolute';
+    back.style.left = '0';
+    back.style.top = '0';
+    back.style.display = 'inline-block';
+
+    wrapper.appendChild(front);
+    wrapper.appendChild(back);
+    link.appendChild(wrapper);
+
+    // If SplitText is available, do char stagger, else just word slide
+    if (typeof SplitText !== 'undefined') {
+      try {
+        const splitFront = new SplitText(front, { type: 'chars', charsClass: 'flip-char' });
+        const splitBack = new SplitText(back, { type: 'chars', charsClass: 'flip-char' });
+        
+        // Ensure chars are styled correctly to sit side-by-side
+        gsap.set(splitFront.chars, { display: 'inline-block' });
+        gsap.set(splitBack.chars, { display: 'inline-block', yPercent: 100 });
+        
+        const tl = gsap.timeline({ paused: true });
+        tl.to(splitFront.chars, { yPercent: -100, stagger: 0.02, duration: 0.4, ease: 'power3.inOut' }, 0)
+          .to(splitBack.chars, { yPercent: 0, stagger: 0.02, duration: 0.4, ease: 'power3.inOut' }, 0);
+          
+        link.addEventListener('mouseenter', () => tl.play());
+        link.addEventListener('mouseleave', () => tl.reverse());
+        return;
+      } catch(e) { }
+    }
+    
+    // Fallback if SplitText fails or is not available
+    gsap.set(back, { yPercent: 100 });
+    const tl = gsap.timeline({ paused: true });
+    tl.to(front, { yPercent: -100, duration: 0.4, ease: 'power3.inOut' }, 0)
+      .to(back, { yPercent: 0, duration: 0.4, ease: 'power3.inOut' }, 0);
+      
+    link.addEventListener('mouseenter', () => tl.play());
+    link.addEventListener('mouseleave', () => tl.reverse());
+  });
 })();

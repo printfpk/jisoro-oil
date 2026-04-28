@@ -588,7 +588,7 @@
   }
 }
 .site-footer-premium__brand {
-  font-family: var(--ff-serif, var(--font-heading, "Playfair Display", serif));
+  font-family: var(--ff-serif, var(--font-heading, 'DejaVu Serif', 'DejaVu', serif));
   font-size: 1.5rem;
   color: #fff;
   display: flex !important;

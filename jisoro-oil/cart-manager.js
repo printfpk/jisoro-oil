@@ -33,7 +33,7 @@
           sub:        item.sub || item.subtitle || '',
           badge:      item.badge || 'Wood Pressed',
           badgeColor: item.badgeColor || '#f3eb66',
-          color:      item.color || item.cardBg || '#b8bea8',
+          color:      item.color || item.cardBg || '#E8E4D9',
           price:      Number.isFinite(item.price) ? item.price : 0,
         }));
     } catch {
@@ -201,7 +201,7 @@
       .jom-close:hover { background: #DDD6CB; }
 
       .jom-title {
-        font-family: 'Playfair Display', 'DM Serif Display', Georgia, serif;
+        font-family: 'DejaVu Serif', 'DejaVu', serif;
         font-size: 1.55rem;
         font-style: italic;
         color: #17140F;
@@ -470,7 +470,7 @@
           sub:        d.sub        || '',
           badge:      d.badge      || 'Wood Pressed',
           badgeColor: d.badgeColor || '#f3eb66',
-          color:      d.color      || '#b8bea8',
+          color:      d.color      || '#E8E4D9',
           price:      parseInt(d.price) || 0,
         });
         flyToCart(btn, d.img);
@@ -496,7 +496,7 @@
           sub:        d.sub        || '',
           badge:      d.badge      || 'Wood Pressed',
           badgeColor: d.badgeColor || '#f3eb66',
-          color:      d.color      || '#b8bea8',
+          color:      d.color      || '#E8E4D9',
           price:      parseInt(d.price) || 0,
         });
         flyToCart(btn, btn.dataset.img);

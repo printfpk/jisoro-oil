@@ -9,14 +9,14 @@
 
 /* ---------- Warm Token Overrides ---------- */
 :root {
-  --cream:   #FAF7F0;
-  --warm:    #FDFCF8;
+  --cream:   #F5F2E9;
+  --warm:    #FFFFFF;
   --parch:   #EDE8DF;
-  --gold:    #C4923A;
+  --gold:    #C89B3C;
   --gold-l:  #E8B668;
   --gold-p:  #F5E3BF;
   --gold-d:  #A87830;
-  --ink:     #17140F;
+  --ink:     #0F3D2E;
   --char:    #2B2822;
   --slate:   #5A554E;
   --mist:    #928D85;
@@ -36,7 +36,7 @@
   --color-text:       var(--ink);
 
   --font-body:    'Inter', system-ui, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'DejaVu Serif', 'DejaVu', serif;
   --font-mono:    'DM Mono', 'Courier New', monospace;
 }
 
