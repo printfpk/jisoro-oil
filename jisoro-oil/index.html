@@ -663,7 +663,7 @@
 
     .btn--gold {
       background-color: transparent;
-      background-image: 
+      background-image:
         linear-gradient(110deg, var(--gold) 0%, var(--gold-l) 45%, #fff 50%, var(--gold-l) 55%, var(--gold) 100%),
         linear-gradient(var(--ink), var(--ink));
       background-size: 200% auto, 100% 100%;
@@ -676,14 +676,17 @@
     }
 
     .btn--gold:hover {
-      background-image: 
+      background-image:
         linear-gradient(110deg, var(--gold-l) 0%, var(--gold-p) 45%, #fff 50%, var(--gold-p) 55%, var(--gold-l) 100%),
         linear-gradient(var(--char), var(--char));
       box-shadow: 0 10px 30px rgba(23, 20, 15, .35);
       transform: translateY(-2px);
     }
+
     @keyframes shine-btn {
-      to { background-position: 200% center, center center; }
+      to {
+        background-position: 200% center, center center;
+      }
     }
 
     .btn--wire {
@@ -1111,9 +1114,19 @@
     }
 
     /* Out of Stock */
-    .pc.oos { position: relative; }
-    .pc.oos .pc__img-wrap, .pc.oos .pc__body { opacity: 0.7; }
-    .pc.oos .pc__overlay-cart { display: none !important; }
+    .pc.oos {
+      position: relative;
+    }
+
+    .pc.oos .pc__img-wrap,
+    .pc.oos .pc__body {
+      opacity: 0.7;
+    }
+
+    .pc.oos .pc__overlay-cart {
+      display: none !important;
+    }
+
     .oos-badge {
       position: absolute;
       top: 1.5rem;
@@ -1334,12 +1347,12 @@
       transition: opacity 0.4s, visibility 0.4s;
       padding: 1rem;
     }
-    
+
     .fs-modal.active {
       opacity: 1;
       visibility: visible;
     }
-    
+
     .fs-modal__img {
       max-width: 100%;
       max-height: 100%;
@@ -1347,11 +1360,11 @@
       transform: scale(0.9);
       transition: transform 0.4s var(--ease1);
     }
-    
+
     .fs-modal.active .fs-modal__img {
       transform: scale(1);
     }
-    
+
     .fs-modal__close {
       position: absolute;
       top: 1.5rem;
@@ -1371,7 +1384,7 @@
       transition: background 0.3s;
       border: none;
     }
-    
+
     .fs-modal__close:hover {
       background: rgba(255, 255, 255, 0.2);
     }
@@ -1716,17 +1729,20 @@
       .comp-grid {
         grid-template-columns: 1fr 1fr;
       }
+
       .cc--head:first-child,
       .comp-col--lbl {
         grid-column: span 2;
         background: rgba(255, 255, 255, 0.05);
         text-align: center;
       }
+
       .cc__val {
         font-size: 0.8rem;
         display: block;
         text-align: center;
       }
+
       .cc {
         padding: 1rem 0.75rem;
       }
@@ -2096,96 +2112,7 @@
       background: var(--ink)
     }
 
-    .footer-nl {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, #1F1C17 0%, #161310 60%, #1F1A12 100%);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
 
-    /* Glow orb */
-    .footer-nl::before {
-      content: '';
-      position: absolute;
-      top: -60%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(196, 146, 58, .12), transparent 70%);
-      pointer-events: none;
-    }
-
-    .footer-nl h3 {
-      font-family: var(--ff-serif);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 500;
-      color: #fff;
-      margin-bottom: .75rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .footer-nl p {
-      color: rgba(255, 255, 255, .45);
-      font-size: .92rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 1
-    }
-
-    .nl-form {
-      display: flex;
-      gap: .75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    .nl-form input {
-      padding: .9rem 1.5rem;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      background: rgba(255, 255, 255, .06);
-      color: #fff;
-      font-family: var(--ff-sans);
-      font-size: .9rem;
-      width: 300px;
-      max-width: 100%;
-      outline: none;
-      transition: border-color .3s, background .3s;
-    }
-
-    .nl-form input::placeholder {
-      color: rgba(255, 255, 255, .3)
-    }
-
-    .nl-form input:focus {
-      border-color: var(--gold);
-      background: rgba(255, 255, 255, .09)
-    }
-
-    /* Animated submit feedback */
-    .nl-form button {
-      position: relative;
-      overflow: hidden
-    }
-
-    .nl-form button::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
-      transform: translateX(-100%);
-    }
-
-    .nl-form button:hover::after {
-      transform: translateX(100%);
-      transition: transform .6s
-    }
 
     /* Footer grid */
     .footer-grid {
@@ -2313,7 +2240,7 @@
   <!-- ── HEADER ─────────────────────────────────────── -->
   <header class="hdr" id="hdr">
     <div class="container hdr__inner">
-      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png?v=2" alt="Jiraso Organics" style="height: 48px; width: auto;"></a>
+      <a class="hdr__logo" href="index.html">JIRASO <span>Organics</span></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -2637,23 +2564,63 @@
   <section class="strip-section" id="gallery" aria-label="Gallery">
     <div class="strip-track" id="strip">
       <!-- Original set -->
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="Gallery 1" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="Gallery 2" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="Gallery 3" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="Gallery 4" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="Gallery 5" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="Gallery 6" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="Gallery 7" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="Gallery 8" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="Gallery 1" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="Gallery 2" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="Gallery 3" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="Gallery 4" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="Gallery 5" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="Gallery 6" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="Gallery 7" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="Gallery 8" loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
       <!-- Duplicate -->
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
-      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="" aria-hidden="true" loading="lazy"><div class="strip-overlay"><span>View</span></div></div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/1.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/2.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/3.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/4.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/5.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/6.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/7.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
+      <div class="strip-img" onclick="openFsModal(this)"><img src="assets/8.png" alt="" aria-hidden="true"
+          loading="lazy">
+        <div class="strip-overlay"><span>View</span></div>
+      </div>
     </div>
   </section>
 
@@ -2934,20 +2901,12 @@
   ⑫ FOOTER
 ================================================================ -->
   <footer class="site-footer">
-    <div class="footer-nl">
-      <div class="container">
-        <h3>Inside JIRASO</h3>
-        <p>Updates on pure products, health tips and exclusive offers crafted for your wellness journey.</p>
-        <form class="nl-form" novalidate>
-          <input type="email" id="nl-email" placeholder="Enter your email address" aria-label="Email">
-          <button type="submit" class="btn btn--gold">Subscribe →</button>
-        </form>
-      </div>
-    </div>
+
     <div class="container">
       <div class="footer-grid">
         <div class="fb">
-          <p class="fb__logo">JIRAS<span>O</span>™</p>
+          <a href="index.html" class="fb__logo"><img src="assets/logo-white.png" alt="Jiraso Organics"
+              style="height: 55px; width: auto;"></a>
           <p>100% Natural · No Chemicals<br>Traditional Wood Pressed Oils<br>Madhwapur, Salempur, Uttar Pradesh, India
           </p>
         </div>
@@ -3350,6 +3309,5 @@
     }
   </script>
 </body>
+
 </html>
-
-

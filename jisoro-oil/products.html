@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,18 +8,28 @@
   <title>Products | JIRASO Organics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1777407289547">
-  <link rel="stylesheet" href="inner-pages.css?v=1777407289547">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1777407289560">
+  <link rel="stylesheet" href="inner-pages.css?v=1777407289560">
   <link rel="stylesheet" href="inner-theme.css?v=1777407289547">
 
   <style>
     /* ── Out-of-stock overlay ── */
-    .product-card-wrap.oos { position: relative; }
-    .product-card-wrap.oos .product-card { filter: grayscale(55%) opacity(0.7); pointer-events: none; }
+    .product-card-wrap.oos {
+      position: relative;
+    }
+
+    .product-card-wrap.oos .product-card {
+      filter: grayscale(55%) opacity(0.7);
+      pointer-events: none;
+    }
+
     .oos-badge {
       position: absolute;
-      top: 1rem; right: 1rem;
+      top: 1rem;
+      right: 1rem;
       background: #17140F;
       color: #fff;
       font-family: var(--font-mono, 'DM Mono', monospace);
@@ -38,23 +49,26 @@
       flex-wrap: wrap;
       margin-top: .5rem;
     }
+
     .card-sku-chip {
       font-family: var(--font-mono, 'DM Mono', monospace);
       font-size: .62rem;
       text-transform: uppercase;
       letter-spacing: .06em;
       padding: .25rem .75rem;
-      border: 1.5px solid rgba(255,255,255,.5);
+      border: 1.5px solid rgba(23, 20, 15, .15);
       border-radius: 100px;
-      color: #fff;
-      background: rgba(255,255,255,.12);
+      color: #17140F;
+      background: rgba(23, 20, 15, .05);
       cursor: pointer;
-      transition: background .2s, border-color .2s;
+      transition: all .2s;
     }
+
     .card-sku-chip.is-selected,
     .card-sku-chip:hover {
-      background: rgba(255,255,255,.3);
-      border-color: rgba(255,255,255,.9);
+      background: #17140F;
+      color: #fff;
+      border-color: #17140F;
     }
 
     /* ── Fullscreen image modal ── */
@@ -63,40 +77,55 @@
       position: fixed;
       inset: 0;
       z-index: 9000;
-      background: rgba(10,8,5,.92);
+      background: rgba(10, 8, 5, .92);
       backdrop-filter: blur(12px);
       align-items: center;
       justify-content: center;
       cursor: zoom-out;
     }
-    #img-modal.open { display: flex; }
+
+    #img-modal.open {
+      display: flex;
+    }
+
     #img-modal img {
       max-width: 88vw;
       max-height: 88vh;
       object-fit: contain;
       border-radius: 12px;
-      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .6);
     }
+
     .img-modal-close {
       position: fixed;
-      top: 1.5rem; right: 1.75rem;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.22);
+      top: 1.5rem;
+      right: 1.75rem;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .22);
       color: #fff;
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.35rem;
       cursor: pointer;
       z-index: 9001;
       transition: background .2s;
     }
-    .img-modal-close:hover { background: rgba(255,255,255,.22); }
+
+    .img-modal-close:hover {
+      background: rgba(255, 255, 255, .22);
+    }
 
     /* Make product images clickable */
-    .product-card__image-wrap { cursor: zoom-in; }
+    .product-card__image-wrap {
+      cursor: zoom-in;
+    }
   </style>
 </head>
+
 <body class="inner-page">
   <!-- Announcement -->
   <div class="announcement-bar" id="announcement-bar">
@@ -113,7 +142,7 @@
   <!-- HEADER -->
   <header class="hdr" id="hdr">
     <div class="container hdr__inner">
-      <a class="hdr__logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem;"><img src="assets/logo.png?v=2" alt="Jiraso Organics" style="height: 48px; width: auto;"></a>
+      <a class="hdr__logo" href="index.html">JIRASO <span>Organics</span></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -127,7 +156,11 @@
       <div style="display:flex;align-items:center;gap:.75rem">
         <a class="hdr__cart" href="cart.html" id="cart-btn">
           <div style="position:relative; display:inline-flex;">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
             <span class="cart-count">0</span>
           </div>
           <span class="cart-label">Bag</span>
@@ -158,7 +191,8 @@
     <div class="container" style="position:relative;z-index:1;">
       <p class="ip-hero__eyebrow" data-reveal data-delay="1">01 / Our Offerings</p>
       <h1 class="ip-hero__heading" data-reveal data-delay="2">Our Products</h1>
-      <p class="ip-hero__sub" data-reveal data-delay="3">Everyday essentials, traditionally crafted for healthier kitchens — wood-pressed and unrefined.</p>
+      <p class="ip-hero__sub" data-reveal data-delay="3">Everyday essentials, traditionally crafted for healthier
+        kitchens — wood-pressed and unrefined.</p>
     </div>
   </div>
 
@@ -187,46 +221,57 @@
           <div class="product-card" style="--card-bg:#1B4332;">
             <span class="badge" style="background-color:#f28388;">Available</span>
             <div class="product-card__image-wrap" onclick="openImgModal('assets/mustard.png')">
-              <img class="product-card__img" src="assets/mustard.png" alt="Wood Pressed Black Mustard oil 1L" title="Click to view">
+              <img class="product-card__img" src="assets/mustard.png" alt="Wood Pressed Black Mustard oil 1L"
+                title="Click to view">
             </div>
             <div class="product-card__footer">
               <div class="product-card__title-row">
                 <p class="product-card__name">Wood Pressed Black Mustard oil</p>
                 <p class="product-card__size eyebrow" id="mustard-size-label">1 L</p>
               </div>
-              <p class="product-card__sub eyebrow">Bold, pungent wood-pressed black mustard for authentic Indian cooking.</p>
+              <p class="product-card__sub eyebrow">Bold, pungent wood-pressed black mustard for authentic Indian
+                cooking.</p>
               <div class="product-card__badges">
                 <span class="badge badge--overlay">Wood Pressed</span>
                 <span class="badge badge--overlay">Kachi Ghani</span>
               </div>
               <!-- SKU chips -->
               <div class="card-skus">
-                <button class="card-sku-chip" onclick="selectMustardSku(this,'500 ml',219)" data-price="219">500 ml — ₹219</button>
-                <button class="card-sku-chip is-selected" onclick="selectMustardSku(this,'1 L',399)" data-price="399">1 L — ₹399</button>
+                <button class="card-sku-chip" onclick="selectMustardSku(this,'500 ml',219)" data-price="219">500 ml —
+                  ₹219</button>
+                <button class="card-sku-chip is-selected" onclick="selectMustardSku(this,'1 L',399)" data-price="399">1
+                  L — ₹399</button>
               </div>
               <div class="product-card__ingredients">
                 <div class="ingredients-track">
-                  <span>Mustard Seeds / </span><span>Natural Omega-3 / </span><span>Vitamin E / </span><span>Antioxidants / </span>
-                  <span>Mustard Seeds / </span><span>Natural Omega-3 / </span><span>Vitamin E / </span><span>Antioxidants / </span>
+                  <span>Mustard Seeds / </span><span>Natural Omega-3 / </span><span>Vitamin E /
+                  </span><span>Antioxidants / </span>
+                  <span>Mustard Seeds / </span><span>Natural Omega-3 / </span><span>Vitamin E /
+                  </span><span>Antioxidants / </span>
                 </div>
               </div>
             </div>
             <!-- Hover Overlay -->
             <div class="product-card__overlay">
               <a class="product-card__overlay-view" href="product-mustard.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
                 View Product
               </a>
               <button class="product-card__overlay-cart" id="mustard-cart-btn"
-                data-name="Wood Pressed Black Mustard oil"
-                data-img="assets/mustard.png"
-                data-color="#1B4332"
-                data-badge-color="#f28388"
-                data-badge="Kachi Ghani"
-                data-sub="Bold, pungent wood-pressed black mustard for authentic Indian cooking."
-                data-price="399"
+                data-name="Wood Pressed Black Mustard oil" data-img="assets/mustard.png" data-color="#1B4332"
+                data-badge-color="#f28388" data-badge="Kachi Ghani"
+                data-sub="Bold, pungent wood-pressed black mustard for authentic Indian cooking." data-price="399"
                 data-size="1 L">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
                 Add to Cart
               </button>
             </div>
@@ -319,48 +364,94 @@
       </div>
 
       <!-- Benefits strip -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin-top:4rem;" data-reveal>
+      <div
+        style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin-top:4rem;"
+        data-reveal>
         <div style="background:#fff;padding:2rem 1.5rem;">
-          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">0°</p>
-          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Chemical Processing</p>
+          <p
+            style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">
+            0°</p>
+          <p
+            style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">
+            Chemical Processing</p>
         </div>
         <div style="background:#fff;padding:2rem 1.5rem;">
-          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">100%</p>
-          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Natural Seeds</p>
+          <p
+            style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">
+            100%</p>
+          <p
+            style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">
+            Natural Seeds</p>
         </div>
         <div style="background:#fff;padding:2rem 1.5rem;">
-          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">4+</p>
-          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Oil Varieties</p>
+          <p
+            style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">
+            4+</p>
+          <p
+            style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">
+            Oil Varieties</p>
         </div>
         <div style="background:#fff;padding:2rem 1.5rem;">
-          <p style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">10</p>
-          <p style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">Quality Steps</p>
+          <p
+            style="font-family:var(--font-heading);font-size:2.5rem;color:var(--color-navy);line-height:1;margin-bottom:0.5rem;">
+            10</p>
+          <p
+            style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-light);">
+            Quality Steps</p>
         </div>
       </div>
 
       <!-- Bulk CTA -->
       <div style="text-align:center;padding-block:3.5rem 1rem;" data-reveal>
         <a class="btn btn--primary" href="contact.html">Request Bulk Pricing
-          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z"/></svg>
+          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+            <path d="M10 5.286h-.88V1.5L.62 10 0 9.38 8.5.88H4.714V0H10v5.286Z" />
+          </svg>
         </a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer-premium">
+  <footer class="site-footer">
     <div class="container">
-      <div class="site-footer-premium__inner">
-        <span class="site-footer-premium__brand" style="display:flex;align-items:center;gap:0.5rem;"><img src="assets/logo.png?v=2" alt="Jiraso Organics Logo" style="height: 48px;width:auto;"></span>
-        <nav class="site-footer-premium__links">
-          <a href="index.html">Home</a>
-          <a href="process.html">Process</a>
-          <a href="products.html">Products</a>
-          <a href="reports.html">Reports</a>
-          <a href="know-your-oil.html">Know Your Oil</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <p class="site-footer-premium__copy">© 2026 JIRASO Organics</p>
+      <div class="footer-grid">
+        <div class="fb">
+          <a href="index.html" class="fb__logo"><img src="assets/logo-white.png" alt="Jiraso Organics"
+              style="height: 55px; width: auto;"></a>
+          <p>100% Natural · No Chemicals<br>Traditional Wood Pressed Oils<br>Madhwapur, Salempur, Uttar Pradesh, India
+          </p>
+        </div>
+        <div class="fc">
+          <h4>01 / Support</h4>
+          <ul>
+            <li><a href="index.html#faqs">FAQs</a></li>
+            <li><a href="#">Shipping &amp; Delivery</a></li>
+            <li><a href="#">Returns &amp; Refunds</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>02 / Company</h4>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="process.html">Our Process</a></li>
+            <li><a href="index.html#articles">Blog</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>03 / Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-btm">
+        <p>© 2026 JIRASO Organics. All Rights Reserved.</p>
+        <p>Privacy Policy · Terms · Refund Policy</p>
       </div>
     </div>
   </footer>
@@ -380,12 +471,12 @@
   <script>
     // ── SKU switcher for Mustard Oil card ──────────────────────────
     function selectMustardSku(chip, size, price) {
-      document.querySelectorAll('#mustard-cart-btn').forEach(() => {});
+      document.querySelectorAll('#mustard-cart-btn').forEach(() => { });
       chip.closest('.card-skus').querySelectorAll('.card-sku-chip').forEach(c => c.classList.remove('is-selected'));
       chip.classList.add('is-selected');
       document.getElementById('mustard-size-label').textContent = size;
       const btn = document.getElementById('mustard-cart-btn');
-      btn.dataset.size  = size;
+      btn.dataset.size = size;
       btn.dataset.price = price;
     }
 
@@ -395,7 +486,7 @@
       chip.classList.add('is-selected');
       document.getElementById('black-mustard-size-label').textContent = size;
       const btn = document.getElementById('black-mustard-cart-btn');
-      btn.dataset.size  = size;
+      btn.dataset.size = size;
       btn.dataset.price = price;
     }
 
@@ -411,20 +502,20 @@
       document.body.style.overflow = '';
     }
     document.getElementById('img-modal-close').addEventListener('click', closeImgModal);
-    document.getElementById('img-modal').addEventListener('click', function(e) {
+    document.getElementById('img-modal').addEventListener('click', function (e) {
       if (e.target === this) closeImgModal();
     });
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeImgModal();
     });
 
     // ── Filter chips ───────────────────────────────────────────────
-    document.querySelectorAll('.filter-chip').forEach(function(chip) {
-      chip.addEventListener('click', function() {
-        document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('is-active'); });
+    document.querySelectorAll('.filter-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        document.querySelectorAll('.filter-chip').forEach(function (c) { c.classList.remove('is-active'); });
         chip.classList.add('is-active');
         var filter = chip.dataset.filter;
-        document.querySelectorAll('#products-grid .product-card-wrap').forEach(function(card) {
+        document.querySelectorAll('#products-grid .product-card-wrap').forEach(function (card) {
           var cat = card.dataset.category;
           var show = filter === 'all' || cat === filter;
           card.style.transition = 'opacity 0.3s, transform 0.3s';
@@ -435,4 +526,5 @@
     });
   </script>
 </body>
+
 </html>
