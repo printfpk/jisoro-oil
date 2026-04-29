@@ -1110,6 +1110,26 @@
       border-color: #fff;
     }
 
+    /* Out of Stock */
+    .pc.oos { position: relative; }
+    .pc.oos .pc__img-wrap, .pc.oos .pc__body { opacity: 0.7; }
+    .pc.oos .pc__overlay-cart { display: none !important; }
+    .oos-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #17140F;
+      color: #fff;
+      font-family: var(--ff-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      z-index: 5;
+    }
+
     /* ======================================================
    ④ EDITORIAL "WHY WE EXIST" — Word-by-word clip reveal
 ====================================================== */
@@ -1495,7 +1515,8 @@
     .spotlight__img img {
       width: 100%;
       height: 100%;
-      object-fit: cover
+      object-fit: contain;
+      padding: 3rem;
     }
 
     /* Parallax layer */
@@ -1691,6 +1712,26 @@
       background: linear-gradient(90deg, var(--gold), var(--gold-l))
     }
 
+    @media (max-width: 768px) {
+      .comp-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cc--head:first-child,
+      .comp-col--lbl {
+        grid-column: span 2;
+        background: rgba(255, 255, 255, 0.05);
+        text-align: center;
+      }
+      .cc__val {
+        font-size: 0.8rem;
+        display: block;
+        text-align: center;
+      }
+      .cc {
+        padding: 1rem 0.75rem;
+      }
+    }
+
     .comp-col--r .bar-fill {
       background: rgba(255, 255, 255, .2)
     }
@@ -1789,7 +1830,7 @@
     /* Flying bottle beside quote */
     .testi__bottle {
       position: absolute;
-      right: 4vw;
+      right: 8vw;
       top: 50%;
       transform: translateY(-50%);
       width: clamp(120px, 15vw, 220px);
@@ -1862,7 +1903,8 @@
     .faqs-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover
+      object-fit: contain;
+      padding: 3rem;
     }
 
     .faq-list {
@@ -2321,7 +2363,7 @@
     <div class="hero-drops" id="hero-drops"></div>
 
     <div class="hero__content">
-      <p class="hero__tag">Est. Traditional Wisdom · Wood Pressed</p>
+      <p class="hero__tag">Shuddhata aisi pahle jaisi</p>
       <h1 class="hero__h1">Crafting <em>Purity</em><br>for Modern India</h1>
       <p class="hero__sub">Premium wood-pressed oils inspired by tradition and backed by modern wellness. Pure.
         Authentic. Timeless.</p>
@@ -2433,7 +2475,8 @@
           </div>
         </div>
         <!-- Sesame -->
-        <div class="pc rv d2" id="pc-sesame">
+        <div class="pc rv d2 oos" id="pc-sesame">
+          <span class="oos-badge">Out of Stock</span>
           <p class="pc__num">02 / Sesame</p>
           <div class="pc__img-wrap">
             <img class="pc__img" src="assets/sesame.png" alt="Sesame Oil" loading="lazy">
@@ -2475,7 +2518,8 @@
           </div>
         </div>
         <!-- Coconut -->
-        <div class="pc rv d3" id="pc-coconut">
+        <div class="pc rv d3 oos" id="pc-coconut">
+          <span class="oos-badge">Out of Stock</span>
           <p class="pc__num">03 / Coconut</p>
           <div class="pc__img-wrap">
             <img class="pc__img" src="assets/coconut.png" alt="Coconut Oil" loading="lazy">
@@ -2517,7 +2561,8 @@
           </div>
         </div>
         <!-- Groundnut -->
-        <div class="pc rv d4" id="pc-groundnut">
+        <div class="pc rv d4 oos" id="pc-groundnut">
+          <span class="oos-badge">Out of Stock</span>
           <p class="pc__num">04 / Groundnut</p>
           <div class="pc__img-wrap">
             <img class="pc__img" src="assets/groundnut.png" alt="Groundnut Oil" loading="lazy">
@@ -2674,7 +2719,7 @@
       <div class="spotlight__grid">
         <div>
           <div class="spotlight__img" id="spot-img">
-            <img src="assets/mid_bottle.jpeg" alt="Product Range">
+            <img src="assets/mid_bottle.png" alt="Product Range">
             <div class="spotlight__badge">
               <p class="mono">Feature</p>
               <strong>Complete Kitchen</strong>
@@ -2771,7 +2816,7 @@
   ⑨ TESTIMONIAL — Cinematic full-bleed
 ================================================================ -->
   <section class="testi-section" id="product-quote">
-    <img class="testi__bottle" src="assets/flying_bottle.jpeg" alt="" aria-hidden="true">
+    <img class="testi__bottle" src="assets/flying_bottle.png" alt="" aria-hidden="true">
     <div class="testi__inner">
       <div class="testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <blockquote class="testi__quote" id="testi-quote">
@@ -2795,7 +2840,7 @@
           <p>Everything you need to know about wood-pressed oils and why they outperform refined alternatives in taste,
             nutrition, and purity.</p>
           <div class="faqs-img" style="margin-top:2rem">
-            <img src="assets/flying_bottle.jpeg" alt="JIRASO bottle" loading="lazy">
+            <img src="assets/flying_bottle.png" alt="JIRASO bottle" loading="lazy">
           </div>
         </div>
         <div class="faq-list rv d2">

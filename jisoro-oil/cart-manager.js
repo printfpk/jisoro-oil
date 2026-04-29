@@ -163,26 +163,27 @@
         position: fixed;
         inset: 0;
         z-index: 8000;
-        background: rgba(10,8,5,.78);
-        backdrop-filter: blur(10px);
-        align-items: center;
-        justify-content: center;
-        padding: 1.25rem;
+        background: rgba(10,8,5,.82);
+        backdrop-filter: blur(12px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem;
       }
-      #jiraso-order-modal.open { display: flex; }
+      #jiraso-order-modal.open { display: block; }
 
       .jom-box {
         background: #FDFCF8;
         border-radius: 24px;
         width: 100%;
-        max-width: 480px;
+        max-width: 460px;
+        margin: 2rem auto;
         padding: 2.25rem 2rem 2rem;
-        box-shadow: 0 32px 80px rgba(0,0,0,.35);
+        box-shadow: 0 32px 80px rgba(0,0,0,.45);
         position: relative;
         animation: jomSlideUp .4s cubic-bezier(.34,1.56,.64,1) both;
       }
       @keyframes jomSlideUp {
-        from { opacity:0; transform:translateY(28px) scale(.97); }
+        from { opacity:0; transform:translateY(20px) scale(.98); }
         to   { opacity:1; transform:none; }
       }
       .jom-close {
@@ -197,12 +198,13 @@
         cursor: pointer;
         color: #5A554E;
         transition: background .2s;
+        z-index: 2;
       }
       .jom-close:hover { background: #DDD6CB; }
 
       .jom-title {
         font-family: 'DejaVu Serif', 'DejaVu', serif;
-        font-size: 1.55rem;
+        font-size: 1.5rem;
         font-style: italic;
         color: #17140F;
         margin-bottom: .25rem;
@@ -239,6 +241,7 @@
         outline: none;
         transition: border-color .2s, box-shadow .2s;
         width: 100%;
+        -webkit-appearance: none;
       }
       .jom-input:focus {
         border-color: #C4923A;
@@ -284,7 +287,6 @@
       .jom-submit:hover {
         background: #1aab52;
         transform: translateY(-1px);
-        box-shadow: 0 8px 24px rgba(37,211,102,.3);
       }
       .jom-note {
         text-align: center;
@@ -304,8 +306,15 @@
       }
 
       @media(max-width:480px) {
-        .jom-box { padding: 1.75rem 1.25rem 1.5rem; }
-        .jom-row { grid-template-columns: 1fr; }
+        #jiraso-order-modal { padding: 0.5rem; }
+        .jom-box { padding: 1.5rem 1.15rem; margin: 1rem auto; border-radius: 20px; width: 96%; }
+        .jom-row { grid-template-columns: 1fr; gap: 0.25rem; }
+        .jom-title { font-size: 1.3rem; }
+        .jom-sub { font-size: 0.75rem; margin-bottom: 1.25rem; }
+        .jom-field { margin-bottom: 0.85rem; }
+        .jom-input { padding: 0.65rem 0.85rem; font-size: 0.9rem; }
+        .jom-summary { padding: 0.75rem; font-size: 0.72rem; margin-bottom: 1rem; line-height: 1.6; }
+        .jom-submit { padding: 0.9rem; font-size: 0.72rem; }
       }
     `;
     document.head.appendChild(style);
