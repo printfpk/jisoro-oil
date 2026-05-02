@@ -90,13 +90,7 @@ body.inner-page .hdr {
   border-bottom: 1px solid var(--border);
 }
 
-body.inner-page .hdr .hdr__logo {
-  color: var(--ink);
-}
-
-body.inner-page .hdr .hdr__logo span {
-  color: var(--gold);
-}
+/* Logo styles handled in inner-pages.css */
 
 body.inner-page .hdr .nav-links a {
   color: var(--slate);
@@ -640,7 +634,46 @@ main h3 {
   transform: scaleX(0) !important;
 }
 
-.hbg.open span:nth-child(3),
-.hbg.is-open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg) !important;
+/* --- Premium Shimmer Badge --- */
+.badge--shimmer {
+  background-color: #17140F !important;
+  color: #C4923A !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(196, 146, 58, 0.5) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 4px;
+  padding: 0.1rem 0.4rem !important;
+  width: fit-content !important;
+  border-radius: 4px !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.65rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  white-space: nowrap !important;
+}
+
+.badge--shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: badge-shine 3s infinite;
+}
+
+@keyframes badge-shine {
+  0% { left: -150%; }
+  30% { left: 150%; }
+  100% { left: 150%; }
 }

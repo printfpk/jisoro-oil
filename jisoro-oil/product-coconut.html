@@ -240,7 +240,7 @@
   <!-- HEADER -->
   <header class="hdr" id="hdr">
     <div class="container hdr__inner">
-      <a class="hdr__logo" href="index.html">JIRASO <span>Organics</span></a>
+      <a class="hdr__logo" href="index.html"><img src="assets/logo.png" alt="JIRASO Organics"></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -297,7 +297,7 @@
       <!-- Gallery -->
       <div class="pdp-gallery" data-reveal="left">
         <div class="pdp-gallery__main">
-          <span class="pdp-gallery__badge">Premium Quality</span>
+          <span class="pdp-gallery__badge badge--shimmer">Popular</span>
           <img id="main-img" src="assets/coconut.png" alt="JIRASO Coconut Oil">
         </div>
         <div class="pdp-gallery__thumbs">
@@ -311,12 +311,13 @@
             <img src="assets/process5.png" alt="Wood pressing process">
           </div>
         </div>
+        <p style="font-size:0.6rem;opacity:0.5;margin-top:1rem;color:var(--mist)">* Images shown are for illustrative purposes only. Actual product may vary in appearance.</p>
       </div>
 
       <!-- Info -->
       <div class="pdp-info" data-reveal="right">
         <div>
-          <span class="pdp-badge">⭐ Premium Quality</span>
+          <span class="pdp-badge badge--shimmer">⭐ Popular</span>
         </div>
 
         <div>
@@ -335,18 +336,18 @@
         <div>
           <p class="pdp-section-label">Select Size</p>
           <div class="pdp-sizes">
-            <button class="pdp-size-btn" onclick="selectSize(this,160)" data-price="135">
+            <button class="pdp-size-btn" onclick="selectSize(this,230)" data-price="230">
               <span class="pdp-size-btn__ml">250 ml</span>
-              <span class="pdp-size-btn__price">₹160</span>
+              <span class="pdp-size-btn__price">₹230</span>
             </button>
-            <button class="pdp-size-btn" onclick="selectSize(this,300)" data-price="250">
+            <button class="pdp-size-btn" onclick="selectSize(this,440)" data-price="440">
               <span class="pdp-size-btn__ml">500 ml</span>
-              <span class="pdp-size-btn__price">₹300</span>
+              <span class="pdp-size-btn__price">₹440</span>
             </button>
-            <button class="pdp-size-btn is-active" onclick="selectSize(this,550)" data-price="450">
+            <button class="pdp-size-btn is-active" onclick="selectSize(this,850)" data-price="850">
               <span class="pdp-size-popular">Popular</span>
               <span class="pdp-size-btn__ml">1 Litre</span>
-              <span class="pdp-size-btn__price">₹550</span>
+              <span class="pdp-size-btn__price">₹850</span>
             </button>
           </div>
         </div>
@@ -374,7 +375,7 @@
 
         <!-- Price -->
         <div>
-          <p class="pdp-price" id="display-price">₹550</p>
+          <p class="pdp-price" id="display-price">₹850</p>
           <p class="pdp-price__tax">Inclusive of all taxes</p>
         </div>
 
@@ -419,28 +420,8 @@
         </div>
 
         <!-- Certifications -->
-        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.25rem;padding:.85rem 1.1rem;background:rgba(26,46,32,.06);border-radius:12px;border:1px solid rgba(196,146,58,.22);">
-          <span style="font-family:'DM Mono',monospace;font-size:.56rem;text-transform:uppercase;letter-spacing:.08em;color:#928D85;white-space:nowrap;">Certified</span>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.28rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">FSSC<br>22000</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">FSSC 22000</span>
-          </div>
-          <div style="width:1px;height:20px;background:#DDD6CB;flex-shrink:0;"></div>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.33rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">HACCP</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">HACCP</span>
-          </div>
-          <div style="width:1px;height:20px;background:#DDD6CB;flex-shrink:0;"></div>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.38rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">GMP</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">GMP</span>
-          </div>
+        <div style="margin-top: 1.25rem;">
+          <img src="./assets/certifications.png" alt="Certifications" style="width: 100%; height: auto; display: block; border-radius: 12px;">
         </div>
       </div>
     </div><!-- /.pdp-layout -->
@@ -560,8 +541,6 @@
           <h4>01 / Support</h4>
           <ul>
             <li><a href="index.html#faqs">FAQs</a></li>
-            <li><a href="#">Shipping &amp; Delivery</a></li>
-            <li><a href="#">Returns &amp; Refunds</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -577,15 +556,16 @@
         <div class="fc">
           <h4>03 / Connect</h4>
           <ul>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.instagram.com/jiraso_organics" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/17VwAFejdC/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.youtube.com/@Jiraso_organics" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-btm">
-        <p>© 2026 JIRASO Organics. All Rights Reserved.</p>
-        <p>Privacy Policy · Terms · Refund Policy</p>
+        <p style="margin-bottom: 1.5rem; opacity: 0.6; font-size: 0.75rem;">Disclaimer: Images shown are for illustrative purposes only. The actual product may vary in appearance.</p>
+        <p>&copy; 2026 JIRASO Organics. All Rights Reserved.</p>
+        <p>Privacy Policy &bull; Terms &bull; Refund Policy</p>
       </div>
     </div>
   </footer>
@@ -644,7 +624,7 @@
 
     function updateWALink() {
       const msg = `Hi, I would like to order JIRASO Coconut Oil ${currentSize} ₹${currentPrice} × ${qty}`;
-      document.getElementById('wa-btn').href = `https://wa.me/919479976760?text=${encodeURIComponent(msg)}`;
+      document.getElementById('wa-btn').href = `https://wa.me/918393976770?text=${encodeURIComponent(msg)}`;
     }
 
     // Order via WhatsApp — adds current selection to cart then opens the order modal
@@ -655,7 +635,7 @@
           img: 'assets/coconut.png',
           color: '#AEC6CF',
           badgeColor: '#fcc9a4',
-          badge: 'Peach Chamomile',
+          badge: 'Popular',
           sub: 'Pure tropical oil for cooking, skin, and health.',
           size: currentSize,
           price: currentPrice,
@@ -673,7 +653,7 @@
           img: 'assets/coconut.png',
           color: '#AEC6CF',
           badgeColor: '#fcc9a4',
-          badge: 'Peach Chamomile',
+          badge: 'Popular',
           sub: 'Pure tropical oil for cooking, skin, and health.',
           size: currentSize,
           price: currentPrice,
@@ -691,7 +671,7 @@
     function trackBatch() {
       const val = document.getElementById('batch-input').value.trim();
       if (!val) return;
-      alert('Batch ' + val + ' ”” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“');
+      alert('Batch ' + val + ' - Processed at JIRASO Deoria facility. All quality parameters passed. ✓');
     }
   </script>
   <script>
@@ -702,3 +682,5 @@
 </body>
 
 </html>
+
+

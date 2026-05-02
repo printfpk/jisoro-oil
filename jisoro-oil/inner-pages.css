@@ -66,16 +66,10 @@
 }
 
 /* ---------- Header logo styles ---------- */
-.hdr__logo {
-  font-family: 'DejaVu Serif', 'DejaVu', serif;
-  font-size: 1.55rem;
-  font-weight: 700;
-  letter-spacing: -.02em;
-  color: #17140F;
-}
-
-.hdr__logo span {
-  color: #C4923A;
+.hdr__logo img {
+  height: 42px;
+  width: auto;
+  display: block;
 }
 
 /* ---------- Page hero strip (replaces .page-title-bar) ---------- */

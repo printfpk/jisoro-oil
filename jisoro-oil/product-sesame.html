@@ -239,7 +239,7 @@
   <!-- HEADER -->
   <header class="hdr" id="hdr">
     <div class="container hdr__inner">
-      <a class="hdr__logo" href="index.html">JIRASO <span>Organics</span></a>
+      <a class="hdr__logo" href="index.html"><img src="assets/logo.png" alt="JIRASO Organics"></a>
       <nav aria-label="Main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -291,7 +291,7 @@
   <main class="container">
     <div class="pdp-layout">
       <div class="pdp-gallery" data-reveal="left">
-        <div class="pdp-gallery__main"><span class="pdp-gallery__badge">Premium Quality</span><img id="main-img"
+        <div class="pdp-gallery__main"><span class="pdp-gallery__badge badge--shimmer">Popular</span><img id="main-img"
             src="assets/sesame.png" alt="Sesame Oil"></div>
         <div class="pdp-gallery__thumbs">
           <div class="pdp-gallery__thumb is-active" onclick="switchImg(this,'assets/sesame.png')"><img
@@ -303,7 +303,7 @@
         </div>
       </div>
       <div class="pdp-info" data-reveal="right">
-        <div><span class="pdp-badge">⭐ Premium Quality</span></div>
+        <div><span class="pdp-badge badge--shimmer">⭐ Popular</span></div>
         <div>
           <h1 class="pdp-name">Jiraso Lakdi Ghani Sesame Oil</h1>
           <p class="pdp-tagline">Shudh til ka tel ”” Pure South Indian Wellness Oil</p>
@@ -314,13 +314,13 @@
         <div>
           <p class="pdp-section-label">Select Size</p>
           <div class="pdp-sizes">
-            <button class="pdp-size-btn" onclick="selectSize(this,150)"><span class="pdp-size-btn__ml">250
-                ml</span><span class="pdp-size-btn__price">₹150</span></button>
-            <button class="pdp-size-btn" onclick="selectSize(this,275)"><span class="pdp-size-btn__ml">500
-                ml</span><span class="pdp-size-btn__price">₹275</span></button>
-            <button class="pdp-size-btn is-active" onclick="selectSize(this,500)"><span
+            <button class="pdp-size-btn" onclick="selectSize(this,175)" data-price="175"><span class="pdp-size-btn__ml">250
+                ml</span><span class="pdp-size-btn__price">₹175</span></button>
+            <button class="pdp-size-btn" onclick="selectSize(this,330)" data-price="330"><span class="pdp-size-btn__ml">500
+                ml</span><span class="pdp-size-btn__price">₹330</span></button>
+            <button class="pdp-size-btn is-active" onclick="selectSize(this,650)" data-price="650"><span
                 class="pdp-size-popular">Popular</span><span class="pdp-size-btn__ml">1 Litre</span><span
-                class="pdp-size-btn__price">₹500</span></button>
+                class="pdp-size-btn__price">₹650</span></button>
           </div>
         </div>
         <div>
@@ -337,7 +337,7 @@
               5% on every order · Cancel anytime</span></div>
         </div>
         <div>
-          <p class="pdp-price" id="display-price">₹500</p>
+          <p class="pdp-price" id="display-price">₹650</p>
           <p class="pdp-price__tax">Inclusive of all taxes</p>
         </div>
         <div class="pdp-ctas" style="opacity: 0.6; pointer-events: none;">
@@ -369,28 +369,8 @@
         </div>
 
         <!-- Certifications -->
-        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.25rem;padding:.85rem 1.1rem;background:rgba(26,46,32,.06);border-radius:12px;border:1px solid rgba(196,146,58,.22);">
-          <span style="font-family:'DM Mono',monospace;font-size:.56rem;text-transform:uppercase;letter-spacing:.08em;color:#928D85;white-space:nowrap;">Certified</span>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.28rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">FSSC<br>22000</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">FSSC 22000</span>
-          </div>
-          <div style="width:1px;height:20px;background:#DDD6CB;flex-shrink:0;"></div>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.33rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">HACCP</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">HACCP</span>
-          </div>
-          <div style="width:1px;height:20px;background:#DDD6CB;flex-shrink:0;"></div>
-          <div style="display:flex;align-items:center;gap:.4rem;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#1a2e20;border:1.5px solid #C4923A;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(196,146,58,.18);">
-              <span style="font-family:'DM Mono',monospace;font-size:.38rem;font-weight:700;color:#C4923A;text-align:center;line-height:1.3;text-transform:uppercase;">GMP</span>
-            </div>
-            <span style="font-family:'DM Mono',monospace;font-size:.58rem;color:#17140F;font-weight:600;text-transform:uppercase;letter-spacing:.03em;">GMP</span>
-          </div>
+        <div style="margin-top: 1.25rem;">
+          <img src="./assets/certifications.png" alt="Certifications" style="width: 100%; height: auto; display: block; border-radius: 12px;">
         </div>
       </div>
     </div>
@@ -502,8 +482,6 @@
           <h4>01 / Support</h4>
           <ul>
             <li><a href="index.html#faqs">FAQs</a></li>
-            <li><a href="#">Shipping &amp; Delivery</a></li>
-            <li><a href="#">Returns &amp; Refunds</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -519,9 +497,9 @@
         <div class="fc">
           <h4>03 / Connect</h4>
           <ul>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.instagram.com/jiraso_organics" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/17VwAFejdC/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.youtube.com/@Jiraso_organics" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
       </div>
@@ -551,7 +529,7 @@
           img: 'assets/sesame.png',
           color: '#E8E4D9',
           badgeColor: '#f3eb66',
-          badge: 'Lemon',
+          badge: 'Popular',
           sub: 'Rich aroma, ideal for South Indian & wellness cooking.',
           size: currentSize,
           price: currentPrice,
@@ -569,7 +547,7 @@
           img: 'assets/sesame.png',
           color: '#E8E4D9',
           badgeColor: '#f3eb66',
-          badge: 'Lemon',
+          badge: 'Popular',
           sub: 'Rich aroma, ideal for South Indian & wellness cooking.',
           size: currentSize,
           price: currentPrice,
@@ -582,7 +560,7 @@
         window.jirasoCM.flyToCart(btn, 'assets/sesame.png');
       }
     }
-    function trackBatch() { const v = document.getElementById('batch-input').value.trim(); if (!v) return; alert('Batch ' + v + ' ”” Processed at JIRASO Deoria facility. All quality parameters passed. âœ“'); }
+    function trackBatch() { const v = document.getElementById('batch-input').value.trim(); if (!v) return; alert('Batch ' + v + ' - Processed at JIRASO Deoria facility. All quality parameters passed. ✓'); }
   </script>
   <script>
     const _cc = document.querySelectorAll('.cart-count');
@@ -592,3 +570,5 @@
 </body>
 
 </html>
+
+

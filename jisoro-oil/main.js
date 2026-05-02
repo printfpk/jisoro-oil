@@ -85,7 +85,7 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
 // =============================================================
 (function initCart() {
   const CART_STORAGE_KEY = 'jiraso_cart';
-  const WHATSAPP_NUMBER = '919479976760';
+  const WHATSAPP_NUMBER = '918393976770';
 
   const addButtons = qsa('.product-card-quick-add');
   const navCount = qs('#cart-count-nav');
