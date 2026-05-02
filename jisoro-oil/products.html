@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="inner-theme.css?v=1777407289547">
 
   <style>
-    /* ── Out-of-stock overlay ── */
+    /* Out-of-stock overlay */
     .product-card-wrap.oos {
       position: relative;
     }
@@ -42,7 +42,7 @@
       z-index: 10;
     }
 
-    /* ── SKU size chips on card ── */
+    /* SKU size chips on card */
     .card-skus {
       display: flex;
       gap: .5rem;
@@ -71,7 +71,7 @@
       border-color: #17140F;
     }
 
-    /* ── Fullscreen image modal ── */
+    /* Fullscreen image modal */
     #img-modal {
       display: none;
       position: fixed;
@@ -219,21 +219,19 @@
         <!-- ✅ Wood Pressed Black Mustard oil — LIVE (1 L) -->
         <div class="product-card-wrap" data-reveal data-delay="1" data-category="cooking">
           <div class="product-card" style="--card-bg:#1B4332;">
+            <div class="product-card__header">
+              <p class="product-card__name">Black Mustard oil</p>
+              <p class="product-card__price-display" id="mustard-price-header">₹399</p>
+            </div>
             <span class="badge badge--shimmer">Best Seller</span>
             <div class="product-card__image-wrap" onclick="openImgModal('assets/mustard.png')">
               <img class="product-card__img" src="assets/mustard.png" alt="Wood Pressed Black Mustard oil 1L"
                 title="Click to view">
             </div>
             <div class="product-card__footer">
-              <div class="product-card__title-row">
+              <div class="product-card__title-row" style="display:none;">
                 <p class="product-card__name">Wood Pressed Black Mustard oil</p>
                 <p class="product-card__size eyebrow" id="mustard-size-label">1 L</p>
-              </div>
-              <p class="product-card__sub eyebrow">Bold, pungent wood-pressed black mustard for authentic Indian
-                cooking.</p>
-              <div class="product-card__badges">
-                <span class="badge badge--overlay">Wood Pressed</span>
-                <span class="badge badge--overlay">Kachi Ghani</span>
               </div>
               <!-- SKU chips -->
               <div class="card-skus">
@@ -282,20 +280,15 @@
         <div class="product-card-wrap oos" data-reveal data-delay="2" data-category="wellness">
           <span class="oos-badge">Out of Stock</span>
           <div class="product-card" style="--card-bg:#E8E4D9;">
+            <div class="product-card__header">
+              <p class="product-card__name" style="color:var(--ink);">Sesame Oil</p>
+              <p class="product-card__price-display" style="color:var(--slate);">Sold Out</p>
+            </div>
             <span class="badge badge--shimmer">Popular</span>
             <div class="product-card__image-wrap" onclick="openImgModal('assets/sesame.png')">
               <img class="product-card__img" src="assets/sesame.png" alt="Sesame Oil">
             </div>
             <div class="product-card__footer">
-              <div class="product-card__title-row">
-                <p class="product-card__name">Sesame Oil</p>
-                <p class="product-card__size eyebrow">1 L</p>
-              </div>
-              <p class="product-card__sub eyebrow">Rich aroma, ideal for South Indian &amp; wellness cooking.</p>
-              <div class="product-card__badges">
-                <span class="badge badge--overlay">Wood Pressed</span>
-                <span class="badge badge--overlay">Unrefined</span>
-              </div>
               <div class="product-card__ingredients">
                 <div class="ingredients-track">
                   <span>Sesame Seeds / </span><span>Calcium / </span><span>Iron / </span><span>Sesamin / </span>
@@ -310,20 +303,15 @@
         <div class="product-card-wrap oos" data-reveal data-delay="3" data-category="tropical">
           <span class="oos-badge">Out of Stock</span>
           <div class="product-card" style="--card-bg:#AEC6CF;">
+            <div class="product-card__header">
+              <p class="product-card__name" style="color:var(--ink);">Coconut Oil</p>
+              <p class="product-card__price-display" style="color:var(--slate);">Sold Out</p>
+            </div>
             <span class="badge badge--shimmer">Popular</span>
             <div class="product-card__image-wrap" onclick="openImgModal('assets/coconut.png')">
               <img class="product-card__img" src="assets/coconut.png" alt="Coconut Oil">
             </div>
             <div class="product-card__footer">
-              <div class="product-card__title-row">
-                <p class="product-card__name">Coconut Oil</p>
-                <p class="product-card__size eyebrow">1 L</p>
-              </div>
-              <p class="product-card__sub eyebrow">Pure tropical oil for cooking, skin, and health.</p>
-              <div class="product-card__badges">
-                <span class="badge badge--overlay">Wood Pressed</span>
-                <span class="badge badge--overlay">Unrefined</span>
-              </div>
               <div class="product-card__ingredients">
                 <div class="ingredients-track">
                   <span>Coconuts / </span><span>Lauric Acid / </span><span>MCTs / </span>
@@ -338,20 +326,15 @@
         <div class="product-card-wrap oos" data-reveal data-delay="4" data-category="cooking">
           <span class="oos-badge">Out of Stock</span>
           <div class="product-card" style="--card-bg:#8B3A3A;">
+            <div class="product-card__header">
+              <p class="product-card__name">Groundnut Oil</p>
+              <p class="product-card__price-display">Sold Out</p>
+            </div>
             <span class="badge badge--shimmer">Popular</span>
             <div class="product-card__image-wrap" onclick="openImgModal('assets/groundnut.png')">
               <img class="product-card__img" src="assets/groundnut.png" alt="Groundnut Oil">
             </div>
             <div class="product-card__footer">
-              <div class="product-card__title-row">
-                <p class="product-card__name">Groundnut Oil</p>
-                <p class="product-card__size eyebrow">1 L</p>
-              </div>
-              <p class="product-card__sub eyebrow">Light, versatile oil for everyday use.</p>
-              <div class="product-card__badges">
-                <span class="badge badge--overlay">Wood Pressed</span>
-                <span class="badge badge--overlay">Unrefined</span>
-              </div>
               <div class="product-card__ingredients">
                 <div class="ingredients-track">
                   <span>Peanuts / </span><span>Vitamin A / </span><span>Vitamin E / </span>
@@ -467,18 +450,19 @@
   <script src="main.js"></script>
 
   <script>
-    // ── SKU switcher for Mustard Oil card ──────────────────────────
+    // SKU switcher for Mustard Oil card
     function selectMustardSku(chip, size, price) {
       document.querySelectorAll('#mustard-cart-btn').forEach(() => { });
       chip.closest('.card-skus').querySelectorAll('.card-sku-chip').forEach(c => c.classList.remove('is-selected'));
       chip.classList.add('is-selected');
       document.getElementById('mustard-size-label').textContent = size;
+      document.getElementById('mustard-price-header').textContent = '₹' + price;
       const btn = document.getElementById('mustard-cart-btn');
       btn.dataset.size = size;
       btn.dataset.price = price;
     }
 
-    // ── SKU switcher for Wood Pressed Black Mustard oil card ────────────────────
+    // SKU switcher for Wood Pressed Black Mustard oil card
     function selectBlackMustardSku(chip, size, price) {
       chip.closest('.card-skus').querySelectorAll('.card-sku-chip').forEach(c => c.classList.remove('is-selected'));
       chip.classList.add('is-selected');
@@ -488,7 +472,7 @@
       btn.dataset.price = price;
     }
 
-    // ── Fullscreen image modal ─────────────────────────────────────
+    // Fullscreen image modal
     function openImgModal(src) {
       const modal = document.getElementById('img-modal');
       document.getElementById('img-modal-img').src = src;
@@ -507,7 +491,7 @@
       if (e.key === 'Escape') closeImgModal();
     });
 
-    // ── Filter chips ───────────────────────────────────────────────
+    // Filter chips
     document.querySelectorAll('.filter-chip').forEach(function (chip) {
       chip.addEventListener('click', function () {
         document.querySelectorAll('.filter-chip').forEach(function (c) { c.classList.remove('is-active'); });
@@ -526,5 +510,3 @@
 </body>
 
 </html>
-
-

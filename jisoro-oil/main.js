@@ -245,6 +245,11 @@ const qsa = (selector, root = document) => [...root.querySelectorAll(selector)];
         const msg = `Hi, I want to order ${item.name} (${item.size || 'Standard'}) - Qty: ${item.qty}.`;
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank', 'noopener,noreferrer');
+        
+        // Clear cart
+        cartItems = [];
+        persistCart();
+        renderCartItems();
       });
 
       const removeBtn = document.createElement('button');

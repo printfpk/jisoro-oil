@@ -453,6 +453,9 @@
 
     const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
+    
+    // Clear cart after order is sent
+    clearCart();
     closeOrderModal();
   }
 

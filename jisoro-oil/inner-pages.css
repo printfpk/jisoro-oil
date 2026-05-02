@@ -75,7 +75,7 @@
 /* ---------- Page hero strip (replaces .page-title-bar) ---------- */
 .ip-hero {
   position: relative;
-  padding-block: 7rem 4rem;
+  padding-block: 8.5rem 4.5rem;
   overflow: hidden;
   background: var(--color-navy);
   color: #fff;
