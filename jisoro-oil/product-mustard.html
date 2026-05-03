@@ -292,7 +292,6 @@
       <div class="pdp-gallery" data-reveal="left">
         <div class="pdp-gallery__main" style="cursor:zoom-in;" onclick="openMainImgModal()"
           title="Click to view full image">
-          <span class="pdp-gallery__badge badge--shimmer">Best Seller</span>
           <img id="main-img" src="assets/mustard.png" alt="JIRASO Mustard Oil">
           <span
             style="position:absolute;bottom:.75rem;right:.85rem;background:rgba(0,0,0,.45);color:#fff;font-size:.6rem;font-family:monospace;padding:.25rem .6rem;border-radius:100px;pointer-events:none;">🔍
@@ -320,7 +319,7 @@
         </div>
 
         <div>
-          <h1 class="pdp-name">Wood Pressed Black Mustard oil</h1>
+          <h1 class="pdp-name">Wood Pressed Black Mustard Oil</h1>
           <p class="pdp-tagline">Asli kachi ghani <em>kali</em> sarson ka tel — Bold, pungent &amp; deeply traditional.
           </p>
         </div>
@@ -360,14 +359,7 @@
           </div>
         </div>
 
-        <!-- Subscription -->
-        <div class="pdp-subscription" id="sub-toggle" onclick="toggleSubscription()">
-          <div class="pdp-toggle" id="sub-indicator"></div>
-          <div>
-            <span class="pdp-subscription__label">Monthly Subscription</span>
-            <span class="pdp-subscription__sub">Save 5% on every order · Cancel anytime</span>
-          </div>
-        </div>
+
 
         <!-- Price -->
         <div>
@@ -613,22 +605,13 @@
       updatePrice();
     }
 
-    // Subscription
-    let subscribed = false;
-    function toggleSubscription() {
-      subscribed = !subscribed;
-      document.getElementById('sub-indicator').classList.toggle('is-on', subscribed);
-      updatePrice();
-    }
-
     function updatePrice() {
       let p = currentPrice * qty;
-      if (subscribed) p = Math.round(p * 0.95);
       document.getElementById('display-price').textContent = '₹' + p;
     }
 
     function updateWALink() {
-      const msg = `Hi, I would like to order JIRASO Wood Pressed Black Mustard oil ${currentSize} ₹${currentPrice} × ${qty}`;
+      const msg = `Hi, I would like to order JIRASO Wood Pressed Black Mustard Oil ${currentSize} ₹${currentPrice} × ${qty}`;
       document.getElementById('wa-btn').href = `https://wa.me/918393976770?text=${encodeURIComponent(msg)}`;
     }
 
@@ -636,7 +619,7 @@
     function orderViaWhatsApp() {
       if (window.jirasoCM) {
         window.jirasoCM.addItem({
-          name: 'Wood Pressed Black Mustard oil',
+          name: 'Wood Pressed Black Mustard Oil',
           img: 'assets/mustard.png',
           color: '#1B4332',
           badgeColor: '#f28388',
@@ -655,7 +638,7 @@
       if (window.jirasoCM) {
         const btn = document.getElementById('add-cart-btn');
         window.jirasoCM.addItem({
-          name: 'Wood Pressed Black Mustard oil',
+          name: 'Wood Pressed Black Mustard Oil',
           img: 'assets/mustard.png',
           color: '#1B4332',
           badgeColor: '#f28388',

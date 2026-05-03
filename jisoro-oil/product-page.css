@@ -38,16 +38,9 @@
 
 .pdp-gallery__badge {
   position: absolute;
-  top: 1rem; left: 1rem;
-  background: #fef3c7;
-  color: #92400e;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 99px;
-  border: 1px solid #fcd34d;
+  top: 1.25rem; 
+  left: 1.25rem;
+  z-index: 10;
 }
 
 .pdp-gallery__thumbs {
@@ -80,17 +73,7 @@
 .pdp-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: #fef9e7;
-  border: 1px solid #fcd34d;
-  color: #92400e;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 99px;
-  width: fit-content;
+  gap: 0.5rem;
 }
 
 .pdp-name {
@@ -173,18 +156,29 @@
 }
 .pdp-size-popular {
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #f59e0b;
-  color: #fff;
+  color: #E8B668;
   font-family: var(--font-mono);
-  font-size: 0.5625rem;
+  font-size: 0.6rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.1rem 0.5rem;
-  border-radius: 99px;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 1.4rem;
   white-space: nowrap;
+  z-index: 1;
+}
+
+.pdp-size-popular::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #17140F;
+  border: 1px solid rgba(232, 182, 104, 0.4);
+  transform: skewX(-12deg);
+  z-index: -1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Quantity */

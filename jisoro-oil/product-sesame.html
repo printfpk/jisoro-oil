@@ -280,103 +280,155 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <div style="padding-top:7rem;" class="container">
+  <!-- Breadcrumb -->
+  <div style="padding-top:7rem;padding-bottom:0;" class="container">
     <p
       style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-light);padding-block:1rem 0;">
-      <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp; <a href="products.html"
-        style="color:inherit;">Products</a> &nbsp;/&nbsp; <span style="color:var(--color-navy);">Sesame Oil</span>
+      <a href="index.html" style="color:inherit;">Home</a> &nbsp;/&nbsp;
+      <a href="products.html" style="color:inherit;">Products</a> &nbsp;/&nbsp;
+      <span style="color:var(--color-navy);">Wood Pressed Sesame Oil</span>
     </p>
   </div>
 
   <main class="container">
     <div class="pdp-layout">
+
+      <!-- Gallery -->
       <div class="pdp-gallery" data-reveal="left">
-        <div class="pdp-gallery__main"><span class="pdp-gallery__badge badge--shimmer">Popular</span><img id="main-img"
-            src="assets/sesame.png" alt="Sesame Oil"></div>
+        <div class="pdp-gallery__main" style="cursor:zoom-in;" onclick="openMainImgModal()"
+          title="Click to view full image">
+          <img id="main-img" src="assets/sesame.png" alt="JIRASO Sesame Oil">
+          <span
+            style="position:absolute;bottom:.75rem;right:.85rem;background:rgba(0,0,0,.45);color:#fff;font-size:.6rem;font-family:monospace;padding:.25rem .6rem;border-radius:100px;pointer-events:none;">🔍
+            Click to enlarge</span>
+        </div>
         <div class="pdp-gallery__thumbs">
-          <div class="pdp-gallery__thumb is-active" onclick="switchImg(this,'assets/sesame.png')"><img
-              src="assets/sesame.png" alt="Sesame Oil"></div>
-          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process2.png')"><img src="assets/process2.png"
-              alt="Seeds"></div>
-          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process5.png')"><img src="assets/process5.png"
-              alt="Pressing"></div>
+          <div class="pdp-gallery__thumb is-active" onclick="switchImg(this,'assets/sesame.png')">
+            <img src="assets/sesame.png" alt="Sesame Oil">
+          </div>
+          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process2.png')">
+            <img src="assets/process2.png" alt="Seeds sourcing">
+          </div>
+          <div class="pdp-gallery__thumb" onclick="switchImg(this,'assets/process5.png')">
+            <img src="assets/process5.png" alt="Wood pressing process">
+          </div>
         </div>
+        <p style="font-size:0.6rem;opacity:0.5;margin-top:1rem;color:var(--mist)">* Images shown are for illustrative
+          purposes only. Actual product may vary in appearance.</p>
       </div>
+
+      <!-- Info -->
       <div class="pdp-info" data-reveal="right">
-        <div><span class="pdp-badge badge--shimmer">⭐ Popular</span></div>
         <div>
-          <h1 class="pdp-name">Jiraso Lakdi Ghani Sesame Oil</h1>
-          <p class="pdp-tagline">Shudh til ka tel - Pure South Indian Wellness Oil</p>
+          <span class="pdp-badge badge--shimmer">Popular</span>
         </div>
-        <div class="pdp-rating"><span class="pdp-stars">★★★★★</span><a class="pdp-review-count" href="#reviews">(112
-            reviews)</a></div>
+
+        <div>
+          <h1 class="pdp-name">Wood Pressed Sesame Oil</h1>
+          <p class="pdp-tagline">Shudh til ka tel — Rich aroma, ideal for South Indian & wellness cooking.</p>
+        </div>
+
+        <div class="pdp-rating">
+          <span class="pdp-stars">★★★★★</span>
+          <a class="pdp-review-count" href="#reviews">(112 reviews)</a>
+        </div>
+
         <div class="pdp-divider"></div>
+
+        <!-- Size -->
         <div>
           <p class="pdp-section-label">Select Size</p>
           <div class="pdp-sizes">
-            <button class="pdp-size-btn" onclick="selectSize(this,175)" data-price="175"><span class="pdp-size-btn__ml">250
-                ml</span><span class="pdp-size-btn__price">₹175</span></button>
-            <button class="pdp-size-btn" onclick="selectSize(this,330)" data-price="330"><span class="pdp-size-btn__ml">500
-                ml</span><span class="pdp-size-btn__price">₹330</span></button>
-            <button class="pdp-size-btn is-active" onclick="selectSize(this,650)" data-price="650"><span
-                class="pdp-size-popular">Popular</span><span class="pdp-size-btn__ml">1 Litre</span><span
-                class="pdp-size-btn__price">₹650</span></button>
+            <button class="pdp-size-btn" onclick="selectSize(this,330)" data-price="330">
+              <span class="pdp-size-btn__ml">500 ml</span>
+              <span class="pdp-size-btn__price">₹330</span>
+            </button>
+            <button class="pdp-size-btn is-active" onclick="selectSize(this,650)" data-price="650">
+              <span class="pdp-size-popular">Popular</span>
+              <span class="pdp-size-btn__ml">1 Litre</span>
+              <span class="pdp-size-btn__price">₹650</span>
+            </button>
           </div>
         </div>
+
+        <!-- Quantity -->
         <div>
           <p class="pdp-section-label">Quantity</p>
           <div class="pdp-qty">
-            <div class="pdp-qty-ctrl"><button class="pdp-qty-btn" onclick="changeQty(-1)">−</button><input
-                class="pdp-qty-num" id="qty-num" type="number" value="1" min="1" max="50" readonly><button
-                class="pdp-qty-btn" onclick="changeQty(1)">+</button></div>
+            <div class="pdp-qty-ctrl">
+              <button class="pdp-qty-btn" id="qty-minus" onclick="changeQty(-1)">−</button>
+              <input class="pdp-qty-num" id="qty-num" type="number" value="1" min="1" max="50" readonly>
+              <button class="pdp-qty-btn" id="qty-plus" onclick="changeQty(1)">+</button>
+            </div>
           </div>
         </div>
-        <div class="pdp-subscription" onclick="toggleSubscription()">
-          <div class="pdp-toggle" id="sub-indicator"></div>
-          <div><span class="pdp-subscription__label">Monthly Subscription</span><span class="pdp-subscription__sub">Save
-              5% on every order · Cancel anytime</span></div>
-        </div>
+
+        
+
+        <!-- Price -->
         <div>
           <p class="pdp-price" id="display-price">₹650</p>
           <p class="pdp-price__tax">Inclusive of all taxes</p>
         </div>
-        <div class="pdp-ctas" style="opacity: 0.6; pointer-events: none;">
-          <a id="wa-btn" href="#" class="pdp-btn-whatsapp" style="filter: grayscale(1);">
+
+        <!-- CTAs -->
+        <div class="pdp-ctas">
+          <a id="wa-btn" href="#" onclick="orderViaWhatsApp(); return false;" class="pdp-btn-whatsapp">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
             </svg>
-            Out of Stock
+            Order via WhatsApp
           </a>
-          <button class="pdp-btn-cart" disabled style="background: #ccc; border-color: #ccc; color: #666;">Out of Stock</button>
+          <button class="pdp-btn-cart" id="add-cart-btn" onclick="addToCart()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+            Add to Cart
+          </button>
         </div>
+
+        <!-- Trust -->
         <div class="pdp-trust">
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <div class="pdp-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path
                 d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            </svg><span>Secure Packaging</span></div>
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            </svg>
+            <span>Secure Packaging</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="1" y="3" width="15" height="13" />
               <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
               <circle cx="5.5" cy="18.5" r="2.5" />
               <circle cx="18.5" cy="18.5" r="2.5" />
-            </svg><span>Free Delivery</span></div>
-          <div class="pdp-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            </svg>
+            <span>Free Delivery</span>
+          </div>
+          <div class="pdp-trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg><span>Quality Assured</span></div>
+            </svg>
+            <span>Quality Assured</span>
+          </div>
         </div>
 
         <!-- Certifications -->
         <div style="margin-top: 1.25rem;">
-          <img src="./assets/certifications.png" alt="Certifications" style="width: 100%; height: auto; display: block; border-radius: 12px;">
+          <img src="./assets/certifications.png" alt="Certifications"
+            style="width: 100%; height: auto; display: block; border-radius: 12px;">
         </div>
       </div>
-    </div>
+    </div><!-- /.pdp-layout -->
 
-
-
+    <!-- Benefits + Nutrition -->
     <div class="pdp-details-grid" data-reveal>
       <div class="pdp-card">
         <h2 class="pdp-card__title">Key Benefits</h2>
@@ -417,6 +469,7 @@
       </div>
     </div>
 
+    <!-- Reviews -->
     <section class="pdp-reviews-section" id="reviews" data-reveal>
       <h2 class="pdp-reviews-title">Customer Reviews</h2>
       <div class="pdp-reviews-grid">
@@ -453,18 +506,23 @@
       </div>
     </section>
 
+    <!-- Related Products -->
     <div class="pdp-related" data-reveal>
       <p class="pdp-related__title">You May Also Like</p>
-      <div class="pdp-related__grid"><a href="product-mustard.html" class="pdp-related__card"><img
-            src="assets/mustard.png" alt="Mustard Oil" class="pdp-related__card-img">
-          <p class="pdp-related__card-name">Wood Pressed Black Mustard oil</p>
-        </a><a href="product-coconut.html" class="pdp-related__card"><img src="assets/coconut.png" alt="Coconut Oil"
-            class="pdp-related__card-img">
+      <div class="pdp-related__grid">
+        <a href="product-mustard.html" class="pdp-related__card">
+          <img src="assets/mustard.png" alt="Mustard Oil" class="pdp-related__card-img">
+          <p class="pdp-related__card-name">Mustard Oil</p>
+        </a>
+        <a href="product-coconut.html" class="pdp-related__card">
+          <img src="assets/coconut.png" alt="Coconut Oil" class="pdp-related__card-img">
           <p class="pdp-related__card-name">Coconut Oil</p>
-        </a><a href="product-groundnut.html" class="pdp-related__card"><img src="assets/groundnut.png"
-            alt="Groundnut Oil" class="pdp-related__card-img">
+        </a>
+        <a href="product-groundnut.html" class="pdp-related__card">
+          <img src="assets/groundnut.png" alt="Groundnut Oil" class="pdp-related__card-img">
           <p class="pdp-related__card-name">Groundnut Oil</p>
-        </a></div>
+        </a>
+      </div>
     </div>
   </main>
 
@@ -504,28 +562,67 @@
         </div>
       </div>
       <div class="footer-btm">
-        <p>© 2026 JIRASO Organics. All Rights Reserved.</p>
-        <p>Privacy Policy · Terms · Refund Policy</p>
+        <p style="margin-bottom: 1.5rem; opacity: 0.6; font-size: 0.75rem;">Disclaimer: Images shown are for illustrative
+          purposes only. The actual product may vary in appearance.</p>
+        <p>&copy; 2026 JIRASO Organics. All Rights Reserved.</p>
+        <p>Privacy Policy &bull; Terms &bull; Refund Policy</p>
       </div>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="cart-manager.js"></script>
   <script src="main.js"></script>
   <script>
-    const io = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-visible'); io.unobserve(x.target); } }); }, { threshold: 0.08 }); document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
-    function switchImg(t, s) { document.getElementById('main-img').src = s; document.querySelectorAll('.pdp-gallery__thumb').forEach(x => x.classList.remove('is-active')); t.classList.add('is-active'); }
-    let currentPrice = 500, currentSize = '1 Litre', qty = 1, subscribed = false;
-    function selectSize(b, p) { document.querySelectorAll('.pdp-size-btn').forEach(x => x.classList.remove('is-active')); b.classList.add('is-active'); currentPrice = p; currentSize = b.querySelector('.pdp-size-btn__ml').textContent; updatePrice(); }
-    function changeQty(d) { qty = Math.max(1, Math.min(50, qty + d)); document.getElementById('qty-num').value = qty; updatePrice(); }
-    function toggleSubscription() { subscribed = !subscribed; document.getElementById('sub-indicator').classList.toggle('is-on', subscribed); updatePrice(); }
-    function updatePrice() { let p = currentPrice * qty; if (subscribed) p = Math.round(p * 0.95); document.getElementById('display-price').textContent = '₹' + p; }
-    // Order via WhatsApp — adds current selection to cart then opens the order modal
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Gallery
+    function switchImg(thumb, src) {
+      document.getElementById('main-img').src = src;
+      document.querySelectorAll('.pdp-gallery__thumb').forEach(t => t.classList.remove('is-active'));
+      thumb.classList.add('is-active');
+    }
+
+    // Size selection
+    let currentPrice = 650;
+    let currentSize = '1 Litre';
+    function selectSize(btn, price) {
+      document.querySelectorAll('.pdp-size-btn').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentPrice = price;
+      currentSize = btn.querySelector('.pdp-size-btn__ml').textContent;
+      updatePrice();
+      updateWALink();
+    }
+
+    // Quantity
+    let qty = 1;
+    function changeQty(delta) {
+      qty = Math.max(1, Math.min(50, qty + delta));
+      document.getElementById('qty-num').value = qty;
+      updatePrice();
+    }
+
+    function updatePrice() {
+      let p = currentPrice * qty;
+      document.getElementById('display-price').textContent = '₹' + p;
+    }
+
+    function updateWALink() {
+      const msg = `Hi, I would like to order JIRASO Wood Pressed Sesame Oil ${currentSize} ₹${currentPrice} × ${qty}`;
+      document.getElementById('wa-btn').href = `https://wa.me/918393976770?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Order via WhatsApp
     function orderViaWhatsApp() {
       if (window.jirasoCM) {
         window.jirasoCM.addItem({
-          name: 'Sesame Oil',
+          name: 'Wood Pressed Sesame Oil',
           img: 'assets/sesame.png',
           color: '#E8E4D9',
           badgeColor: '#f3eb66',
@@ -539,11 +636,11 @@
       }
     }
 
-    // Add to Cart — silently adds item with fly animation (no modal)
+    // Add to Cart
     function addToCart() {
       if (window.jirasoCM) {
         window.jirasoCM.addItem({
-          name: 'Sesame Oil',
+          name: 'Wood Pressed Sesame Oil',
           img: 'assets/sesame.png',
           color: '#E8E4D9',
           badgeColor: '#f3eb66',
@@ -554,18 +651,61 @@
           qty: qty
         });
         const btn = document.getElementById('add-cart-btn');
-        btn.textContent = 'Added to Cart';
+        btn.textContent = 'Added!';
         btn.classList.add('is-added');
         setTimeout(() => { btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Add to Cart'; btn.classList.remove('is-added'); }, 2000);
         window.jirasoCM.flyToCart(btn, 'assets/sesame.png');
       }
     }
-    function trackBatch() { const v = document.getElementById('batch-input').value.trim(); if (!v) return; alert('Batch ' + v + ' - Processed at JIRASO Deoria facility. All quality parameters passed. ✓'); }
+
+    // Fullscreen image modal
+    function openMainImgModal() {
+      const src = document.getElementById('main-img').src;
+      const modal = document.getElementById('pdp-img-modal');
+      if (modal) {
+        document.getElementById('pdp-img-modal-img').src = src;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closePdpImgModal() {
+      const modal = document.getElementById('pdp-img-modal');
+      if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+    }
+  </script>
+  <!-- Fullscreen image modal for product gallery -->
+  <style>
+    #pdp-img-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(10, 8, 5, .92);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    #pdp-img-modal.open {
+      display: flex;
+    }
+  </style>
+  <div id="pdp-img-modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closePdpImgModal()">
+    <button onclick="closePdpImgModal()"
+      style="position:fixed;top:1.5rem;right:1.75rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;cursor:pointer;z-index:9001;font-family:inherit;"
+      aria-label="Close">✕</button>
+    <img id="pdp-img-modal-img" src="" alt="Full view"
+      style="max-width:88vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,.6);cursor:default;">
+  </div>
+  <script>
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePdpImgModal(); });
   </script>
   <script>
     const _cc = document.querySelectorAll('.cart-count');
     const _c = JSON.parse(localStorage.getItem('jiraso_cart') || '[]');
-    _cc.forEach(el => { el.textContent = _c.length; });
+    const _tot = _c.reduce ? _c.reduce((s, i) => s + (i.qty || 1), 0) : 0;
+    _cc.forEach(el => { el.textContent = _tot; });
   </script>
 </body>
 

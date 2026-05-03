@@ -634,26 +634,46 @@ main h3 {
   transform: scaleX(0) !important;
 }
 
-/* --- Premium Shimmer Badge --- */
+/* --- Premium Shimmer Badge (Cutting Edge) --- */
 .badge--shimmer {
-  background-color: #17140F !important;
-  color: #C4923A !important;
   position: relative !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(196, 146, 58, 0.5) !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
   display: inline-flex !important;
   align-items: center;
-  gap: 4px;
-  padding: 0.1rem 0.4rem !important;
-  width: fit-content !important;
-  border-radius: 4px !important;
+  gap: 6px;
+  padding: 0.4rem 1.75rem !important;
+  color: #E8B668 !important;
+  font-weight: 700 !important;
   font-family: var(--font-mono, monospace) !important;
-  font-size: 0.65rem !important;
+  font-size: 0.6875rem !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.06em !important;
+  letter-spacing: 0.12em !important;
   white-space: nowrap !important;
+  z-index: 1;
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.badge--shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #17140F 0%, #2b2822 100%);
+  border: 1px solid rgba(232, 182, 104, 0.4);
+  transform: skewX(-15deg);
+  z-index: -1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(232, 182, 104, 0.1);
+  transition: all 0.3s ease;
+}
+
+.badge--shimmer:hover {
+  transform: translateY(-1px);
+}
+
+.badge--shimmer:hover::before {
+  background: linear-gradient(135deg, #1e1b15 0%, #36332d 100%);
+  border-color: rgba(232, 182, 104, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .badge--shimmer::after {
@@ -661,19 +681,20 @@ main h3 {
   position: absolute;
   top: 0;
   left: -150%;
-  width: 100%;
+  width: 60%;
   height: 100%;
   background: linear-gradient(
-    120deg,
+    90deg,
     transparent,
     rgba(255, 255, 255, 0.4),
     transparent
   );
-  animation: badge-shine 3s infinite;
+  transform: skewX(-15deg);
+  animation: badge-shine 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes badge-shine {
   0% { left: -150%; }
-  30% { left: 150%; }
+  40% { left: 150%; }
   100% { left: 150%; }
 }
