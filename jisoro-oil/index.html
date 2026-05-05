@@ -2020,8 +2020,7 @@
     @media (max-width: 768px) {
       .faqs-img {
         aspect-ratio: auto;
-        margin-inline: -1.5rem;
-        /* Go full edge-to-edge */
+        margin-inline: 0;
         margin-top: 1rem !important;
         /* Pull up closer to text */
         margin-bottom: 2rem;
@@ -2032,10 +2031,9 @@
         padding: 0;
         height: auto;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
         display: block;
-        transform: scale(1.18);
-        /* Enlarge safely to fill more space */
+        transform: none;
       }
     }
 
@@ -2371,7 +2369,8 @@
       color: var(--mist)
     }
   </style>
-</head>
+<link rel="icon" type="image/png" href="assets/logo.png">
+  </head>
 
 <body>
 
